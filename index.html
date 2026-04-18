@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -182,8 +183,20 @@
     </footer>
     
     <script>
-        // This will be populated by the cron job
-        const ideas = [];
+        // Populated with alpha ideas
+        const ideas = [
+            {
+                title: "10-Year SDL Laddering at 7.5% YTM",
+                slug: "2026-04-18-sdl-laddering-10yr",
+                date: "April 18, 2026",
+                summary: "Higher-rated than PSU AT1s, SDLs backed by sovereign guarantee via RBI's state guarantee mechanism. Capture tax-efficient ~9.8% gross-equivalent yield before the expected MPC easing cycle begins. Lock-in duration in a cyclically high OIS environment.",
+                timeframe: "9-12 months",
+                expectedReturn: "7.5-9.8%",
+                riskLevel: "Low-Moderate",
+                instrument: "SDLs (State Development Loans)",
+                url: "ideas/2026-04-18-sdl-laddering-10yr.html"
+            }
+        ];
         
         function renderIdeas() {
             const list = document.getElementById('ideasList');
