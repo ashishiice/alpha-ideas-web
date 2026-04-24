@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arbitrage Fund + Short Duration Debt Combo: 8.5% Tax-Efficient Yield | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Arbitrage Fund + Short Duration Debt Combo: 8.5% Tax-Efficient Yield</h1>
+            <p>Capture equity-market volatility premium via arbitrage funds while locking in elevated short-duration corporate yields—delivers 8-9% gross returns with superior post-tax efficiency vs. FDs for 30% bracket investors.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 April 24, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 3-6 months</span>
+                <span class="meta-pill return">📈 Expected: 8-9%</span>
+                <span class="meta-pill risk">⚠️ Low-Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Quant Arbitrage Fund + HDFC Corporate Bond Fund (or equivalents)</p>
+            <p><strong>Exchange:</strong> NSE/BSE via MF Direct (Groww/Zerodha Coin)</p>
+            <p><strong>Strategy Type:</strong> Tax-Efficient Income Generation</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> With equity volatility elevated pre-election results and corporate bond yields still above 7.5%, this split allocation captures both the arbitrage spread (equity cash-futures gap) and accrual income from quality corporate paper. The arbitrage component delivers equity-like tax treatment after 1 year while the debt portion locks in pre-rate-cut yields. Combined effective yield of 8-9% with significantly better post-tax returns than bank FDs for higher-bracket investors.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Deploy capital in 65:35 ratio between arbitrage fund and short-duration corporate bond fund. Enter immediately—arbitrage spreads are elevated at 40-60bps and corporate yields are near cycle highs.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹100 NAV (lumpsum)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">Hold 3-6 months | Exit arbitrage portion post-LTCG eligibility</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">None—hold to maturity/strategy completion</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item">
+    <div class="rationale-bullet">1</div>
+    <p><strong>Arbitrage spreads elevated:</strong> Pre-election volatility has widened cash-futures spreads to 40-60bps—well above the 25-30bps historical average. Arbitrage funds capture this efficiently with minimal directional equity risk.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">2</div>
+    <p><strong>Corporate yields at cycle highs:</strong> AAA corporate bonds still yielding 7.5-7.8%, offering locked-in accrual before anticipated RBI easing in H2 2026.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">3</div>
+    <p><strong>Tax arbitrage opportunity:</strong> Arbitrage funds taxed as equity (10% LTCG above ₹1L after 1 year) vs. debt funds (SLAB rates). For 30% bracket investors, this creates a 15-20% post-tax advantage over equivalent-yield FDs.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">4</div>
+    <p><strong>Liquidity management:</strong> Arbitrage funds offer T+2/T+3 liquidity, while short-duration debt funds provide stability to the portfolio—balanced risk-adjusted returns.</p>
+</div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>RBI MPC on pause but bias shifting toward neutral—rate cuts likely by Q3 2026</li>
+<li>Election-related equity volatility sustaining cash-futures spreads</li>
+<li>Liquidity in banking system tight but stabilizing—corporate spreads attractive</li>
+<li>Credit growth in corporate sector recovering—demand for working capital funding supporting yields</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>Top arbitrage funds (Quant, Nippon, ICICI Pru) delivering 7.5-8.5% with 50-70% of portfolio deployed in arbitrage</li>
+<li>Corporate bond funds (HDFC, Aditya Birla) holding quality AAA/NCDs at 7.5%+ YTM</li>
+<li>Expense ratios on direct plans 15-30bps lower than regular—use MF direct platforms</li>
+<li>Record dates and dividend season providing consistent arbitrage opportunities through June</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Further equity volatility increases arbitrage spreads → higher fund returns</li>
+<li>RBI rate cuts boost NAV of debt portion as yields fall</li>
+<li>Corporate spreads compress → mark-to-market gains in bond fund</li>
+<li>Tax efficiency compounds—LTCG treatment vs. slab rates saves 15-20% for high bracket</li>
+<li>Dividend season (May-July) provides sustained arbitrage opportunities</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Sustained market rally compresses arbitrage spreads below 20bps</li>
+<li>Unexpected rate hikes hurt debt fund NAVs</li>
+<li>Corporate credit stress in specific sectors (NBFCs, real estate)</li>
+<li>Low market participation in derivatives reduces arbitrage opportunities</li>
+<li>Tax law changes affecting arbitrage fund classification</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li>Max 65% in arbitrage (volatility-dependent), 35% in debt (stable accrual)</li>
+<li>Stick to AAA-rated holdings in debt portion—no credit risk funds</li>
+<li>Monitor arbitrage fund cash-futures deployment ratio monthly</li>
+<li>Exit arbitrage portion if spreads compress below 20bps sustained</li>
+<li>Hold debt portion until first RBI cut—or stagger exit based on rate outlook</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-10 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 20% of total portfolio in this combo strategy</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Coin / Groww / MF Utility (Direct plans only)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low—monthly review sufficient</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>3-6 months (arbitrage) + 6-12 months (debt)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Arbitrage: 10% LTCG after 1yr (equity treatment). Debt: Slab rates. Blended effective tax ~15-18% for 30% bracket vs. 30% on FD interest</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>Check arbitrage fund's cash-futures deployment percentage (target >50%)</li>
+<li>Review monthly factsheet for expense ratio changes and AUM flows</li>
+<li>Monitor corporate bond fund portfolio for credit rating downgrades</li>
+<li>Track RBI MPC announcements for rate direction signals</li>
+<li>Check Nifty arbitrage spread levels weekly (should be >30bps)</li>
+<li>Review tax harvesting opportunities for the debt portion before financial year-end</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Login to Zerodha Coin/Groww → Search 'Quant Arbitrage Fund Direct Growth' → Allocate 65% of intended capital → Then search 'HDFC Corporate Bond Fund Direct Growth' → Allocate remaining 35% → Set SIP or lumpsum based on cash availability → Set calendar reminder for 3-month review</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on April 24, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
