@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-MPC G-Sec Duration Play: Lock 6.8% Benchmark Yield + Rate-Cut Kicker | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Post-MPC G-Sec Duration Play: Lock 6.8% Benchmark Yield + Rate-Cut Kicker</h1>
+            <p>Buy 10-year sovereign paper via RBI Retail Direct at post-MPC elevated yields to harvest 6.8% accrual plus 2-4% capital gain when RBI finally delivers its first rate cut in H2 2026.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 April 27, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-12 months</span>
+                <span class="meta-pill return">📈 Expected: 8-10%</span>
+                <span class="meta-pill risk">⚠️ Low-Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> 7.18% Government Stock 2033 (10-Year Benchmark)</p>
+            <p><strong>Exchange:</strong> RBI Retail Direct / NSE goBID</p>
+            <p><strong>Strategy Type:</strong> Sovereign Duration Tactical</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> The April 6-8 MPC minutes reveal growing dovish dissent inside the committee, yet Governor Das held the repo at 6.50%—meaning the first 25bps cut is likely pushed to Aug-Oct 2026. This creates a narrow window to lock into 10-year G-Sec yields above 6.75% before the curve bull-steepens. The trade offers asymmetric payoff: accrue a 7.18% coupon while waiting, and pick up 2-4% capital appreciation on the first cut.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Enter when the 10-year benchmark trades at a yield of 6.75% or higher (price below ~₹102.50). If yields compress to 6.30-6.40% post-rate-cut, the bond should trade at ₹104-₹105, delivering the target return.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">YTM ≥ 6.75% (~₹102.50)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">YTM 6.30% (~₹104.50) or hold</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">YTM 7.15% (~₹98.50) – hedge via position sizing, not stop</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item">
+    <div class="rationale-bullet">1</div>
+    <p><strong>MPC minutes signal delayed but likely cuts:</strong> April 6-8 minutes reveal 2 members voting for a hold (minority) with growing concern on growth-inflation mix. Market pricing 60bps cuts over next 12 months; front-loading into the long end makes sense.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">2</div>
+    <p><strong>Spread compression has already occurred in SDLs:</strong> SDL spreads over G-Sec compressed from 50bps to 30bps last fortnight, pushing smart money back into the central-government curve where liquidity is superior and transaction costs are lower.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">3</div>
+    <p><strong>Fiscal glide path is credible:</strong> Centre’s H1 borrowing calendar is front-loaded but not excessive. ₹32,000cr G-Sec auction (Apr 24) was fully subscribed with healthy bid-cover, showing demand is deep at current yields.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">4</div>
+    <p><strong>Duration positioning is consensus-light:</strong> Most retail money is still in FDs, SDL ladders, or ultra-short funds. A tactical long-duration G-Sec position is under-owned and offers first-mover advantage.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">5</div>
+    <p><strong>7.18% coupon cushions MTM volatility:</strong> Higher-than-market coupon means faster pull-to-par, reducing mark-to-market stress if rates take longer to fall. You are paid to wait.</p>
+</div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li><strong>Fed status:</strong> US 10Y at ~4.30% with expectation of 2 cuts in H2 2026; lower US yields reduce EM debt pressure and open space for RBI easing.</li>
+<li><strong>Oil &amp; INR:</strong> Brent steady near $80/bbl; INR holding 86-87/USD. Comfortable balance of payments reduces imported inflation risk.</li>
+<li><strong>Core inflation:</strong> Stubborn around 4.0-4.2% but headline CPI trending to sub-4% base-effect prints from May-Jun 2026, giving RBI cover.</li>
+<li><strong>Fiscal:</strong> GoI borrowing path announced; no supply shock expected. April 24 auction results confirm market absorption capacity.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li><strong>7.18% coupon &gt; current yield:</strong> Bond trades at slight premium but entry at dips (YTM &gt; 6.75%) creates margin of safety.</li>
+<li><strong>RBI Retail Direct zero-brokerage:</strong> No brokerage, no custody charges, zero AMC. Gains accrue 100% to investor.</li>
+<li><strong>SLR demand:</strong> Banks are steady buyers; any dip gets absorbed by institutional demand, providing a backstop price floor.</li>
+<li><strong>G-Sec liquidity:</strong> 7.18% 2033 is a benchmark line with tight bid-ask—easy to exit before maturity if needed.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>RBI delivers 25-50bps rate cut by Dec 2026 → bond rallies 2-4% on top of coupon accrual.</li>
+<li>Oil breaks below $75 → faster CPI decline → faster rate-cut cycle → duration gains amplified.</li>
+<li>Monsoon is normal (IMD forecast) → rural recovery → fiscal room for capex without bond supply surge.</li>
+<li>US recession fears deepen → Fed cuts 75-100bps → RBI follows with front-loaded cuts.</li>
+<li>G-Sec included in global bond index at higher weight → passive inflows bid up prices.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Geopolitical oil spike &gt;$90/bbl reignites CPI → RBI extends pause into 2027, rates stays elevated.</li>
+<li>Fiscal slippage in H2 or off-budget borrowing surprise → supply scare pushes yields to 7.20%+.</li>
+<li>INR depreciation to 90+ triggers RBI to hike SDF to anchor expectations.</li>
+<li>Domestic liquidity tightens (currency leakage around festivals) → SLR selling pressure on G-Sec.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li><strong>Position sizing:</strong> Cap at 15-20% of total portfolio. Blend with cash (30%) and short-duration (50%) to manage drawdown.</li>
+<li><strong>Entry discipline:</strong> Only enter on yield spikes (≥6.75%). Do not chase at 6.50% YTM.</li>
+<li><strong>Hold vs. sell rule:</strong> If yields breach 7.15% and RBI signals extended pause, book partial loss at -2% MTM; do not hold through a full tightening cycle.</li>
+<li><strong>Tax efficiency:</strong> If held &gt;1 year, LTCG at 10% without indexation; if sold within 12 months, STCG at slab—optimize holding period.</li>
+<li><strong>Broker choice:</strong> Use RBI Retail Direct for zero-cost acquisition; avoid broker fees that eat into the thin duration pick-up.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹2-8 lakh (₹1 lakh minimum for meaningful allocation)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 20% of debt portfolio; blend with 50% SDL/ultra-short and 30% liquid bees/T-bills</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>RBI Retail Direct (free) or NSE goBID via Zerodha/Axis Direct</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low—review monthly on RBI announcement days and yield-screen alerts</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-12 months tactical; or hold to Dec 2033 maturity</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Interest taxed at slab annually (7.18% coupon). Capital gain: LTCG 10% (no indexation) if held &gt;12 months; STCG at slab if sold earlier</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>Track RBI MPC announcement every first Wednesday of the month (next: May 7, 2026).</li>
+<li>Monitor 10-year G-Sec yield via CCIL or RBI Retail Direct price feed; set alert at 6.50% and 7.15%.</li>
+<li>Watch Brent crude and INR 86-87 band for macro stress signals.</li>
+<li>Review auction subscription ratios (bid/cover) for demand confirmation.</li>
+<li>Track US 10Y Treasury and Fed dot-plot for global rate direction.</li>
+<li>Review position quarterly: if RBI delivers 2+ cuts, consider profit-taking at YTM 6.20-6.30%.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Log in to RBI Retail Direct → Search "7.18% GS 2033" in the secondary market section → Place a limit buy order at price ≤ ₹102.50 (YTM ≥ 6.75%) for your chosen lot size. If unavailable, set up a price alert. Simultaneously, open a 91-day T-bill rolling ladder for the remaining 30% of your allocation to maintain liquidity.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on April 27, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
