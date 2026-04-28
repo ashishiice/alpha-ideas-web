@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSU NCD Spread Harvest: Lock 7.8% Yield with Sovereign Backstop | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>PSU NCD Spread Harvest: Lock 7.8% Yield with Sovereign Backstop</h1>
+            <p>Buy AAA-rated PSU NCDs trading at 90-110bps over 10Y G-Secs to lock in elevated yields ahead of RBI's eventual easing cycle, harvesting both coupon accrual and spread-compression capital gains.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 April 28, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months</span>
+                <span class="meta-pill return">📈 Expected: 8-10%</span>
+                <span class="meta-pill risk">⚠️ Low-Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> REC / PFC / NHAI AAA NCDs (secondary market)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Fixed Income Spread Capture / Accrual</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> Post-April MPC, RBI remains on hold with a dovish tilt. The 90-100bps spread between AAA PSU NCDs and equivalent-duration G-Secs is historically wide relative to the 5-year average of 60-70bps. As rate-cut expectations firm for H2 2026, these spreads will compress, delivering 7.8% coupon accrual plus 1-2% capital gain on 5-7 year duration paper. Sovereign ownership of REC, PFC, and NHAI virtually eliminates credit risk, making this a rare combination of yield and safety.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Enter when AAA PSU NCDs (8% coupon, 2029-2031 maturity) trade at YTM ≥ 7.75% in the NSE/BSE secondary market. The current post-MPC dislocation offers a 90-100bps spread over 10Y G-Secs. Exit when spreads compress below 60bps or RBI delivers the first 25bps rate cut.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">≤ ₹101.50 (YTM ≥ 7.75%)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">Hold to maturity OR sell at YTM 7.0%</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">MtM loss >3% OR spread >120bps vs G-sec</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item"><div class="rationale-bullet">1</div><p><strong>RBI on hold at 6.5% with dovish guidance</strong> — Markets pricing first 25bps cut by Aug/Sep 2026. The pause creates a window to lock in elevated yields before compression begins.</p></div>
+                <div class="rationale-item"><div class="rationale-bullet">2</div><p><strong>PSU spreads at 90-100bps are ~30bps wider vs. 5Y average</strong> — Post-MPC liquidity dislocation temporarily pushed PSU NCDs cheap. Mean reversion alone delivers 2-3% capital gain.</p></div>
+                <div class="rationale-item"><div class="rationale-bullet">3</div><p><strong>Sovereign-owned with implicit guarantee</strong> — REC, PFC, and NHAI are 100% government-controlled. Default probability is effectively zero; they are extensions of sovereign credit.</p></div>
+                <div class="rationale-item"><div class="rationale-bullet">4</div><p><strong>Rate-cut cycle = spread compression + duration rally</strong> — A 50bps cut cycle compresses spreads by 30-50bps and pushes bond prices up 2-4% on 5-7yr duration.</p></div>
+                <div class="rationale-item"><div class="rationale-bullet">5</div><p><strong>Semi-annual coupon for cashflow visibility</strong> — Unlike zero-coupon instruments, these NCDs pay regular interest, improving risk-adjusted holding experience.</p></div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>CPI inflation moderating toward 4.2-4.5% in Q2 2026, clearing room for RBI pivot</li>
+                <li>US Fed on hold with potential cuts later in 2026; EM FX pressure minimal</li>
+                <li>Rupee stable around 84-85/USD; no FX intervention pressure crowding out rate cuts</li>
+                <li>Fiscal consolidation on track; sovereign borrowing front-loaded and well-absorbed</li>
+                <li>OIS curve pricing 50-75bps cuts over next 12 months</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>REC/PFC reported strong Q4 FY26 disbursement growth (15-18% YoY)</li>
+                <li>Government recapitalization pipeline keeps Tier-1 equity buffers well above regulatory minima</li>
+                <li>Gross NPA ratios at multi-year lows for infrastructure financing PSUs</li>
+                <li>NCD supply calendar from PSUs well-anticipated; no supply shock expected in H1 2026</li>
+                <li>NSE goBID secondary market liquidity improving steadily for retail bond participation</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Faster-than-expected RBI rate cuts (50-75bps cycle) could compress spreads by 50-70bps</li>
+                <li>Credit rating upgrade possibility as asset quality metrics improve further</li>
+                <li>Sovereign guarantee formalization (if announced in Budget 2027) triggers re-rating rally</li>
+                <li>Flight-to-quality mutual fund inflows into AAA PSU papers if credit stress emerges elsewhere</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Inflation spike above 5.5% forces RBI to extend hold or reverse course</li>
+                <li>Infrastructure NPA cycle turns if power sector reforms stall or DISCOM stress resurfaces</li>
+                <li>Heavy government borrowing calendar (H2 2026) creates duration supply overhang</li>
+                <li>Liquidity event or mutual fund redemption cycle forces mark-to-market losses before recovery</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li>Position size capped at 20% of total portfolio / ₹5 lakh maximum</li>
+                <li>Split across 3 issuers (REC + PFC + NHAI) for issuer diversification even within PSU basket</li>
+                <li>Hold in demat to enable pledging for margin (liquidity backstop without selling)</li>
+                <li>Monitor G-sec-NCD spread weekly; trim half position if spread widens beyond 120bps</li>
+                <li>Maintain 6-month emergency fund outside this allocation</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-5 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 20% of fixed-income allocation; single-issuer max ₹2 lakh</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Groww / Angel One (search BOND segment on NSE/BSE)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Moderate — monthly review of RBI policy, spread levels, and PSU credit news</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-9 months tactical; or hold to maturity for pure accrual</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Interest income taxed at slab rate. Capital gains: STCG at slab if sold < 3 years; 20% with indexation if LTCG > 3 years. TDS at 10% if interest > ₹5,000/annum per issuer.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>Check RBI OMO calendar for duration supply/demand impact</li>
+                <li>Review monthly WPI/CPI prints for inflation trajectory surprises</li>
+                <li>Track REC/PFC credit spreads vs 10Y G-sec on NSE goBID portal</li>
+                <li>Monitor PSU capital-raising and NPA announcements quarterly</li>
+                <li>Review CRISIL/ICRA credit rating outlooks for any negative triggers</li>
+                <li>Rebalance / take profits if spread compresses below 60bps (cycle maturity)</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Login to your broker app → Search "REC NCD", "PFC NCD", or "NHAI NCD" in the BOND segment → Filter by coupon ≥ 7.5% and remaining maturity 3-5 years → Place limit order at or below ₹101.50 for 8%+ coupon paper → Hold and review monthly.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on April 28, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
