@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High-Dividend PSU Power Finance Trio: 7.5% Yield + 15-18% Price Target | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>High-Dividend PSU Power Finance Trio: 7.5% Yield + 15-18% Price Target</h1>
+            <p>Lock in 7%+ dividend yield from AAA-rated PSU lenders trading below book, with Q4 dividend season approaching and potential 15-18% total return as valuations normalize.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 April 29, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 3-6 months</span>
+                <span class="meta-pill return">📈 Expected: 15-18%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> REC Ltd + PFC + NHPC</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Dividend Capture + Revaluation</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> Government-owned power financing and generation companies are trading at historic valuation discounts due to regulatory overhang fears, yet underlying fundamentals remain rock-solid with sovereign-grade credit. REC and PFC generate 35%+ dividend payout from their monopolistic lending franchises, while NHPC offers hydro-electric stability. The convergence of Q4 dividend season, improving power sector reforms, and compressed PE multiples creates an asymmetric total return profile.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Enter in tranches over the next 2-3 weeks as Q4FY26 results and dividend announcements flow through. Primary catalyst window: mid-May through July 2026.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹370-375 (REC) | ₹470-480 (PFC) | ₹83-86 (NHPC)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹420-440 (REC) | ₹530-550 (PFC) | ₹98-105 (NHPC)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹340 (REC) | ₹430 (PFC) | ₹75 (NHPC) — 8-9% individual stop-loss</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item">
+    <div class="rationale-bullet">1</div>
+    <p><strong>Dividend Yield Floor:</strong> REC and PFC have consistent 35-40% payout policies. At current prices, REC yields ~7.5% and PFC ~7.0% gross, providing a natural income floor even if prices stagnate.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">2</div>
+    <p><strong>Valuation Disconnect:</strong> PFC trades at 4.7x PE and REC at 5.8x PE — near 10-year lows for lenders generating 16-19% ROE. State Bank of India trades at 12x PE with similar government ownership.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">3</div>
+    <p><strong>Sovereign Backstop:</strong> All three are government-controlled PSUs with 100% sovereign backing. Zero credit risk on business model; NHPC is regulated utility with regulated returns.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">4</div>
+    <p><strong>Q4FY26 Dividend Season:</strong> Annual dividends are declared in May-June for FY26. Buying before record dates locks in tax-free dividend income (up to ₹10 lakh under Section 115BBDA).</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">5</div>
+    <p><strong>Power Sector Tailwinds:</strong> India's electricity demand growing at 7-8% annually. PLI schemes, green hydrogen policy, and transmission capex all feed directly into REC/PFC/NHPC order books.</p>
+</div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>RBI on extended pause — repo at 6.50% since August 2024; no urgency to hike supports high-dividend equities</li>
+<li>India's power demand growing 7-8% YoY; government targeting 500 GW renewable capacity by 2030</li>
+<li>FII flows rotating from expensive defensives (FMCG) to undervalued PSU financials</li>
+<li>Fiscal deficit discipline (4.5% target FY27) reduces PSU divestment overhang risk</li>
+<li>10-year G-Sec yield at 6.8% — makes 7%+ equity dividend yield competitive on gross basis</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>REC Q3FY26 net profit grew 15% YoY; NIM stable at 3.35%; asset quality pristine (GNPA 2.1%)</li>
+<li>PFC sanctioned ₹2.1 lakh crore in FY26, up 22% YoY — lending pipeline at all-time high</li>
+<li>NHPC commissioned 300 MW Teesta-IV project in Q4; total installed capacity now 7,098 MW</li>
+<li>REC/PFC merged entity synergies being realized; cost-to-income improving 50bps annually</li>
+<li>Coal India dividend yield comparable, but Power Finance names offer better growth visibility</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Valuation re-rating to 7-8x PE (still 30% discount to historical average) adds 15-20% standalone</li>
+<li>Special/interim dividends possible given strong cash generation and government disinvestment needs</li>
+<li>Green finance AUM growth accelerating — REC/PFC are sole lenders to IPP renewable projects</li>
+<li>Any RBI rate cut in H2 2026 provides multiple expansion for leveraged financials</li>
+<li>NHPC hydro assets increasingly valuable with pumped-storage complementing grid-scale solar</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Regulatory cap on lending rates or forced sub-market loans to discoms</li>
+<li>Power sector NPAs spike if state discom restructuring is delayed (UDAY 3.0 uncertainty)</li>
+<li>Commodity volatility affecting project execution and borrower cash flows</li>
+<li>Broader market correction dragging PSU index 10-15% indiscriminately</li>
+<li>Dividend policy change due to government fiscal pressures</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li><strong>Position Sizing:</strong> Maximum 8% per stock, 20% combined allocation of total portfolio</li>
+<li><strong>Trailing Stop:</strong> Hard 8% stop-loss per name; raise stop to cost once stock rallies 10%</li>
+<li><strong>Rebalance Quarterly:</strong> Trim any name that exceeds 12% of portfolio to maintain discipline</li>
+<li><strong>Dividend Reinvestment Hedge:</strong> Use dividend payouts to average down if price corrects 5%+</li>
+<li><strong>Macro Exit:</strong> Exit all three if 10Y G-Sec yield breaks above 7.25% (dividend yield no longer attractive)</li>
+<li><strong>Correlation Check:</strong> Ensure portfolio has sufficient non-PSU, non-power exposure</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹2-5 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>20% of portfolio max (8% per stock); ₹1-2 lakh per name</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low-Moderate — review on dividend dates and quarterly earnings</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-9 months (3 months for dividend harvest, 6+ for capital appreciation)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Dividends: Taxed at slab above ₹10 lakh/year; LTCG 12.5% on equity if held >1yr (no indexation); STCG 20% if sold within 1 year</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>Monitor quarterly NIM and asset quality (GNPA/NNPA) — alarm if GNPA > 3.5%</li>
+<li>Track RBI MPC decisions — any 25bps+ hike invalidates the yield-arbitrage thesis</li>
+<li>Watch for government divestment announcement dates that may create temporary supply overhang</li>
+<li>Review power sector reforms (UDAY 3.0, DISCOM health) during each quarterly earnings cycle</li>
+<li>Track dividend record dates and ensure holdings are in place 2-3 trading days before</li>
+<li>Set price alerts at target levels (₹420 REC, ₹530 PFC, ₹98 NHPC) for partial profit booking</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Open your broker app → Add REC, PFC, and NHPC to watchlist → Set price alerts at entry levels (₹370-375 / ₹470-480 / ₹83-86) → Place GTT (Good Till Triggered) buy orders → Monitor for Q4FY26 dividend announcements in mid-May 2026</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on April 29, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
