@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvIT Yield Harvest: India Grid Trust at 8%+ Distribution with Power Transmission Backing | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>InvIT Yield Harvest: India Grid Trust at 8%+ Distribution with Power Transmission Backing</h1>
+            <p>Lock in tax-efficient, inflation-linked infrastructure yield from India's largest listed power transmission InvIT while rates remain elevated.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 April 30, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-12 months</span>
+                <span class="meta-pill return">📈 Expected: 12-15%</span>
+                <span class="meta-pill risk">⚠️ Low-Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> India Grid Trust (INDIGRID) — Units</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Infrastructure Yield / Listed InvIT</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> India Grid Trust owns 14 power transmission assets with an average residual concession life of 30+ years, all operating under CERC-regulated, availability-based tariffs. With quarterly distributions of ~₹3.00/unit and growing, investors buying at current levels lock in an 8%+ running yield that is partly tax-free (capital repayment component), plus potential 4-6% unit price appreciation as yield-hungry retail and institutional capital rotates into listed infrastructure.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Accumulate INDIGRID units in the ₹138-148 zone where the implied distribution yield exceeds 8%. Exit at ₹168-175 or after 12 months, whichever delivers the target total return first.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹138-148</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹168-175</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹122</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <div><strong>100% Operational Portfolio:</strong> INDIGRID's assets are fully operational with zero under-construction project risk, providing immediate cash flow visibility.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <div><strong>Availability-Based Revenue:</strong> Revenue is based on transmission line availability, not power volumes—immunizing cash flows from electricity demand fluctuations.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <div><strong>Attractive Yield Spread:</strong> ~8% distribution yield compares favorably to 10Y G-Sec at ~6.8%, providing a healthy 120bps credit spread for a quasi-sovereign asset class.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <div><strong>Inflation-Linked Escalation:</strong> Transmission tariffs escalate at ~3% CAGR per CERC norms, providing built-in inflation protection without commodity price risk.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">5</div>
+                    <div><strong>Deep Sponsor Pipeline:</strong> KKR-sponsored Sterlite Power maintains a ROFO pipeline of ₹4,000+ crore transmission assets, enabling NAV-accretive drop-downs.</div>
+                </div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>RBI rate pause makes yield assets attractive on a relative basis</li>
+                <li>Government ₹17 lakh crore power transmission investment plan driving sector tailwinds</li>
+                <li>Rising electricity demand (+6-7% annually) expands grid footprint and asset utilization</li>
+                <li>Falling interest rates in H2 2026 improve present value of long-duration cash flows</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>INDIGRID maintains 99.9%+ availability across all assets—regulatory penalties are negligible</li>
+                <li>Debt-to-AUM conservative at ~55%, with primarily project-level non-recourse financing</li>
+                <li>Weighted average remaining concession life is 32 years, providing long cash-flow visibility</li>
+                <li>Sponsor KKR has a deep ROFO pipeline of Sterlite Power transmission assets for accretive growth</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Yield compression: If 10Y G-Sec falls to 6.2%, the 8% yield benchmark implies 10-12% unit price appreciation</li>
+                        <li>Accretive acquisitions: Pipeline of ₹4,000+ crore assets from sponsor could raise DPU by 5-7%</li>
+                        <li>Retail demand: SEBI's relaxation of InvIT minimum ticket sizes may broaden the investor base</li>
+                        <li>Strategic interest: Foreign pension/sovereign funds increasingly targeting Indian infrastructure</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Regulatory risk: CERC tariff regulations could change unfavorably in tariff reset periods</li>
+                        <li>Interest rate risk: Rising G-Sec yields would compress InvIT valuations (inverse relationship)</li>
+                        <li>Concentration risk: Top 3 assets contribute ~45% of total cash flows</li>
+                        <li>Single-sector risk: Entirely exposed to power transmission; no diversification into roads/renewables</li>
+                        <li>Sponsor conflict: Asset injection terms from sponsor may not always be arm's length</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li>Position size: Cap at 10-15% of portfolio to manage single-name concentration</li>
+                <li>Entry discipline: Accumulate only in ₹138-148 zone; do not chase above ₹150</li>
+                <li>Reinvest distributions: Opt for DRP (Distribution Reinvestment Plan) units for compounding</li>
+                <li>Monitor G-Sec yield: If 10Y G-Sec breaks above 7.2%, reassess duration exposure</li>
+                <li>Review quarterly: Track availability metrics, debt covenants, and DPU coverage ratios</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-5 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 15% of equity portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low—quarterly DPU review</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>9-12 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Distribution split: Interest (taxable at slab), Dividend (taxable at slab), Repayment of debt (tax-free). Capital gains: STCG at slab if &lt;36 months; LTCG at 12.5% beyond ₹1.25L if held &gt;36 months. For 6-12 month hold, STCG/IT treatment applies.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review quarterly:</p>
+            <ul>
+                <li>Quarterly DPU declared and paid on schedule per distribution policy?</li>
+                <li>Availability metrics &gt;99% across all SPVs—any unexpected outages?</li>
+                <li>Any CERC tariff order impacting future cash flows or escalation rates?</li>
+                <li>10Y G-Sec yield trajectory—above 7.2% warning level?</li>
+                <li>Sponsor injection of new assets—accretive or dilutive to existing unitholders?</li>
+                <li>Debt service coverage ratio &gt;1.2x across all project SPVs?</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Open your broker app, search for INDIGRID, and place a limit order at ₹142. Set a 3-month accumulation plan if the price hovers in the ₹138-148 range. Enable the DRP option to receive distributions in additional units for tax-deferred compounding. Mark your calendar for the next quarterly DPU announcement (typically 45 days post quarter-end).</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on April 30, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
