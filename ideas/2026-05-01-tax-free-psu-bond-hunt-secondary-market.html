@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax-Free PSU Bond Hunt: Lock 6.2% Tax-Free (8.8% Gross Equivalent) on NSE | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Tax-Free PSU Bond Hunt: Lock 6.2% Tax-Free (8.8% Gross Equivalent) on NSE</h1>
+            <p>Capture institution-grade, tax-free yields from AAA-rated PSU infrastructure bonds trading in the secondary market—delivering 8-9% gross-equivalent returns with sovereign-grade safety.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 May 1, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-12 months</span>
+                <span class="meta-pill return">📈 Expected: 8-9% gross-equivalent</span>
+                <span class="meta-pill risk">⚠️ Low</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> NHAI / IRFC / REC / PFC Tax-Free Bonds (Secondary Market)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Tax-Efficient Fixed Income Accrual</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> Buy AAA-rated, tax-free PSU infrastructure bonds trading at 5.8-6.2% YTM in the NSE secondary market. For a 30% tax-bracket investor, this translates to an 8.3-8.8% taxable-equivalent yield—superior to FDs, most debt funds, and even many AT1 bonds—while carrying near-sovereign credit risk.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Buy tax-free PSU bonds via NSE/BSE secondary market at yields of 5.8-6.2%. Hold to maturity for guaranteed tax-free coupon accrual, or sell into rate-cut driven yield compression for capital gains.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">YTM 5.8-6.2%</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">Hold to maturity / YTM 5.0% exit</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">None—sovereign-backed</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item">
+    <div class="rationale-bullet">1</div>
+    <p><strong>Finite supply advantage:</strong> No new tax-free bonds have been issued since 2016. The existing stock is scarce, shrinking, and increasingly valuable to tax-conscious investors.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">2</div>
+    <p><strong>Massive tax arbitrage:</strong> A 6.2% tax-free coupon equals 8.8% gross yield for a 30% bracket investor—beating bank FDs (7% taxable = 4.9% post-tax), most debt funds, and even many PSU AT1 bonds on a risk-adjusted basis.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">3</div>
+    <p><strong>Rate-cut capital gain kicker:</strong> When RBI eventually cuts repo rate from 6.25%, tax-free bond yields will compress 25-50bps, generating ₹3-6 per bond of capital appreciation on top of coupon accrual.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">4</div>
+    <p><strong>Sovereign-grade safety:</strong> NHAI, IRFC, and REC carry effective central government backing. These entities have zero default history and their debt is treated as sovereign-equivalent by the market.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">5</div>
+    <p><strong>Inflation-beating real returns:</strong> With CPI inflation moderating toward 4%, the post-tax real yield of 4.5-5% is among the highest available in Indian fixed income for retail investors.</p>
+</div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li><strong>RBI on hold with easing bias:</strong> Repo rate at 6.25% with MPC signaling eventual cuts as inflation moderates toward 4%. Bond yields across the curve will compress when cuts arrive.</li>
+<li><strong>Bank FD rates declining:</strong> SBI 1-year FD at 6.80% (taxable), post-tax yield for 30% bracket is only 4.76%. Tax-free bonds offer a 400bps post-tax advantage.</li>
+<li><strong>10-year G-Sec benchmark at ~6.8%:</strong> Makes tax-free 6.2% highly competitive on a post-tax basis while carrying similar sovereign-grade credit risk.</li>
+<li><strong>Institutional demand rising:</strong> Insurance companies and PF trusts are increasingly hunting for tax-free paper, tightening supply in the secondary market.</li>
+<li><strong>No new supply pipeline:</strong> Government has no plans to issue fresh tax-free bonds, making the existing ₹3.5 lakh crore stock a closed-end, scarce asset.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li><strong>NHAI 8.20% 2033 Series:</strong> Trades at ~₹112-115 (YTM ~6.0%), AAA-rated, backed by Central Road Fund inflows and toll monetization.</li>
+<li><strong>IRFC 8.10% 2028 Series:</strong> Trades at ~₹108-110 (YTM ~6.2%), maturity in 2.5 years—ideal for investors who want near-term liquidity with high yield.</li>
+<li><strong>REC 8.00% 2027 Series:</strong> Trades at ~₹105-107 (YTM ~5.8%), shortest duration option with highest safety due to power sector PSU backing.</li>
+<li><strong>PFC 8.30% 2033 Series:</strong> Trades at ~₹115-118 (YTM ~5.9%), highest coupon in the set, backed by power sector transmission and distribution financing.</li>
+<li><strong>Interest fully exempt</strong> under Section 10(15)(iv)(h) of the Income Tax Act—no TDS, no tax filing requirement for interest income.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>25-50bps yield compression on first RBI rate cut adds 2-4% capital gain over 6-12 months</li>
+<li>30% tax-bracket investors earn 240-260bps more vs. equivalent taxable G-Secs or bank deposits</li>
+<li>No TDS deduction, no advance tax on interest, minimal tax compliance overhead</li>
+<li>Liquidity premium may expand further as outstanding supply naturally amortizes toward maturity</li>
+<li>Potential for tender buybacks or early redemptions at premium if issuers refinance at lower rates</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li><strong>Liquidity risk:</strong> Very thin secondary market volumes—selling before maturity may require 2-4% price haircut</li>
+<li><strong>Interest rate risk:</strong> If RBI unexpectedly hikes or inflation spikes, mark-to-market losses on longer-duration bonds (irrelevant if held to maturity)</li>
+<li><strong>Duration risk:</strong> 2033 maturities carry ~6-7 year modified duration; a 100bps yield spike could cause 6-7% paper loss</li>
+<li><strong>Re-investment risk:</strong> Bonds maturing within 2 years (2027-2028) may be difficult to replace at similar tax-free yields</li>
+<li><strong>Platform limitations:</strong> Not all discount brokers support NSE/BSE bond trading; order placement may require phone dealing for some brokers</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li><strong>Limit orders only:</strong> Never use market orders on thinly traded tax-free bonds; place limit bids at or below last traded price</li>
+<li><strong>Issuer diversification:</strong> Split across 3-4 issuers (NHAI, IRFC, REC, PFC) to reduce single-entity concentration</li>
+<li><strong>Maturity barbell:</strong> Allocate 50% to short-dated (2027-2028) and 50% to medium-dated (2030-2033) to balance yield and duration risk</li>
+<li><strong>Hold-to-maturity discipline:</strong> Treat as a buy-and-hold asset; do not plan to sell before maturity unless yields compress significantly</li>
+<li><strong>Position cap:</strong> Maximum 15% of total fixed-income allocation to manage liquidity and concentration risk</li>
+<li><strong>Broker verification:</strong> Confirm with your broker that NSE/BSE tax-free bond segment is accessible before funding the strategy</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹2-5 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 15% of debt portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / ICICI Direct</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low—quarterly price check</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-24 months (or to maturity)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Interest fully tax-free u/s 10(15)(iv)(h); LTCG 10% (if held >12 months), STCG 15% (if <12 months)</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>Check NSE/BSE quoted YTM monthly for yield compression tracking and potential exit signals</li>
+<li>Track RBI MPC meeting outcomes and minutes for rate-cut probability and timing</li>
+<li>Verify annual/semi-annual coupon credits on due dates (check broker ledger)</li>
+<li>Review portfolio allocation if bond prices rise >5% above entry (consider trimming if over-allocated)</li>
+<li>Reassess if any issuer faces rating downgrade (highly unlikely for these central PSUs)</li>
+<li>Monitor new tax-free bond policy announcements from Ministry of Finance (any new supply would affect scarcity premium)</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Open your broker's NSE/BSE bond terminal this week. Search for 'NHAI Tax Free', 'IRFC Tax Free', or 'REC Tax Free' bond series. Place limit buy orders at YTM 6.0% or higher. Start with ₹2 lakh across 2-3 series. Verify coupon schedule and maturity date before confirming.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on May 1, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
