@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITC Ltd: Deep Value Turnaround at Historic Valuation Trough | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>ITC Ltd: Deep Value Turnaround at Historic Valuation Trough</h1>
+            <p>Buy India's strongest consumer franchise at 3-year valuation lows — 3.5% dividend yield, ₹16,000Cr annual FCF, hotel demerger catalyst, and P/E expansion from 18x to 22x delivers 18-20% total return in 3-6 months.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 May 2, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 3-6 months</span>
+                <span class="meta-pill return">📈 Expected: 18-20%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> ITC Ltd (NSE: ITC)</p>
+            <p><strong>Exchange:</strong> NSE</p>
+            <p><strong>Strategy Type:</strong> Deep Value + Dividend Capture</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> ITC is trading at 18-19x P/E — a 30% discount to its 10-year average of 24x — despite owning an irreplaceable cigarette franchise generating ₹16,000Cr+ annual free cash flow, a profitable FMCG business, and a recently demerged hotel arm (ITC Hotels) that unlocks hidden asset value. With Q4FY26 results due in May, the stock offers a compelling asymmetric risk-reward: 3.5% dividend yield as downside protection, and 15%+ price upside as valuation normalizes.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Accumulate in ₹310-320 zone with staggered entries over 2-3 trading sessions. The stock is at its 3-year valuation trough with institutional selling abating and buybacks providing a floor.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹310-320</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹360-370</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹280 (trailing stop after ₹340)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                
+                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <div><strong>Historic Valuation Discount:</strong> ITC trades at 18-19x P/E vs 10-year average of 24x and 5-year average of 22x. This is the cheapest the stock has been relative to its intrinsic earnings power since the COVID crash of 2020, despite the underlying business generating record cash flows.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <div><strong>Q4FY26 Catalyst (May Results):</strong> Q4 is seasonally the strongest quarter for cigarettes. With stable tax regime (no GST shock) and volume recovery in premium segment, Q4 EBITDA is expected at ₹5,800-6,000Cr. A dividend announcement inline with the progressive 75-80% payout policy would reinforce the yield anchor.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <div><strong>Hotel Demerger Value Unlock:</strong> ITC Hotels (demerged, separately listed) unlocks ₹30-35k Cr of hidden value. ITC shareholders received 1 share of ITC Hotels for every 10 held at listing (~₹400/share value). The market is yet to fully price this capital-efficient restructuring.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <div><strong>FMCG Segment Inflection:</strong> ITC's FMCG business (Aashirvaad, Sunfeast, Bingo) has turned EBITDA positive for the first time, with margins expanding from -2% to +3% over 18 months. Revenue run-rate of ₹18,000Cr with 15%+ CAGR makes this a significant value driver going forward.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">5</div>
+                    <div><strong>Buyback + Dividend Floor:</strong> ITC has returned ₹12,000Cr+ via buybacks and dividends over the last 3 years. With net cash of ₹5,000Cr+ on balance sheet, the company has ample capacity to sustain this. A ₹10-12 annual dividend (₹315/share = ~3.5% yield) provides a soft floor at current levels.</div>
+                </div>
+    
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                
+                <li>RBI rate cut expectations in H2 2026 — FIIs may rotate back into Indian equities, benefiting large-cap FMCG anchors like ITC</li>
+                <li>Crude oil staying below $70/bbl supports packaging and FMCG input costs — margin tailwind for ITC's FMCG and paperboard segments</li>
+                <li>Normal monsoons forecast for 2026 supporting rural demand recovery — ITC's FMCG and agri businesses directly benefit from rural pickup</li>
+                <li>Stable GST regime for tobacco — no adverse policy shock expected in near term given government's focus on revenue stability</li>
+                <li>Nifty 50 valuation at ~22x P/E — ITC's valuation discount makes it a relative value play in a moderately priced market</li>
+    
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                
+                <li>Q4FY26 results due mid-May — consensus expects ₹5,200Cr PAT (+12% YoY) and dividend announcement of ₹6.50-7.00/share</li>
+                <li>Cigarette volume growth has stabilized at 3-5% annually after price hikes absorbed without losing market share to illicit trade</li>
+                <li>FMCG segment EBITDA margin crossed 3% in Q3FY26 — management targets 5-6% in 2 years, adding ₹500-600Cr to segment profit</li>
+                <li>ITC Hotels separately listed on NSE/BSE — shareholders received full value unlocking without dilution</li>
+                <li>Paperboards, Paper & Packaging segment benefits from Chinese capacity off-take and import curbs — EBITDA margins improving from cyclical lows</li>
+                <li>FII holding at 13.5% (near decade low) — any reversal of FII outflows could trigger significant institutional buying</li>
+    
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        
+                        <li>P/E re-rating from 18x to 22x adds ~₹55/share in stock price (~17% upside from ₹315)</li>
+                        <li>Q4 results beat + dividend surprise could trigger 5-8% immediate rally</li>
+                        <li>FII inflows returning to India could disproportionately benefit high-quality large-cap value plays</li>
+                        <li>FMCG margin expansion to 5-6% adds ₹5-7/share to EPS, justifying higher multiples</li>
+                        <li>Potential stake sale/monetization of non-core assets (hotel land bank, agri business)</li>
+                        <li>Government buyback/SBI MF accumulation as part of PSU diversification — ITC is an index heavyweight with governance standards</li>
+    
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        
+                        <li>Regulatory risk: surprise GST increase on cigarettes or ban on loose cigarette sales could impact volumes 5-8%</li>
+                        <li>Illlicit cigarette trade gaining share if legal prices rise too fast — revenue leakage to unorganized sector</li>
+                        <li>FMCG turnaround stalls — if segment margins don't expand, the sum-of-parts thesis weakens</li>
+                        <li>Broader market correction (Nifty -10%+) would drag ITC even if business is sound (beta ~0.8)</li>
+                        <li>Extended FII selling cycle in Indian equities (global risk-off due to US tariffs/trade war escalation)</li>
+    
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                
+                <li>Position size: Max 15% of equity portfolio (₹1.5L per ₹10L portfolio)</li>
+                <li>Staggered entry: Buy 50% at ₹315, 25% at ₹305, 25% at ₹295 — averages to ₹310</li>
+                <li>Trailing stop: Activate at ₹340, trail at 8% below the highest close</li>
+                <li>Hard stop loss: ₹280 (10% drawdown) — exit if cigarette volume guidance is downgraded</li>
+                <li>Dividend as cushion: ~₹10-12/share expected in May — 3.5% yield reduces cost basis to ~₹300 after dividend</li>
+                <li>Do not lever — this is a cash equity position, not a margin trade</li>
+    
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-5 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 15% of equity portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Groww</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low — weekly check, review only at Q4 results and major news</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>3-6 months (or hold as core portfolio position)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>STCG (held <12 months): taxed at income slab rate. LTCG (held >12 months): 10% over ₹1L. Dividends taxed at slab rate. If held 12+ months for LTCG, post-tax returns improve significantly at 10% vs slab rate.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                
+                <li>✓ Check ITC share price weekly — note if entering buy zone (₹310-320)</li>
+                <li>✓ Monitor Q4FY26 result date announcement — mark calendar within first week of May</li>
+                <li>✓ Track cigarette volume commentary — any mention of volume decline >5% is a red flag</li>
+                <li>✓ Watch FII holding data monthly — sustained selling below 13% is bearish; accumulation above 14% is bullish confirmation</li>
+                <li>✓ Track FMCG segment margin in quarterly results — target >3.5% for thesis confirmation</li>
+                <li>✓ Update trailing stop to ₹340 level once stock reaches target zone</li>
+    
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Step 1: Open Zerodha/Groww and set a GTT buy order for 150 shares of ITC at ₹315. Step 2: Place a limit order for 75 more shares at ₹305. Step 3: Set a GTT stop-loss at ₹280. Step 4: Mark your calendar for mid-May when Q4FY26 results are announced — review dividend declaration and volume guidance before adjusting targets.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on May 2, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
