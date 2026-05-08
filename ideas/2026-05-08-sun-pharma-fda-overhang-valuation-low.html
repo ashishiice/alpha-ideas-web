@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sun Pharma: Buy the FDA Overhang at 3-Year Valuation Low | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Sun Pharma: Buy the FDA Overhang at 3-Year Valuation Low</h1>
+            <p>India's largest pharma company trades at 22x P/E vs 5-year average of 28x—despite 12% YoY revenue growth, a dominant domestic franchise, and a rapidly expanding US specialty portfolio. The market has over-discounted near-term USFDA headwinds, creating a rare defensive entry with both dividend yield and multiple expansion.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 May 8, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months</span>
+                <span class="meta-pill return">📈 Expected: 16-18%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Sun Pharmaceutical Industries Ltd (NSE: SUNPHARMA)</p>
+            <p><strong>Exchange:</strong> NSE</p>
+            <p><strong>Strategy Type:</strong> Defensive Growth with Multiple Expansion</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> Sun Pharma offers a rare combination of domestic market dominance (8.5% market share), a rapidly growing specialty portfolio in the US, and an attractive valuation after the recent USFDA warning letter overhang. With the rupee weakening and domestic pharma growing at 10%+ CAGR, the stock is positioned for both earnings growth and P/E re-rating over the next 6-9 months.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Enter on weakness in the ₹1,350-1,400 zone where the stock has found institutional support. The target captures a P/E re-rating from 22x to 26x on FY27 EPS of ₹65, plus ~₹10 dividend. Stop-loss below the 200-DMA and key horizontal support to limit drawdown if FDA issues escalate.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹1,350-1,400</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹1,650-1,700</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹1,220</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <p><strong>Valuation gap:</strong> Trading at 22x FY27 P/E vs 5-year average of 28x—a 20% discount that narrows as FDA issues resolve and earnings compound.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <p><strong>Domestic moat:</strong> #1 in Indian pharma with 8.5% market share; domestic formulations growing 12% YoY with pricing power in chronic therapies.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <p><strong>Specialty pivot:</strong> Ilumya (psoriasis) and Cequa (dry eye) now drive 18% of US revenue vs 8% three years ago—higher margins, lower pricing risk.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <p><strong>Currency tailwind:</strong> INR depreciation from 83 to 85+ boosts export realizations and margins by an estimated 200-300bps.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">5</div>
+                    <p><strong>Defensive appeal:</strong> Pharma is non-cyclical; earnings hold up even if equity markets correct, offering portfolio ballast.</p>
+                </div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>Rupee depreciation trend (83→85+) boosts export pharma margins by 200-300bps</li>
+                <li>Domestic pharmaceutical market growing at 10-12% CAGR, outpaced by chronic therapy segments at 15%+</li>
+                <li>US generic pricing pressure bottoming out; industry seeing first price increases in 5 years</li>
+                <li>India's API (Active Pharmaceutical Ingredients) push reducing China dependence and improving margins</li>
+                <li>Government PLI schemes for pharma manufacturing boosting domestic capacity and export competitiveness</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>Sun Pharma's specialty portfolio (Ilumya, Cequa, Winlevi) now contributes 18% of US revenue vs 8% three years ago</li>
+                <li>Domestic formulations business growing 12% YoY with 72% gross margins—best-in-class</li>
+                <li>Taro acquisition integration complete; Israel facility adding high-margin derma products</li>
+                <li>R&D spend at 8% of revenue—among highest in Indian pharma—feeding robust ANDA pipeline</li>
+                <li>Management guided for 15% revenue CAGR and 200bps margin expansion over FY25-28</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Resolution of Mohali USFDA warning letter could trigger 8-10% re-rating in 30 days</li>
+                <li>Ilumya prescription growth accelerating; could become $500M+ brand by FY28</li>
+                <li>Any large US generic launch (gRevlimid, gJakafi) adds ₹800-1,200Cr annual revenue</li>
+                <li>Rupee at 85+ adds 4-5% to EPS directly through export translation gains</li>
+                <li>Potential acquisition of distressed US specialty assets at attractive valuations</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Additional USFDA observations at other plants (Halol, Mohali) prolong resolution timeline</li>
+                <li>US generic pricing pressure intensifies beyond base-case assumptions</li>
+                <li>Key patent litigation losses on specialty products (Ilumya IPR challenge)</li>
+                <li>Domestic NLEM (National Essential Medicines List) price caps expand to more therapies</li>
+                <li>Management execution risk on specialty portfolio scaling and margin targets</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li><strong>Position size:</strong> Max 8-10% of equity portfolio; pair with Bharat Bond ETF for stability</li>
+                <li><strong>Stop-loss:</strong> Hard stop at ₹1,220 (12% below entry) to protect against sustained FDA issues</li>
+                <li><strong>Scale-in:</strong> Buy 50% at ₹1,380, add 30% at ₹1,320, final 20% at ₹1,250 if available</li>
+                <li><strong>Review quarterly:</strong> Monitor FDA status, ANDA approvals, and specialty revenue mix</li>
+                <li><strong>Hedge:</strong> Hold 15% cash or liquid bees for opportunistic averaging on broader market correction</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-5 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 10% of equity portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Groww / Angel One</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Moderate—monthly review sufficient</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-9 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>LTCG at 12.5% beyond ₹1.25L if held >1 year; STCG at 20% if exited earlier; dividends tax-free in receiver's hands up to ₹10 lakh/year</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>FDA status: Track USFDA.com for Mohali/EWOO classification updates and response timelines</li>
+                <li>Specialty revenue: Check quarterly Ilumya/Cequa prescription trends and US revenue mix shift</li>
+                <li>ANDA pipeline: Monitor 10-12 pending approvals for high-value generic launches</li>
+                <li>Currency: Watch USD/INR; sustained level above 85 is bullish for export realizations</li>
+                <li>Domestic growth: Ensure India formulations maintain 10%+ growth and market share</li>
+                <li>Peer valuations: Compare P/E with Dr Reddy's, Cipla, Lupin for relative value confirmation</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Place a limit buy order for SUNPHARMA at ₹1,380 with a 50% position allocation this week. Set a GTT stop-loss at ₹1,220 and a target GTT sell at ₹1,650. Review position monthly and scale in on dips below ₹1,320. Add to watchlist on your broker app now.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on May 8, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
