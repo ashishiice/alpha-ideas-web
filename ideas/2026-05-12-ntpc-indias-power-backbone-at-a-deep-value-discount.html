@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTPC: India's Power Backbone at a Deep Value Discount | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>NTPC: India's Power Backbone at a Deep Value Discount</h1>
+            <p>Buy India's largest power utility at 12x P/E with a 4.5% dividend yield, 28 GW renewable pipeline, and an NTPC Green Energy IPO catalyst—total return target of 20-24% over 6-9 months.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 May 12, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months</span>
+                <span class="meta-pill return">📈 Expected: 20-24%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> NTPC Ltd (NSE: NTPC)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Deep Value + Dividend Capture + Event-Driven</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> NTPC trades at 12x P/E vs its 5-year average of 15x, despite adding 5 GW of capacity in FY26, commissioning India's largest renewable pipeline, and preparing a ₹1.5 lakh Cr IPO for NTPC Green Energy. The 12-15% pullback from 52-week highs reflects transient coal-cost concerns and PSU-sector derating—not structural impairment. Investors collect a 4.5% dividend while waiting for valuation normalization and the Green Energy IPO unlock.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Accumulate NTPC in the ₹385-395 zone over 2-3 trading sessions. The stock has established strong support near ₹380 (200-DMA) and any dip toward ₹385 should be treated as a buying opportunity.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹385 – ₹395</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹450 – ₹470 (+15-20% price) + ₹18 dividend</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹360 (8.5% drawdown)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item">
+    <div class="rationale-bullet">1</div>
+    <div><strong>Valuation Compression is Temporary:</strong> NTPC trades at 12x P/E vs 5-year average of 15x. The discount is driven by coal-cost fears and PSU derating—not by impaired fundamentals. Q4 FY26 revenue grew 8% YoY and capacity addition hit a record 5 GW.</div>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">2</div>
+    <div><strong>Dividend Yield Floors Downside:</strong> At ₹392, the stock yields ~4.5% with a 40% payout policy. Even if the stock flatlines for 9 months, you earn a tax-efficient return superior to FDs, with equity upside optionality.</div>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">3</div>
+    <div><strong>NTPC Green Energy IPO Catalyst:</strong> The renewable subsidiary (28 GW pipeline, 5 GW commissioned) is preparing a ₹1.5-2 lakh Cr IPO. This could unlock 30-40% of NTPC's current market cap as standalone value, forcing a re-rating of the parent.</div>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">4</div>
+    <div><strong>Structural Power Demand Tailwind:</strong> India's electricity demand is growing at 6-7% annually—2x GDP. PLI-driven manufacturing, heat waves, and AC penetration are creating record peak demand every summer. NTPC, with 20% market share, is the primary beneficiary.</div>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">5</div>
+    <div><strong>Coal Cost Pass-Through Normalizing:</strong> Q4 margin compression from higher e-auction coal prices is already reversing. Q1 FY27 PLF (plant load factor) is tracking higher and coal inventory is at comfortable levels. Margins should recover 150-200bps.</div>
+</div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li><strong>Power demand growing 6-7% annually</strong> — structural tailwind from manufacturing PLI, data centers, and EV adoption</li>
+<li><strong>Government committed to 24×7 power for all</strong> — NTPC is the execution vehicle; no privatization risk (GoI holds 51%)</li>
+<li><strong>RBI rate pause at 6.5%</strong> — utility dividend yields become relatively more attractive in a flat-rate environment</li>
+<li><strong>PSU capex cycle intact</strong> — FY26 PSU capex hit ₹12 lakh Cr; NTPC alone has ₹32,000Cr plan for FY27</li>
+<li><strong>ESG/fund flows into Indian utilities</strong> — NTPC is now India's largest green hydrogen and renewable player by capacity</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li><strong>5 GW capacity added in FY26</strong> — highest in 5 years; FY27 target is 10 GW (5 thermal + 5 renewable)</li>
+<li><strong>NTPC Green Energy IPO filing expected Q2 CY26</strong> — SEBI DRHP already in advanced stages; could list at ₹1.5-2L Cr</li>
+<li><strong>Debt/Equity at 1.2x</strong> — manageable for a regulated utility with assured ROE; FFO/Debt ~25%</li>
+<li><strong>Q4 FY26 PAT up 6% YoY</strong> despite coal headwinds; revenue up 8%; dividend of ₹8.75/share declared</li>
+<li><strong>Green hydrogen pilot at 20 MW scale operational</strong> — first-mover advantage in India's hydrogen economy</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>NTPC Green Energy IPO at ₹1.5-2L Cr valuation forces parent re-rating</li>
+<li>Coal cost pass-through normalizes → 150-200bps margin recovery in FY27</li>
+<li>P/E expansion from 12x to 15x on execution visibility = +25% valuation uplift</li>
+<li>Dividend yield + price appreciation = 20-24% total return even without multiple expansion</li>
+<li>Any PSU-sector rotation or defense-to-value pivot benefits NTPC disproportionately</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Coal price spike without regulatory pass-through compresses margins further</li>
+<li>Renewable transition capex strains balance sheet and dilutes ROE</li>
+<li>NTPC Green IPO delayed or priced below expectations → sentiment dampener</li>
+<li>General PSU derating continues (political risk, governance concerns)</li>
+<li>Severe summer heat causing coal supply disruption or forced plant outages</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li><strong>Position sizing:</strong> Cap at 10% of equity portfolio; pair with a defensive debt allocation</li>
+<li><strong>Staged entry:</strong> Deploy 50% at ₹390, 50% at ₹385 (if available) to average cost</li>
+<li><strong>Hard stop at ₹360:</strong> 8.5% drawdown limit; exits below 200-DMA and recent institutional support</li>
+<li><strong>GTT orders:</strong> Set target sell at ₹465 and stop at ₹360 immediately after entry</li>
+<li><strong>Monthly review:</strong> Track PLF data, coal inventory, and NTPC Green IPO filings</li>
+<li><strong>Hedge via ITM put:</strong> If F&O enabled, buy ₹380 PE as insurance (not mandatory)</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-5 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 10% of equity portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Moderate—monthly + around results/IPO events</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-9 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Dividend taxed at slab (TDS >₹5,000); LTCG at 12.5% if held >1 year (>₹1.25L gain); STCG at 20% if exited <1 year</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>Monthly PLF and coal inventory data from NTPC's investor presentations</li>
+<li>Q1 FY27 results (August 2026) — check margin recovery and revenue trajectory</li>
+<li>NTPC Green Energy IPO SEBI filing and anchor investor interest</li>
+<li>Power demand data from NLDC — should show 6%+ growth to validate thesis</li>
+<li>Dividend record date (typically August and February) — ensure holding eligibility</li>
+<li>Any regulatory changes in coal pass-through mechanism or tariff norms</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Log in to your broker → Search 'NTPC' (NSE) → Place a limit buy at ₹390 for 50% allocation and ₹385 for remaining 50% → Set a GTT sell at ₹465 (target) and ₹360 (stop). Mark calendar for Q1 FY27 results (Aug 2026) and NTPC Green Energy IPO SEBI filing.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on May 12, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
