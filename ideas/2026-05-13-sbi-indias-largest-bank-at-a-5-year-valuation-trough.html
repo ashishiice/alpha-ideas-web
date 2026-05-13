@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBI: India's Largest Bank at a 5-Year Valuation Trough | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>SBI: India's Largest Bank at a 5-Year Valuation Trough</h1>
+            <p>Buy India's most systemically important bank at 1.2x book with a 4% dividend yield, 15% credit growth, and the best asset quality in 15 years — a rare confluence of safety and upside.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 May 13, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months</span>
+                <span class="meta-pill return">📈 Expected: 18-22%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> State Bank of India (NSE: SBIN)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Deep Value + Dividend Yield</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> SBI trades at a valuation discount not seen in a decade despite delivering its best asset quality, highest credit growth, and most profitable quarterly results in history. The market is treating the stock like a distressed PSU, ignoring the transformation in risk management, digital capabilities, and retail franchise that has made SBI India's most profitable public sector bank by a wide margin.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Accumulate SBI in the ₹765–780 zone over 2–3 trading sessions. Use a staggered entry: deploy 50% on first buy, 50% on any dip below ₹760.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹765 – ₹780</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹920 – ₹950</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹680 (GTT)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item">
+    <div class="rationale-bullet">1</div>
+    <p><strong>Valuation gap:</strong> SBI trades at 1.2x book value vs a 5-year average of 1.5x — a 20% discount to its own historical mean despite fundamentally stronger earnings power.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">2</div>
+    <p><strong>Asset quality at 15-year best:</strong> GNPA has fallen to 1.8% and net NPA to 0.5%, with provision coverage above 75%. The credit cost cycle is decisively behind us.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">3</div>
+    <p><strong>Earnings momentum:</strong> FY26 PAT growth is tracking 15–18% YoY, driven by 15% credit growth and expanding ROA toward 1.1% — previously unthinkable for a PSU bank.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">4</div>
+    <p><strong>Income while you wait:</strong> A 4%+ dividend yield at current prices delivers cash flow during the holding period, reducing effective cost of carry.</p>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">5</div>
+    <p><strong>Systemic tailwinds:</strong> India's credit-to-GDP is still ~60% (vs 100%+ in developed markets). SBI, with its unmatched branch network and deposit base, captures the lion's share of this structural growth.</p>
+</div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>India's GDP growth sustained at 6.5%+, driving broad-based credit demand across retail, SME, and corporate segments</li>
+<li>RBI in extended pause mode — interest rate stability supports net interest margins and reduces mark-to-market volatility</li>
+<li>Government capital infusion track record eliminates solvency tail risk; SBI is systemically too important to fail</li>
+<li>Deposit growth remains robust at 12%+, providing low-cost liability funding for loan book expansion</li>
+<li>FII flows stabilizing as EM allocations recover post-US tariff uncertainty</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>YONO SBI digital platform has 65+ million users and contributes &gt;50% of retail liability acquisitions at near-zero marginal cost</li>
+<li>SME book growing at 20% with industry-leading recovery rates and cross-sell into current accounts</li>
+<li>Provision coverage ratio at 75%+ — even a 50bps spike in slippages would not require fresh capital</li>
+<li>NIM stabilized at 3.25% despite rising deposit costs; management guided to maintain above 3.0%</li>
+<li>Cost-to-income ratio improving as digital self-service replaces branch transactions</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>A simple rerating to 1.5x book value (the 5-year average) would deliver 22% standalone capital gain + 4% yield = ~26% total return</li>
+<li>FY26 Q4 results beat (due 3–4 months out) could trigger FII buying after 3 quarters of net selling</li>
+<li>Dividend per share likely to increase given strong capital position and low credit-cost environment</li>
+<li>Any government OFS would likely price at a premium, not discount, given demand dynamics</li>
+<li>Credit rating upgrade (if ROA sustains above 1.0%) would reduce cost of wholesale funding</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Broad market correction (Nifty 50 down 15–20%) would likely drag SBI proportionally</li>
+<li>Unexpected slowdown in retail/SME credit growth compresses earnings trajectory and extends the rerating timeline</li>
+<li>Spike in unsecured lending slippages from high-cost consumer loans or stress in certain SME clusters</li>
+<li>Unexpected interest rate volatility — rapid rate cuts compress NIM, rapid hikes spike deposit costs</li>
+<li>Government OFS announcement creates temporary supply overhang and price indigestion</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li><strong>Position size:</strong> Cap at 10–12% of total equity portfolio to avoid single-stock concentration risk</li>
+<li><strong>Staggered entry:</strong> Deploy 50% on first buy, remaining 50% on dip below ₹760 to average cost</li>
+<li><strong>Hard stop:</strong> Set GTT stop-loss at ₹680 (≈12% below mid-entry at ₹770) — protects against tail scenarios</li>
+<li><strong>Portfolio hedge:</strong> Pair with 15–20% G-Sec / SDL allocation to cap overall portfolio beta</li>
+<li><strong>Rebalance rule:</strong> If P/B hits 1.4x before target, trim 30% of position and rotate into next idea</li>
+<li><strong>Time stop:</strong> If no meaningful move in 9 months, reassess thesis and consider rotation</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹2–8 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 12% of equity portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww / Upstox</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low — review monthly or post-earnings only</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6–9 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>STCG at 20% if sold within 1 year (plus cess); LTCG at 12.5% on gains exceeding ₹1.25 lakh/year beyond 12 months. Dividend taxed at slab rate.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>Review quarterly GNPA trend — any spike above 2.2% is a red flag requiring reassessment</li>
+<li>Track NIM trajectory — stable above 3.0% sustains earnings; below 3.0% for 2 quarters is bearish</li>
+<li>Watch credit growth print — 12%+ sustains earnings growth; sub-10% for 2 quarters warrants caution</li>
+<li>Monitor government OFS announcements — a dip on supply news is a buying opportunity, not a sell signal</li>
+<li>Check FII holding changes — rising institutional ownership is a strong rerating signal</li>
+<li>Review dividend declaration — an increase signals management confidence in capital sustainability</li>
+<li>Compare SBI P/B with private bank peers — SBI should trade at 70–75% of HDFC Bank/ICICI P/B</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Login to your broker app, search for SBIN, and place a limit buy order at ₹775. Enter with 50% of planned allocation today. Add the remaining 50% if the price dips to ₹755 or below. Set a GTT (Good Till Triggered) stop-loss at ₹680 to protect downside.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on May 13, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
