@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reliance Industries: Buy India's Conglomerate at 52-Week Low | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Reliance Industries: Buy India's Conglomerate at 52-Week Low</h1>
+            <p>India's largest company by market cap trades near 52-week lows at ~18x forward P/E vs a 5-year average of 23x—accumulate before Jio ARPU inflection and retail margin expansion re-rate the stock.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 May 16, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months</span>
+                <span class="meta-pill return">📈 Expected: 15-18%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Reliance Industries Ltd (NSE: RELIANCE)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Large-Cap Value Reversion</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> Reliance Industries is trading at a rare valuation discount due to indiscriminate FII selling and over-discounting of near-term Jio tariff headwinds. With a fortress balance sheet, diversified revenue streams, and visible ARPU inflection in H2 FY26, the stock offers 15-18% total return potential over 6-9 months as valuations normalize.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Deploy capital in two tranches to average into weakness. The stock is near 52-week lows, providing a wide margin of safety for India's most diversified conglomerate.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹1,320–1,360</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹1,550–1,600</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹1,240</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item"><div class="rationale-bullet">1</div><div><strong>Valuation Reset:</strong> RIL is trading at ~18x 1-year forward P/E, a 20% discount to its 5-year average of 23x and near the bottom of its historical range. This is not justified by fundamentals.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">2</div><div><strong>Jio ARPU Inflection:</strong> Jio has initiated selective tariff hikes in FY26. Full rollout across plans by Q3/Q4 FY26 should lift blended ARPU from ~₹182 to ₹210+, adding an estimated ₹15,000Cr in annual EBITDA.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">3</div><div><strong>Retail Margin Expansion:</strong> Reliance Retail continues to grow revenue >20% YoY while scaling private-label FMCG manufacturing, which improves EBITDA margins toward the 9-10% target.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">4</div><div><strong>O2C Stability:</strong> Global refining margins have stabilized with crude in the $60-70/bbl range. The new energy capex (green hydrogen, solar) is backed by government PLI schemes, reducing execution risk.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">5</div><div><strong>Fortress Balance Sheet:</strong> Post the rights issue and Jio/Retail stake sales, RIL holds ~₹2.5 lakh crore in net cash. This limits downside and supports dividend growth.</div></div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>FII outflows from India have been indiscriminate, disproportionately pressuring large-cap liquid names like RIL that are easy to sell.</li>
+                <li>RBI's hawkish pause is largely priced in; any dovish pivot in H2 2026 will re-rate long-duration cashflow assets such as telecom and retail.</li>
+                <li>Crude oil prices have consolidated in a supportive $60-70/bbl band, reducing O2C earnings volatility.</li>
+                <li>India remains the fastest-growing major economy, underpinning domestic consumption and energy demand.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>Jio's selective tariff hikes in prepaid and postpaid plans are the first pricing action in 3 years—historically, ARPU moves have led to sharp EBITDA upgrades.</li>
+                <li>Reliance Retail's store count has crossed 18,500; the integration of Metro Cash & Carry and private-label manufacturing (Goodness Co, Snac Tac) is improving margin mix.</li>
+                <li>The New Energy giga-complex in Jamnagar is progressing under PLI support, with green hydrogen and solar module targets providing long-term valuation optionality.</li>
+                <li>Management has guided for net debt elimination; any update on Jio Platforms or Retail IPO timelines would act as a sentiment catalyst.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Jio ARPU inflection to ₹210+ adds ~₹15,000Cr annual EBITDA</li>
+                        <li>Retail EBITDA margin expansion via private-label scaling</li>
+                        <li>O2C GRM sustained above $10/bbl supports steady cashflows</li>
+                        <li>Potential Jio/Retail IPO announcements re-rate holding company discount</li>
+                        <li>FII reversal would disproportionately benefit RIL given liquidity</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Jio tariff hike rollout slower than expected due to competitive pressure from Airtel and BSNL</li>
+                        <li>Global recession sharply reduces refining margins and polyester spreads</li>
+                        <li>Regulatory or environmental delays in New Energy projects</li>
+                        <li>Sustained FII outflows depress large-cap multiples further</li>
+                        <li>Unexpected promoter share sale or capital allocation shift</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li>Cap position at 15% of total equity portfolio to avoid concentration risk.</li>
+                <li>Hard stop-loss at ₹1,240 (~7.5% below entry midpoint) to protect capital.</li>
+                <li>Scale-in approach: deploy 50% at ₹1,340 and remaining 50% at ₹1,280 if the market corrects further.</li>
+                <li>Hold through at least one full quarterly earnings cycle (Q1 FY26) before reassessing the thesis.</li>
+                <li>Pair with a liquid ETF (e.g., Nifty Bees) if portfolio beta is already high; RIL alone is sufficient for large-cap exposure.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1–5 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 15% of equity portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Groww / Angel One</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Moderate—review quarterly results and monthly Jio ARPU updates</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6–9 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>LTCG at 12.5% (no indexation) if held >1 year; STCG at 20% if exited earlier</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review monthly and after each quarterly result:</p>
+            <ul>
+                <li>Jio ARPU trend (target >₹200 by Q3 FY26 and >₹210 by Q4 FY26)</li>
+                <li>Reliance Retail revenue growth and EBITDA margin trajectory (target >9%)</li>
+                <li>Gross Refining Margin (GRM) vs Singapore benchmark (sustainable above $10/bbl)</li>
+                <li>Net debt/cash position—confirm net debt-free guidance is on track</li>
+                <li>FII/DII flow trends in Nifty 50 and Reliance specifically</li>
+                <li>Crude oil price trend and any OPEC+ supply disruption risks</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Place a limit buy order at ₹1,340 for 50% of your intended allocation. Set a GTT (Good Till Triggered) stop-loss at ₹1,240. Monitor Q1 FY26 results for Jio ARPU confirmation before deploying the remaining 50%. Do not chase—let the market come to your price.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on May 16, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
