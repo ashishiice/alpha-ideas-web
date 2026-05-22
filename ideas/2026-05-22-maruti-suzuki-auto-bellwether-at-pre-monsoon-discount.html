@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maruti Suzuki: Auto Bellwether at Pre-Monsoon Discount | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Maruti Suzuki: Auto Bellwether at Pre-Monsoon Discount</h1>
+            <p>India's largest car maker trades at a 3-year valuation low despite a resurgent SUV portfolio and rural demand poised for a monsoon-driven recovery—accumulate before the auto cycle turns.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 May 22, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months</span>
+                <span class="meta-pill return">📈 Expected: 16-20%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Maruti Suzuki India Ltd (NSE: MARUTI)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Cyclical Recovery + Consumption</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> Maruti Suzuki has lost favor with investors due to EV transition fears and temporary market share loss in SUVs, yet the company's new SUV lineup—Grand Vitara, Fronx, Jimny, and e-Vitara—has stabilized its competitive position. At current valuations of ~22x forward P/E vs a 5-year average of 28x, the market is pricing in near-term weakness while ignoring the rural recovery catalyst and margin inflection from input cost relief. This creates a rare entry for patient capital to earn 16-20% total return as valuations normalize over the next two earnings cycles.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Accumulate MARUTI shares in the ₹11,200–11,500 zone over 3–4 trading sessions on any market-wide weakness. Deploy 60% of intended allocation at ₹11,300–11,400 average and reserve 40% for a potential dip to ₹10,800–11,000 if broader indices correct further.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹11,200–11,500</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹13,200–13,600</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹10,200</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <div>
+                        <strong>SUV Renaissance:</strong> Maruti's new SUV portfolio (Grand Vitara, Fronx, Jimny, Brezza) has reversed market share decline, with SUV contribution rising from 12% to ~28% in FY26. The upcoming e-Vitara EV (co-developed with Toyota) positions Maruti competitively in the electric transition.
+                    </div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <div>
+                        <strong>Rural Recovery Play:</strong> Two-thirds of Maruti's sales come from Tier-2/3 cities and rural markets. With IMD forecasting above-normal monsoon for 2026, rural disposable income is set to rise, directly boosting demand for entry-level and compact vehicles where Maruti dominates.
+                    </div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <div>
+                        <strong>Valuation Reset:</strong> MARUTI trades at ~22x FY27 P/E vs its 5-year average of 28x and a peak of 35x. The discount is driven by EV anxiety and margin fears that are already priced in. Even a modest re-rating to 25x implies ₹13,000+ levels.
+                    </div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <div>
+                        <strong>Margin Inflection:</strong> Commodity costs (steel, aluminum, precious metals) have declined 8-12% from FY25 peaks. Maruti's cost-optimization program and localization push (including battery localization for hybrids) should expand EBITDA margins by 150-200bps over FY26-27.
+                    </div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">5</div>
+                    <div>
+                        <strong>Export and EV Optionality:</strong> Maruti is expanding exports to Africa, Middle East, and Southeast Asia. The e-Vitara launch in Europe (rebadged as Toyota Urban Cruiser) provides high-margin global EV revenue, while Indian operations benefit from hybrid technology transfer.
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                                <li>IMD forecasts above-normal southwest monsoon, lifting rural income and auto demand</li>
+                <li>India's GDP growth remains resilient at 6.5-7%, supporting consumer discretionary spending</li>
+                <li>Global commodity prices (steel, aluminum) have stabilized lower, aiding auto OEM margins</li>
+                <li>Repo rate likely at or near peak; any rate cuts in H2 2026 will lower auto finance costs</li>
+                <li>Government focus on rural employment (MGNREGA, PM-KISAN) continues to support rural cashflows</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                                <li>New SUV launches (Grand Vitara, Fronx) have stabilized Maruti's UV market share at ~18%</li>
+                <li>Nexa premium channel expansion continues to improve product mix and realizations</li>
+                <li>Toyota partnership on e-Vitara reduces R&D risk and leverages global EV supply chains</li>
+                <li>Q4 FY26 results showed 11% YoY revenue growth with margin beat; management guided for double-digit volume growth in FY27</li>
+                <li>Dealer inventory has normalized and discounting intensity has decreased from FY25 peaks</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                                        <li>Monsoon-driven rural demand surge could drive quarterly volume surprises</li>
+                <li>e-Vitara receives strong pre-bookings and review traction in India and Europe</li>
+                <li>Commodity cost tailwinds sustain longer than expected, driving 200bps+ margin expansion</li>
+                <li>Faster-than-expected repo rate cuts reduce EMIs and boost auto financing</li>
+                <li>Export volumes exceed 4 lakh units annually, adding high-margin revenue stream</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                                        <li>El Niño or poor monsoon dampens rural demand recovery</li>
+                <li>Electric vehicle adoption accelerates faster than Maruti's EV pipeline readiness</li>
+                <li>Aggressive competitive pricing from Hyundai/Kia/Tata in SUV segment</li>
+                <li>Global recession impacting export volumes and commodity prices</li>
+                <li>Regulatory cost increases (CAFE norms, safety mandates) compress margins unexpectedly</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                                <li>Cap position at 12–15% of equity portfolio to manage single-stock concentration</li>
+                <li>Use staggered entry: 60% at ₹11,300–11,400, 40% on dips to ₹10,800–11,000</li>
+                <li>Strict stop-loss at ₹10,200 to limit maximum drawdown to ~8-9%</li>
+                <li>Pair with defensive allocation (liquid bees or short-term G-Secs) to balance portfolio beta</li>
+                <li>Review position monthly; trim 50% if target reached within 3 months to lock gains</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1–8 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 12–15% of equity portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Moderate — monthly review + quarterly earnings</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6–9 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Equity LTCG at 12.5% (gains above ₹1.25L exempt); STCG at 20% if sold within 1 year. Dividends taxed at slab rate.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                                <li>Monthly auto sales data (SIAM): Check Maruti's domestic + export volumes vs. estimates</li>
+                <li>Commodity prices: Track steel, aluminum, and palladium price trends monthly</li>
+                <li>Monsoon progress: Review IMD rainfall actuals vs. forecast weekly during Jun–Sep</li>
+                <li>Quarterly earnings: Focus on EBITDA margin trajectory and management FY27 guidance</li>
+                <li>Competitive positioning: Monitor SUV market share data from industry reports monthly</li>
+                <li>Interest rate cycle: Watch RBI MPC minutes for rate cut signals that boost auto EMIs</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Login to your broker → Search MARUTI → Place a limit buy order at ₹11,350 for 60% of intended position → Set a GTT stop-loss at ₹10,200 → Add a calendar reminder for monthly volume review and Q1 FY27 earnings.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on May 22, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
