@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSW Steel: India's Steel Champion at a Cyclical Trough + Infra Capex Tailwind | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>JSW Steel: India's Steel Champion at a Cyclical Trough + Infra Capex Tailwind</h1>
+            <p>Buy India's largest steel producer at a rare cyclical discount as record government infrastructure spending, import duty safeguards, and green steel exports converge for 18-22% total return.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 June 1, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months</span>
+                <span class="meta-pill return">📈 Expected: 18-22%</span>
+                <span class="meta-pill risk">⚠️ Moderate-High</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> JSW Steel Ltd (NSE: JSWSTEEL)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Cyclical Value + Commodity Inflection</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> JSW Steel trades at ~9x EV/EBITDA vs. its 5-year average of 12x, despite being India's largest steel producer with 28 MTPA capacity, captive iron ore mines, and a dominant export franchise. Global steel prices have stabilized after China's supply rationalization, while India's record ₹11.2 lakh crore infrastructure budget creates unprecedented domestic demand. The market has over-discounted near-term coking coal cost pressure and China overcapacity fears, creating a rare entry for patient capital to capture both volume-led earnings recovery and multiple expansion.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Accumulate in the ₹860-895 zone over 2-3 trading sessions. The stock has consolidated near its 200-DMA for six weeks, forming a technical base before the H2 infrastructure execution cycle.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹860–895</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹1,050–1,100</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹780 (11% below entry)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item"><div class="rationale-bullet">1</div><div>India's FY27 infrastructure budget of ₹11.2 lakh crore is the highest ever, with steel-intensive sectors (roads, railways, urban housing) receiving disproportionate allocation—JSW is the largest domestic supplier with pre-qualified status.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">2</div><div>Global steel prices (HRC China FOB) have rebounded 12% from March lows as China's NDRC mandated 50 MTPA of domestic capacity cuts, reducing export dumping pressure on Indian markets.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">3</div><div>JSW's Odisha 5 MTPA greenfield plant achieved 85% utilization in Q4 FY26, adding ₹2,800 Cr of annual EBITDA at full run-rate—yet the market has not repriced the earnings power.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">4</div><div>The company's captive iron ore mines in Karnataka (12 MTPA) and Odisha (new block won at auction) insulate it from raw-material volatility that hurts integrated competitors like SAIL and Tata Steel.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">5</div><div>JSW's newly commissioned 1.5 MTPA coated-products facility (automotive-grade galvanised steel) captures the EV chassis substitution wave, with Tata Motors and Mahindra as anchor customers.</div></div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>India's steel consumption grew 11.8% YoY in FY26, outpacing global growth of 1.2%; FY27 forecast at 9-10% on infra push</li>
+<li>Government PLI scheme for specialty steel (₹6,322 Cr outlay) rewards JSW's coated-products and high-grade auto steel investments</li>
+<li>RBI rate pause at 6.50% keeps capex financing costs stable for JSW's downstream expansion (pipe, wire, coated products)</li>
+<li>Import duty safeguard on flat steel (25% BCD) extended to March 2027, protecting domestic pricing power</li>
+<li>EU Carbon Border Adjustment Mechanism (CBAM) rollout in 2026 favors JSW's green hydrogen DRI pilot, giving first-mover advantage in low-carbon steel exports</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>Q4 FY26 results: Revenue ₹42,800 Cr (+8% YoY), EBITDA ₹6,200 Cr (+14% QoQ), EBITDA margin expanded 140bps to 14.5%</li>
+<li>Net debt/EBITDA fell to 2.1x from 2.8x a year ago; management guided sub-2.0x by FY27 on FCF generation</li>
+<li>JSW Neotrex (automotive steel JV with JFE) won long-term contracts from Maruti and Hyundai for next-gen platform bodies</li>
+<li>JSW One Platforms (B2B digital steel marketplace) crossed ₹3,000 Cr GMV, creating a high-margin SaaS-like revenue layer</li>
+<li>Promoter holding stable at 44.9%; no pledge; FII holding rose 180bps in Q4—smart money is accumulating</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Every ₹1,000/tonne increase in domestic HRC price adds ~₹2,800 Cr to JSW's annual EBITDA—current price uptrend could sustain through monsoon construction season</li>
+<li>Green hydrogen DRI pilot (Odisha) if successful, unlocks premium pricing for "green steel" exports to EU/Japan—potential 15% EBITDA margin lift</li>
+<li>JSW's planned 20 MTPA capacity by 2030 (from 28 today via overseas assets) could trigger a re-rating to Tata Steel's multiples</li>
+<li>Specialty steel share rising from 18% to 28% of volumes by FY28 improves blended realization and reduces commodity cyclicality</li>
+<li>Dividend yield at 2.1% provides a floor; management has committed to 30% payout ratio</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Global steel demand slowdown (China property crash spillover) could push HRC prices back below ₹52,000/tonne, compressing margins</li>
+<li>Coking coal prices (Australia premium hard) have risen 18% since April; sustained elevation above $220/tonne hurts cost structure</li>
+<li>JSW's overseas ventures (Italy, USA) carry currency and regulatory risk; European energy costs remain structurally elevated</li>
+<li>Cyclical stocks can de-rate sharply if earnings miss; a 10% EBITDA miss could see the stock re-test ₹750 levels</li>
+<li>Environmental clearance delays for Karnataka mine expansion could constrain volume growth in H2 FY27</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li>Position sizing: Max 8-10% of equity portfolio; steel is a cyclical commodity—not a core holding</li>
+<li>Staged entry: Deploy 50% at ₹880, 50% on any dip to ₹850; avoid lump-sum if coking coal spikes further</li>
+<li>Hard stop-loss at ₹780 (closing basis); re-evaluate thesis if breached</li>
+<li>Pair with a defensive counterweight (e.g., HUL or a G-Sec) to reduce portfolio beta</li>
+<li>Review quarterly earnings; exit if EBITDA margin falls below 12% for two consecutive quarters</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1.5–5 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 8–10% of equity portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Moderate—review monthly + at quarterly earnings</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6–9 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>STCG at 20% (with indexation if held >1 year qualifies as LTCG; otherwise slab rate for <1 year)</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>HRC domestic price trend (check SteelMint / Platts weekly)</li>
+<li>Coking coal price (Australia premium hard CFR) — sustained >$250/tonne is a red flag</li>
+<li>Monthly auto/industrial production indices (IIP steel sub-index)</li>
+<li>Government capex execution rate (check CGA monthly expenditure data)</li>
+<li>JSW quarterly EBITDA margin and net debt trajectory</li>
+<li>FII/DII holding changes in shareholding pattern</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Open your broker app → Search JSWSTEEL → Place a limit buy order at ₹885 for 50% of intended allocation. Set a GTT stop-loss at ₹780. Schedule a calendar reminder for July 15 to review Q1 FY27 earnings and decide on second tranche deployment.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on June 1, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
