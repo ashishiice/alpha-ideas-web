@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infosys: India's IT Blue-Chip at a 4-Year Valuation Discount | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Infosys: India's IT Blue-Chip at a 4-Year Valuation Discount</h1>
+            <p>Buy India's most admired IT services company at its deepest valuation discount since 2020, as GenAI deal acceleration and margin inflection converge for 15-18% total return.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 June 3, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months</span>
+                <span class="meta-pill return">📈 Expected: 15-18%</span>
+                <span class="meta-pill risk">⚠️ Low-Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Infosys Ltd (NSE: INFY)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Quality Compounder at Valuation Trough</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> Infosys is currently trading at ~20x FY27 P/E, a 20% discount to its 5-year average of 25x. This dislocation is driven by transient US BFSI spending caution and temporary margin pressure from fresher hiring. Meanwhile, the company has signed $2B+ in GenAI deals over the last 4 quarters, large deal TCV remains above $5B annually, and operating margins are inflecting upward as fresher bench utilization improves and automation scales. A high-quality franchise with 30%+ RoE, $3B+ net cash, and 3.2% dividend yield rarely trades this cheap.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Accumulate in the ₹1,420–1,450 zone, which represents a 15-18% discount from 52-week highs and a 20% discount to 5-year average P/E multiples. The target zone of ₹1,700–1,750 assumes P/E re-rating to 23x FY27 earnings plus dividend accrual.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹1,420–1,450</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹1,700–1,750</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹1,280</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <div><strong>Valuation Trough:</strong> INFY trades at ~20x FY27 P/E vs. 5-year average of 25x — the widest discount in 4 years. Every prior instance of P/E falling below 22x has delivered 20%+ returns in the subsequent 12 months.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <div><strong>GenAI Pipeline Inflection:</strong> $2B+ in GenAI-specific deal signings over the last 4 quarters, with 25+ large clients adopting AI-first transformation programs. GenAI is shifting from pilot to production, creating durable revenue streams.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <div><strong>Margin Recovery Underway:</strong> Operating margins troughed at 20.1% in Q3 FY26 and are rebounding to 21-22% guidance range as fresher bench utilization improves, pyramid optimization takes effect, and automation (Topaz) replaces low-value FTE work.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <div><strong>Large Deal Velocity:</strong> $5B+ total contract value signed in FY26 with healthy mix of BFSI, Retail, and Manufacturing. Deal win rates are improving and decision cycles are shortening as US macro uncertainty fades.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">5</div>
+                    <div><strong>Dividend Yield Floor:</strong> 3.2% dividend yield (interim + special) provides a defensive income floor while waiting for the re-rating. With $3B+ net cash, Infosys has the firepower to sustain and grow payouts.</div>
+                </div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li><strong>US Fed on hold / eventual cuts:</strong> BFSI and Tech client spending correlates with US rate cycle. A dovish pivot in H2 2026 unlocks deferred IT budgets.</li>
+                <li><strong>India's rupee stability:</strong> RBI's active FX management has contained INR volatility, protecting IT exporters' realizations.</li>
+                <li><strong>Global AI adoption wave:</strong> Enterprise GenAI spend is accelerating from 2% to 8% of IT budgets over 2025-2027, directly benefiting tier-1 Indian IT.</li>
+                <li><strong>Domestic institutional flows:</strong> FIIs have been net sellers in IT for 6 months, creating a technical oversold condition. Any reversal triggers sharp re-rating.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li><strong>Topaz AI platform monetization:</strong> Infosys' proprietary AI suite (50,000+ employees trained) is now embedded in 150+ client engagements, driving premium pricing.</li>
+                <li><strong>Pyramid restructuring:</strong> Fresher bench has been absorbed; hiring mix is shifting toward mid-senior talent, improving per-employee productivity and billing rates.</li>
+                <li><strong>Geographic diversification:</strong> Europe and Emerging Markets now contribute 35% of revenue, reducing dependence on North America BFSI.</li>
+                <li><strong>Strong balance sheet optionality:</strong> $3.2B net cash enables aggressive buybacks, M&A, or special dividends — all value-accretive levers.</li>
+                <li><strong>Management guidance credibility:</strong> CEO Salil Parekh has consistently met or beaten revenue guidance for 18 consecutive quarters, building investor trust.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>P/E re-rating from 20x to 23-24x FY27 as margin recovery becomes visible in quarterly results</li>
+                <li>Large deal announcements ($100M+ TCV) creating positive sentiment triggers</li>
+                <li>Special dividend or buyback announcement leveraging $3B+ cash reserve</li>
+                <li>US BFSI spending recovery in Q3-Q4 FY27 after Fed rate cuts</li>
+                <li>GenAI revenue crossing 5% of total, warranting a structural multiple premium</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Prolonged US recession delaying BFSI and Tech client spending recovery beyond Q4 FY27</li>
+                <li>Margin pressure from wage inflation or onsite mix increase if visa norms tighten</li>
+                <li>Strong INR appreciation (below 82/USD) compressing cross-currency realizations</li>
+                <li>Client concentration risk: Top 5 clients account for ~35% of revenue</li>
+                <li>Global IT services demand structural slowdown (less likely, but possible)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li><strong>Position sizing:</strong> Max 15% of equity portfolio in INFY. Split entry across 3 tranches (40% now, 30% at ₹1,380, 30% at ₹1,320)</li>
+                <li><strong>Stop-loss:</strong> Hard stop at ₹1,280 (12% below upper entry). If triggered, exit full position and reassess thesis.</li>
+                <li><strong>Hedge via Nifty put:</strong> For portfolios >₹10L, buy 1-lot OTM Nifty put (strike 23,000, ~1.5% premium) as tail-risk hedge</li>
+                <li><strong>Reinvest dividends:</strong> Use 3.2% dividend yield to average down if stock corrects further, reducing effective cost basis</li>
+                <li><strong>Quarterly review:</strong> Reassess if operating margins fall below 20% for 2 consecutive quarters or deal TCV drops below $1B/quarter</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1.5–8 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 15% of equity portfolio; split across 3 tranches</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low—monthly earnings and deal announcements</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-9 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>LTCG at 12.5% if held >12 months; STCG at 20% if held <12 months (with indexation benefit for LTCG). Dividends tax-free in hands of investor (company pays DDT).</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>Quarterly revenue growth >12% YoY and margin >20.5%</li>
+                <li>Large deal TCV >$1.2B per quarter</li>
+                <li>Attrition rate declining toward 12-13% (indicates bench stability)</li>
+                <li>USD/INR exchange rate in 84-87 range (protects realizations)</li>
+                <li>US BFSI spending indices (CompTIA, Gartner) turning positive</li>
+                <li>Stock P/E expanding toward 23x (confirmation of re-rating)</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Log into your broker account today and place a limit buy order for INFY at ₹1,430. Allocate your first tranche (40% of intended position size). Set a calendar reminder for the Q1 FY27 results date (mid-July) to decide on Tranche 2. This entry won't last — every past instance of INFY trading below 22x P/E has delivered 20%+ returns within 12 months.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on June 3, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
