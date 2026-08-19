@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PFC: India's Power Finance Giant at 4.7x PE — Merger Catalyst + 5% Yield | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>PFC: India's Power Finance Giant at 4.7x PE — Merger Catalyst + 5% Yield</h1>
+            <p>Buy India's largest power financier at 4.7x earnings with a 4.95% dividend yield as the board-approved REC merger and RBI rate cuts set up a 20-25% total return.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 August 20, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 9-12 months</span>
+                <span class="meta-pill return">📈 Expected: 20-25%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Power Finance Corporation Ltd (NSE: PFC)</p>
+            <p><strong>Exchange:</strong> NSE (India)</p>
+            <p><strong>Strategy Type:</strong> Value + Dividend Yield + Merger Re-rating</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> PFC combines a 4.95% dividend yield with a 4.7x PE and near-book valuation while its balance sheet compounds at 12-15%. The approved REC merger and RBI rate-cut cycle create both structural and cyclical catalysts for a PE re-rating to 6x, implying 20-25% total return over 9-12 months.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Accumulate in the Rs 355-375 zone over 2-3 sessions (before the August 27 ex-dividend date). Add a second tranche at Rs 340-352 if merger overhang or broad-market weakness persists. Exit on re-rating to 6x PE or thesis invalidation.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹355-375 (limit orders, 2 tranches)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹455-470 (6.0-6.2x PE) + ₹18.55 dividend</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹329.90 (52-wk low, weekly close)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                
+                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <div><strong>Mega-merger catalyst live:</strong> PFC and REC boards have approved a merger scheme, creating India's largest power financing institution with a combined ~Rs 11 lakh crore balance sheet. Merger-driven synergies (cheaper joint borrowing, unified discom exposure) historically trigger 1-2x PE re-rating in the surviving entity.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <div><strong>Deep value + high yield:</strong> At Rs 374, PFC trades at just 4.7x trailing earnings (vs 6.5-8x for global infrastructure financiers) with a 4.95% dividend yield. P/B is near 1.1x despite RoE of ~20% — classic re-rating setup when merger clarity improves.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <div><strong>Power capex supercycle:</strong> India's 30 GW annual renewables buildout, Green Energy Corridor transmission outlays and thermal pipeline underpin 13-15% loan book growth for PFC — growth the market is not paying for at 4.7x.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <div><strong>RBI rate-cut tailwind:</strong> With the MPC signalling room for more cuts, PFC's wholesale funding costs (G-Sec-linked borrowings) will compress faster than its fixed-rate loan book re-prices — direct NIM expansion to the bottom line.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">5</div>
+                    <div><strong>Dividend capture window:</strong> Ex-dividend date August 27, 2026 (Rs 18.55/share, ~5% yield). Buying before ex-date locks the payout; the stock is already down ~23% from its 52-week high, providing a margin of safety.</div>
+                </div>
+            
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                
+                <li>RBI cutting cycle with "room for more cuts" commentary — funding cost relief for wholesale lenders</li>
+                <li>India power demand growing 6-7% YoY; peak supply deficit forces new capacity sanctions</li>
+                <li>Government capex at record levels; transmission and renewables share rising</li>
+                <li>Global infrastructure financing valuations (7-8x) remain a re-rating reference for Indian power lenders</li>
+            
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                
+                <li>Board-approved PFC-REC merger scheme — potential implied value uplift for PFC shareholders</li>
+                <li>Ex-dividend date August 27, 2026 (Rs 18.75/share); capture before ex-date</li>
+                <li>Record low slippages; GNPA ~1.4% with government counterparty base</li>
+                <li>Q1 FY27 results confirmed growth; FY27 book growth guidance intact</li>
+            
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        
+                <li>Merger completion re-rating: combined entity could command 6-7x PE post-consolidation</li>
+                <li>Faster-than-expected RBI cuts expanding NIM and treasury gains</li>
+                <li>Transmission corridor auctions and thermal capacity additions accelerate disbursements</li>
+                <li>Special dividend / higher payout ratio on strong cash generation</li>
+            
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        
+                <li>Merger integration delays or unfavorable swap ratio terms for PFC shareholders</li>
+                <li>Global risk-off / domestic equity correction pressure on high-beta PSU names</li>
+                <li>10-year G-Sec yield back above 6.5% compressing wholesale lending spreads</li>
+                <li>State discom financial stress delaying repayments</li>
+                <li>Regulatory tightening on NBFC capital norms raising equity requirements</li>
+            
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                
+                <li>Position sizing: maximum 20% of total portfolio in PFC (single-stock concentration cap)</li>
+                <li>Tranche entry: first 60% at Rs 355-375; balance 40% at Rs 340-352 if the merger overhang persists</li>
+                <li>Hard stop: weekly close below Rs 329.90 (52-week low) invalidates the thesis — exit fully</li>
+                <li>No leverage; hold fully paid equity shares (CNC) to capture dividends</li>
+                <li>Trim 50% at Rs 430+ (6.2x PE) and let the balance ride for merger completion</li>
+            
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-3 lakh (for ~300-800 shares)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 20% of portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww (equity delivery)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Medium — weekly + quarterly results</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>9-12 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>LTCG 10% above ₹1.25L on sale after 12 months; STCG 20% if earlier. Dividends taxed at slab + 12% DDTC.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                
+                <li>RBI MPC outcome each meeting — track policy stance for NIM impact</li>
+                <li>Merger scheme filing and regulatory approvals (NCLT, CCI, RBI)</li>
+                <li>Quarterly results: NIM, loan book growth, GNPA ratio, CET-1</li>
+                <li>10Y G-Sec yield movement above/below 6.40%</li>
+                <li>PFC price vs 52-week low support at Rs 330</li>
+                <li>Dividend payment receipt confirmation post ex-date</li>
+            
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Open Zerodha Kite → Place a 60% limit order at ₹370 today and a 40% limit order at ₹350. Set a price alert at ₹330. Hold through ex-dividend date Aug 27 and re-check the merger scheme filing within 30 days.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on August 20, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
