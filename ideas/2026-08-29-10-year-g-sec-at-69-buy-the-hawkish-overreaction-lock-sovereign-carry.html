@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10-Year G-Sec at 6.9%: Buy the Hawkish Overreaction, Lock Sovereign Carry | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>10-Year G-Sec at 6.9%: Buy the Hawkish Overreaction, Lock Sovereign Carry</h1>
+            <p>Buy the 6.94% 2036 benchmark G-Sec at a two-month-high 6.91% yield via RBI Retail Direct — collect 6.9% sovereign carry while the market's rate-hike scare fades, targeting 8-10% total return with a positive return in every scenario short of a full hike cycle.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 August 29, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 9-12 months</span>
+                <span class="meta-pill return">📈 Expected: 8-10% (6.9% floor to maturity)</span>
+                <span class="meta-pill risk">⚠️ Low-Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Government of India 6.94% 2036 (10Y benchmark G-Sec)</p>
+            <p><strong>Exchange:</strong> RBI Retail Direct (also NSE/BSE debt segment)</p>
+            <p><strong>Strategy Type:</strong> Fixed Income Carry + Rate Reversal</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> The 10-year G-Sec at 6.91% embeds a rate-hike scare from hawkish August MPC minutes that the RBI is unlikely to deliver — growth is 6.7%, core inflation is moderate, and the food/fuel spike is supply-side. Buying at two-month-high yields locks a 6.9% sovereign carry with an asymmetric tail: if yields mean-revert to 6.6%, total return approaches 9-10%; if the RBI does hike, the 6.94% coupon nearly offsets the mark-to-market loss and holding to maturity still pays 6.9%.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Accumulate in two tranches while the 10Y yield holds at or above 6.90% — via non-competitive bids in the next 10Y G-Sec auction (early September) or direct secondary-market purchase on RBI Retail Direct. The heavy Q3 government borrowing calendar is the near-term supply headwind that creates the entry window.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">Yield ≥ 6.90% (price ≤ ₹100.30)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">Yield 6.55-6.65% (price ₹102.5-103.5) → ~9% total return</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">None for buy-and-hold (sovereign, zero credit risk); tactical review only if 10Y > 7.25% post-MPC</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                
+                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <p><strong>Two-Month-High Yield = Entry Gift:</strong> The 10Y at 6.91% (Aug 28) sits at the top of its 3-month 6.65-6.95% band, pushed up by heavy Q3 borrowing and hawkish MPC minutes — a supply/positioning spike, not a fundamentals repricing. Buying the most liquid sovereign benchmark at the top of its range is the entire trade.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <p><strong>The Hike the Market Fears Is Unlikely:</strong> RBI's own projection: inflation peaks in Q3 FY27 then moderates, core stays moderate, GDP at 6.7%. The MPC held unanimously in August with a neutral stance — hiking into supply-side food/fuel inflation with growth at 6.7% would be self-defeating.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <p><strong>Asymmetric Payoff:</strong> With ~7.5 years duration: yields to 6.60% → +2.2% capital gain + 6.94% coupon ≈ 9.1% in 12 months. Yields to 7.30% (a delivered hike) → -2.3% mark-to-market but the coupon still nets +4.6% total. Positive in every scenario short of a full-blown hike cycle.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <p><strong>Disinflationary Tailwinds Building:</strong> Brent fell ~5% to ~$87/bbl on Strait of Hormuz reopening talks; a normalizing monsoon caps food prices; RBI sees headline peaking in Q3. Falling oil + peaking food = the October MPC hold becomes the yield-rally catalyst.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">5</div>
+                    <p><strong>Zero-Cost Sovereign Access:</strong> RBI Retail Direct offers free demat, no brokerage, minimum ₹10,000, and a 5% non-competitive window that guarantees retail allotment at auction cutoff. The 6.94% coupon is the highest risk-free accrual retail has seen in 2+ years.</p>
+                </div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                
+                <li>RBI held repo at 5.25% (Aug 5, unanimous, neutral stance); next MPC Oct 5-7 — hawkish minutes have the market pricing hike risk</li>
+                <li>10Y G-Sec at 6.91% (Aug 28) — two-month high, top of the 6.65-6.95% 3-month band; 30Y at 7.53%, 5Y at 6.54% (steep curve = positive roll-down)</li>
+                <li>RBI FY27 projections: GDP 6.7%, CPI ~5.0% with a Q3 peak then moderation; core inflation moderate</li>
+                <li>Brent ~$87/bbl (-5% on Strait of Hormuz reopening talks) — easing energy is disinflationary</li>
+                <li>Heavy Q3 FY27 borrowing: ₹340bn benchmark sale on Aug 28 — supply pressure creates the entry window</li>
+                <li>Fed under Chair Warsh: hawkish tilt keeps global rates elevated — the main external risk to the trade</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                
+                <li>Benchmark 6.94% 2036 trades at ~6.91% YTM, near par (~₹100.3) — clean entry with no premium erosion</li>
+                <li>10Y-repo spread at ~166bps vs ~120-140bps through 2025 — spread normalization alone is a 20-30bps yield-decline catalyst</li>
+                <li>1Y OIS at 5.90% vs repo 5.25% — the market prices a meaningful tightening path; if the RBI delivers 0-1 hikes, the front-end rally drags the 10Y lower</li>
+                <li>RBI Retail Direct non-competitive window (5% of notified amount) guarantees retail allotment at auction cutoff — no auction-rigging risk</li>
+                <li>SDL alternative: 10Y SDLs at 7.2-7.4% offer +30-40bps carry for investors willing to take state-level (still sovereign-adjacent) risk</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        
+                <li>October MPC hold + dovish guidance → 20-30bps yield rally → ~2% capital gain on top of 6.9% carry</li>
+                <li>Oil keeps falling (Hormuz reopening) → inflation undershoot → early-2027 cut speculation → yields toward 6.4-6.5%</li>
+                <li>Post-Q3 supply digestion: banks, insurers and provident funds re-enter — a structural bid for the 10Y</li>
+                <li>Positive roll-down: the 10Y→9Y roll captures ~10-15bps/year on the steep curve</li>
+                <li>If the RBI does hike, the 6.94% coupon becomes above-market carry — price support, not collapse</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        
+                <li>RBI delivers 25-50bps of hikes (hawkish minutes materialize) → 10Y to 7.15-7.30% → -2.5% to -3.5% mark-to-market</li>
+                <li>Hawkish Fed (Warsh) keeps US yields elevated → INR pressure → RBI forced into tighter policy</li>
+                <li>Oil spike: Hormuz closure escalates → Brent $100+ → inflation broadens → hike risk repriced</li>
+                <li>Fiscal slippage: borrowing exceeds budget → supply overhang persists through Q4</li>
+                <li>INR depreciation beyond ₹90/USD → imported inflation → policy tightening</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                
+                <li>Hold-to-maturity default: sovereign zero-credit-risk, 6.94% accrual guaranteed — mark-to-market swings are paper-only if you don't sell</li>
+                <li>Tranche entry: 50% now, 50% after the October MPC — avoids catching a falling knife if supply pushes yields higher first</li>
+                <li>Tactical rule: if 10Y > 7.25% (hike delivered), hold to maturity — never sell at the bottom of a rate shock</li>
+                <li>Ladder if deploying >₹5 lakh: split across 5Y (6.54%), 10Y (6.91%), 30Y (7.53%) to cap duration risk</li>
+                <li>Position sizing: max 30-40% of total debt allocation; keep 6 months of expenses in liquid funds</li>
+                <li>Duration awareness: ~7.5y modified duration → a 50bps spike = ~3.5% MTM, recovered by ~6 months of carry — well within the 25% drawdown budget</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-5 lakh (min ₹10,000 per auction)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 30-40% of debt portfolio; ladder maturities above ₹5 lakh</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>RBI Retail Direct (free) / NSE-BSE debt segment via Zerodha Kite</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low — monthly yield check; action only around the October MPC</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>9-12 months (or hold to 2036 maturity)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Coupon interest taxed at slab rate (like FD interest). Capital gains: STCG at slab if sold before 12 months; LTCG at 12.5% without indexation if held beyond 12 months. For 30%+ slab investors, holding past 12 months converts part of the return into tax-advantaged LTCG — a real edge over bank FDs.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                
+                <li>10Y yield: below 6.60% = target zone — book partial gains; above 7.25% = hold to maturity, do not sell</li>
+                <li>October 5-7 MPC outcome: hold = thesis intact; hike = no panic selling, carry still pays 6.94%</li>
+                <li>Brent trajectory: sustained <$85 = disinflation confirmed; >$100 = reassess thesis</li>
+                <li>Auction cutoffs: devolvement (undersubscription) = yields spike = add tranche</li>
+                <li>USD/INR: sustained depreciation beyond ₹90 = imported inflation risk</li>
+                <li>1Y OIS vs repo spread: widening = market pricing more hikes = reassess</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>This week: log in to retaildirect.rbi.org.in, verify your account, and place a non-competitive bid for ₹50,000-1,00,000 in the next 10Y G-Sec auction (early September). Missed the auction? Buy the 6.94% 2036 in the secondary market whenever the yield is at or above 6.90%. Deploy the second tranche after the October 5-7 MPC.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on August 29, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
