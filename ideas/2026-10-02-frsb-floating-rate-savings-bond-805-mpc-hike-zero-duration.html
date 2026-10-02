@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RBI Floating Rate Savings Bond at 8.05%: Zero-Duration Sovereign Yield for a Hiking MPC | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>RBI Floating Rate Savings Bond at 8.05%: Zero-Duration Sovereign Yield for a Hiking MPC</h1>
+            <p>Subscribe to GoI Floating Rate Savings Bonds 2020 (Taxable) at an 8.05% sovereign coupon — the only fixed-income instrument in India that pays you MORE if the MPC begins hiking at its October 5-7 meeting, with zero mark-to-market risk.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 October 2, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-12 months (coupon cycle)</span>
+                <span class="meta-pill return">📈 Expected: 8.05-8.4% p.a.</span>
+                <span class="meta-pill risk">⚠️ Very Low (zero duration/credit risk)</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Floating Rate Savings Bonds, 2020 (Taxable) — FRSB 2020(T), Government of India; 7-year maturity (June 2033 for the current series vintage)</p>
+            <p><strong>Exchange:</strong> RBI-authorized Receiving Offices — bank branches/net banking (SBI, ICICI, HDFC) and Post Offices. Not listed on NSE/BSE and not tradable; subscription-based.</p>
+            <p><strong>Strategy Type:</strong> Fixed Income Accrual — Floating-Rate Sovereign Coupon</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> The FRSB 2020(T) coupon = prevailing NSC rate + 35 bps, reset every January 1 and July 1, and it currently pays 8.05% (7.70% + 0.35%) — locked through December 31, 2026 per RBI's July 1, 2026 press release. With the RBI MPC meeting October 5-7 and 8 of 10 economists in the Business Standard poll expecting a 25bp hike to 5.50% (terminal 5.75%), the 10-year G-Sec has already jumped to ~7.05% (FBIL, Sep 11) from 6.57% a year ago. Because the NSC rate is formula-benchmarked to G-Sec yields at the December 31 quarterly review, rising G-Sec yields raise the odds the NSC rate is lifted — which flows straight into a higher FRSB coupon at the January 1, 2027 reset. This is the only sovereign instrument that converts an RBI hiking cycle into coupon upside while carrying literally zero duration risk.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Subscriptions are accepted at par (₹100 face value), minimum ₹1,000, no upper limit, any business day. Unlike a fixed-rate bond bought in the secondary market, there is no price — and therefore no timing risk — to entry: subscribing today or on December 15 earns the identical 8.05% coupon for the Oct-Dec half-year (pro-rated from value date), so this trades like a deposit placement, not a trade.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹100 par, 8.05% coupon locked Oct 1-Dec 31, 2026</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">Coupon reset Jan 1, 2027 → 8.3-8.95% if NSC raised at Dec 31 review</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">None for buy-and-hold (sovereign, non-tradable)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item"><div class="rationale-bullet">1</div><p><strong>The MPC is poised to hike, not cut.</strong> The October 5-7, 2026 MPC meeting is expected to deliver India's first repo hike since February 2023 (8/10 economists, Business Standard poll) as inflation hit 4.82% in August and oil prices pressure the trajectory. Every prior idea in this archive was a duration play — a hike turns that MTM risk negative. The FRSB, non-tradable at par, has zero duration exposure and instead rides the yield spike upward.</p></div>
+                <div class="rationale-item"><div class="rationale-bullet">2</div><p><strong>The coupon is already 8.05% — 100-250 bps above every comparable retail instrument.</strong> Bank FDs above 1 year pay 6.00-6.75%, the 10-year G-Sec yields 7.05%, and post-office 5-year deposits pay 7.5%. The only higher small-savings rates (SCSS/SSY at 8.2%) carry eligibility or lock-in constraints. The Sep 30, 2026 Finance Ministry review kept NSC at 7.7% for Oct-Dec — ten straight quarters unchanged — locking your 8.05% accrual through Dec 31, 2026.</p></div>
+                <div class="rationale-item"><div class="rationale-bullet">3</div><p><strong>The Jan 1, 2027 reset has asymmetric upside.</strong> Small-savings rates are set by formula: average G-Sec yields of matching maturity over the prior quarter plus a 25-100 bps spread. The July-September average 10-year yield (~7.0%) is well above the ~6.875% base that underpins today's 7.1%/7.7% rates. At the Dec 31 review, the government can raise the NSC rate 25-125 bps without breaking the formula — each 25 bps on NSC is a straight 25 bps on FRSB, taking the coupon to 8.3-8.95% from January 1, 2027.</p></div>
+                <div class="rationale-item"><div class="rationale-bullet">4</div><p><strong>Sovereign credit with a payout clock.</strong> Government of India guarantee, semi-annual interest paid January 1 and July 1 — the next payment lands January 1, 2027 at the full 8.05% half-yearly rate. For an investor rotating out of ~6.5% fixed deposits or money-market funds, the upgrade is immediate and riskless.</p></div>
+                <div class="rationale-item"><div class="rationale-bullet">5</div><p><strong>RBI Retail Direct and bank channels make execution frictionless.</strong> Subscription via SBI/ICICI/HDFC net banking or the post office; minimum ₹1,000. No demat, no secondary-market spreads, no order-book timing.</p></div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li><strong>MPC Oct 5-7, 2026:</strong> Repo at 5.25%, SDF 5.00%, MSF 5.50%; consensus is a 25bp hike to 5.50% with terminal at 5.75% (Barclays, Business Standard poll) — first hike since February 2023 after 125 bps of cuts in 2025.</li>
+                <li><strong>10-Year G-Sec at 7.05%</strong> (FBIL, week of Sep 11, 2026) vs 6.57% a year earlier — G-Sec yields at 52-week highs set up a higher benchmark for the NSC formula at the Dec 31 review.</li>
+                <li><strong>Inflation at 4.82%</strong> (August) with upside from energy prices — the CPI anchor that is turning the MPC hawkish.</li>
+                <li><strong>System liquidity surplus ~1.8% of NDTL</strong>, WACR 4.97-5.15% below repo; RBI absorbing via VRRR, OMO sales and swaps — keeps short rates firm, supporting deposit-type yields.</li>
+                <li><strong>Small-savings rates unchanged 10 straight quarters</strong> — but unchanged now ≠ unchanged in January: the Sep 30, 2026 notification fixes rates only for Oct 1-Dec 31, 2026.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li><strong>Coupon formula (RBI press release, Jul 1, 2026):</strong> FRSB 2020(T) = prevailing NSC rate + 35 bps, semi-annual resets on January 1 and July 1. Current half-year: 8.05% (7.70% + 0.35%), payable January 1, 2027.</li>
+                <li><strong>Dec 31, 2026 small-savings review is the single catalyst to watch:</strong> whatever NSC rate is announced effective January 1, 2027 flows mechanically into the FRSB coupon the same day.</li>
+                <li><strong>No credit risk, no market risk:</strong> the bond is a Bond Ledger Account entry at par — it has no traded price, so a yield spike can never mark it down.</li>
+                <li><strong>Minimum ₹1,000, no upper limit</strong> — scales cleanly into a ₹1-10 lakh allocation with zero slippage.</li>
+                <li><strong>7-year tenor:</strong> for the current vintage, maturity lands in 2033, spanning multiple MPC cycles — the float leg means you are never stuck at today's rate, unlike a fixed G-Sec.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Coupon rises on every NSC rate increase — an RBI hiking cycle is a tailwind, not a mark-to-market risk</li>
+                        <li>8.05% base coupon is 100-250 bps above comparable sovereign-grade alternatives (G-Sec 7.05%, bank FDs 6.00-6.75%)</li>
+                        <li>Asymmetric reset math: G-Sec yields up ~50 bps in the last quarter alone; a 25-100 bps NSC increase at the Dec 31 review takes the coupon to 8.3-8.95%</li>
+                        <li>Sovereign guarantee — the only risk-free accrual at this yield available to retail</li>
+                        <li>Semi-annual cash payout (Jan 1 / Jul 1) — no reinvestment gap at the reset dates</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li><strong>Liquidity lock-in:</strong> no premature redemption for regular investors; senior citizens (60+) can exit only after year 6 with a 50% interest penalty</li>
+                        <li><strong>Coupon could drop if the rate cycle turns:</strong> if RBI pauses and G-Sec yields fall back, the NSC rate can be cut at future quarterly reviews, lowering the coupon at each Jan 1/Jul 1 reset</li>
+                        <li><strong>Full slab taxation with TDS:</strong> interest is taxable at slab and TDS applies once annual interest crosses ₹10,000 — on ₹5 lakh, ~₹40,500/yr, post-tax ~5.8% for a 30% bracket</li>
+                        <li><strong>No 80C deduction</strong> — unlike NSC itself, the FRSB does not qualify for Section 80C</li>
+                        <li><strong>Opportunity cost:</strong> if G-Sec yields spike then collapse (pause-and-cut), a fixed 10-year bought at 7.05%+ could outperform on duration gains the FRSB structurally cannot capture</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li><strong>Allocation cap — 30% of the fixed-income sleeve (max ~₹3 lakh of a ₹10 lakh bucket):</strong> the non-tradability is the main risk; never let an instrument you cannot sell exceed one-third of the defensive book</li>
+                <li><strong>Barbell for liquidity:</strong> pair the FRSB with a liquid/overnight fund or RBI Retail Direct T-Bill roll so short-term cash needs never force decisions about the locked portion</li>
+                <li><strong>Tax-aware sizing:</strong> in the 30% bracket, weight toward this idea only for money that would otherwise sit in taxable FDs at 6-6.75% — the ~150 bps gross spread survives tax; prefer PPF/SSY headroom first for tax-free accrual</li>
+                <li><strong>Form 15G/15H:</strong> if your income is below the taxable threshold, file to stop TDS on the January 1 / July 1 payouts</li>
+                <li><strong>Decision discipline, not a stop-loss:</strong> there is no price to stop out of — the only "exit trigger" is the December 31 NSC review; if NSC is held at 7.7% or cut, direct fresh increments to fixed G-Secs at 7%+ instead, and let the existing position accrue</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1,000 minimum; ideal tranche ₹2-10 lakh (no upper limit)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 30% of fixed-income sleeve; treat as the "cash-plus" accrual bucket alongside, not instead of, T-Bills and liquid funds</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Bank Receiving Office net banking (SBI/ICICI/HDFC) or Post Office — NOT Zerodha/Groww (the bond is non-tradable, subscription-only via RBI-authorized offices)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Passive — two calendar events per year: Oct 5-7 MPC decision and Dec 31 small-savings review</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>7 years to maturity (2033) — review the annual coupon path semi-annually; non-seniors must be able to hold full tenor</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Interest fully taxable at slab rates; TDS above ₹10,000/yr annual interest; no 80C deduction; payouts Jan 1 and Jul 1</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Two event-driven reviews per year — check:</p>
+            <ul>
+                <li><strong>October 7, 2026:</strong> MPC decision — a hike confirms the hawkish path that pressures NSC rates higher at the December review; a hold or dovish tone downweights that catalyst</li>
+                <li><strong>December 31, 2026:</strong> Finance Ministry small-savings notification — the NSC rate announced here becomes the FRSB coupon on January 1, 2027 (watch for 7.7% hold vs 7.95-8.95% raise scenarios)</li>
+                <li><strong>January 1 / July 1:</strong> confirm the semi-annual credit hits the linked bank account at the expected rate</li>
+                <li><strong>Quarterly:</strong> compare the running coupon against prevailing 10Y G-Sec yield, bank 1-5yr FD rates, and SCSS (8.2%) — if the sovereign fixed curve rises 100+ bps above your FRSB coupon and stays there, weight fresh money to fixed G-Secs via RBI Retail Direct</li>
+                <li><strong>Annually:</strong> re-check the 30%-of-sleeve allocation cap and refill the liquid-fund leg used for emergencies</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Open your bank's net banking (SBI/ICICI/HDFC) or visit the nearest post office and subscribe to FRSB 2020(T) — start with ₹2-5 lakh of your fixed-income bucket. The coupon for Oct 1-Dec 31, 2026 is already locked at 8.05% regardless of subscription date, so there is zero timing risk: subscribe this week and your first payout accrues from the value date, then let the January 1, 2027 reset work for you.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on October 2, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
