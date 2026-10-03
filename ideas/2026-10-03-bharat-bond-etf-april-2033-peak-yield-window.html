@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharat Bond ETF April 2033 at 7.4% YTM — Lock the Peak-Yield Window | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Bharat Bond ETF April 2033 at 7.4% YTM — Lock the Peak-Yield Window Before the Hike Cycle Tops</h1>
+            <p>Buy India's flagship AAA-PSU target-maturity ETF at the highest yield-to-maturity in two years — locking ~7.4% annualized sovereign-adjacent accrual to April 2033 while keeping free optionality on a post-MPC yield reset.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 October 3, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 12-15 months primary (option to hold to April 2033 maturity)</span>
+                <span class="meta-pill return">📈 Expected: 7.5-9.5% annualized</span>
+                <span class="meta-pill risk">⚠️ Low-Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Bharat Bond ETF – April 2033 (NSE/BSE: EBBETF0433), Edelweiss AMC — tracks the Nifty Bharat Bond Index – April 2033 (AAA CPSE/CPSU/CPFI bonds only) | NAV ₹1,299.72 (Oct 1, 2026) | Fund AUM ~₹6,200 Cr | Expense ratio ~0.01% | Modified duration ~4.9 | YTM ~7.35-7.40%</p>
+            <p><strong>Exchange:</strong> NSE / BSE (ETF route); Edelweiss AMC direct plan / FOF as alternative for non-ETF or larger tickets</p>
+            <p><strong>Strategy Type:</strong> Fixed Income Accrual + Duration Optionality (Target Maturity)</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> With the 10-year G-Sec at a two-year high of ~7.2% and the Bharat Bond April 2033 ETF YTM near 7.35-7.40%, this is a rare window to lock AAA sovereign-adjacent PSU accrual for the next 6.5 years. The October 7 MPC hike (repo 5.25% → 5.50% consensus) is already priced in; any "one-and-done" outcome or crude/rupee cooling triggers a 20-40 bps yield pullback that adds 1-2% mark-to-market upside on top of accrual. Even in the bear case of continued hikes, the target-maturity structure guarantees a return of NAV at April 2033 redemption with the locked YTM — a structural "lose-less" asymmetry versus a conventional 10-year bond fund.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Enter near iNAV — the ETF oscillates around its underlying NAV and retail tickets often face modest premium/discount. Place <strong>limit orders only</strong>, within 0.5% of iNAV. Split the position into tranches: roughly half before and half after the October 7 MPC outcome. Exit is either tactical (if triggers hit) or structural (hold to April 18, 2033 maturity, when the fund redeems at NAV and pays out the locked YTM).</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹1,270-1,310</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹1,380-1,410</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹1,235 (-5%) conditional</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <p><strong>Cycle-peak YTM:</strong> The 10Y G-Sec at 7.18-7.21% (touching a two-year high on October 1, last seen April 2024) pushes the 2033 AAA-PSU curve YTM to ~7.35-7.40% — the best sovereign-adjacent lock-in since early 2024. Historically, entries at yield-cycle peaks have delivered superior 12-month risk-adjusted returns versus mid-cycle chasing.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <p><strong>MPC uncertainty is nearly resolved:</strong> The October 7 decision (25 bps hike to 5.50% priced in by most economists in polls) removes the largest near-term unknown. Post-hike guidance is the real catalyst — a "one-and-done" or balanced-stance reading typically releases 20-40 bps of yield compression at the mid-curve, which this fund's ~4.9 modified duration converts into 1-2% NAV gain.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <p><strong>Bounded bear case:</strong> The selloff drivers are external — crude above $106, US 10Y at 5.2-5.3% (post-Fed hike to 3.75-4.00%), INR at ₹96-97 — not a structural domestic inflation regime shift. And the target-maturity structure means interim MTM pain never crystallizes if held to April 2033 redemption.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <p><strong>Supply relief at the mid-curve:</strong> H2 FY27 borrowing of ₹7.86 trillion cut the 5Y/10Y share from 15.4%/29% to 12.1%/26.3% of issuance. While the tilt toward 15/30/40-year paper pressures the long end, the 5-7 year segment that this ETF dominates faces reduced marginal supply.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">5</div>
+                    <p><strong>Tax deferral engine:</strong> Unlike holding PSU bonds directly (annual coupon taxed at slab), the growth-ETF structure defers all tax to redemption — coupons compound unimpeded inside the fund, adding roughly 30-50 bps of effective annual return versus direct bond ladders for a 30% bracket investor.</p>
+                </div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li><strong>RBI MPC Oct 5-7:</strong> consensus 25 bps hike to 5.50% (first since Feb 2023); BofA sees 100 bps cumulative by H1 2027 (terminal 6.25%); Barclays terminal 5.75%; Moneycontrol poll majority +25 bps in October, possible December follow-up.</li>
+                <li><strong>10Y G-Sec at 7.18%:</strong> two-year high (touched 7.21% on Oct 1); last comparable level was 7.22% on April 19, 2024.</li>
+                <li><strong>External pressure stack:</strong> US 10Y at 5.2-5.3% (highest since June 2007) after the Fed's first hike since 2023 (to 3.75-4.00%); Brent >$106-108 (+4% spike); INR at ₹96.25-97.</li>
+                <li><strong>Domestic inflation:</strong> CPI (Aug 2026) at 4.82%, above the 4% target, with festive-season upside risk into Q3; 13% rainfall deficit feeds food-price pressure.</li>
+                <li><strong>H2 FY27 borrowing ₹7.86 trillion:</strong> 5Y/10Y share trimmed to 12.1%/26.3% (from 15.4%/29%) — marginal supply relief at the mid-curve, though long-duration supply skew remains a headwind.</li>
+                <li><strong>OIS curve repriced tighter:</strong> 1Y OIS at 6.235%, 2Y at 6.45%, 5Y at 6.72% — forwards now embed the tightening cycle, meaning much of the bad news is already in current yields.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li><strong>Index composition:</strong> Nifty Bharat Bond Index – April 2033 holds only AAA-rated bonds of Government-owned entities (CPSE/CPSU/CPFI) maturing not beyond April 2033 — REC, PFC, NABARD, NHAI, IRFC, SIDBI, EXIM-type quasi-sovereign issuers.</li>
+                <li><strong>Fund profile:</strong> AUM ~₹6,200 Cr, expense ratio ~0.01% (ETF TER ~0.0005%), modified duration ~4.9, average maturity ~6.5 years, 21-day volatility ~0.92% — among the cheapest and most stable duration vehicles accessible to retail.</li>
+                <li><strong>NAV context:</strong> ₹1,299.72 (Oct 1, 2026), down from recent highs as yields spiked — the pullback has already handed the entry window; 1-year trailing return just 3.7-5.4% versus a 3-year CAGR of ~7.1-8.0%, i.e., this is a low point in the realized-return cycle, not a high.</li>
+                <li><strong>Maturity mechanics:</strong> The scheme terminates on April 18, 2033 and distributes net assets to unit holders — a contractual NAV-return anchor that plain-vanilla debt funds and most NSE bonds don't offer.</li>
+                <li><strong>Alternative access:</strong> Edelweiss direct plan / FOF available for investors who prefer NAV-based execution without intraday ETF pricing; minimum investment ₹1,001.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Peak-YTM entry window (~7.35-7.40%) — highest sovereign-adjacent accrual in ~2 years, before any hike fully transmits to the mid-curve.</li>
+                        <li>"One-and-done" MPC scenario → 20-40 bps yield pullback → 1-2% MTM gain layered on top of accrual.</li>
+                        <li>Target-maturity structure removes reinvestment risk and terminal MTM risk — even a worst-case multi-hike regime converges to the locked YTM by April 2033.</li>
+                        <li>Tax deferral: no annual coupon taxation under the growth option; tax hits only at unit sale/redemption — an extra ~30-50 bps of compounding benefit at the 30% slab.</li>
+                        <li>Expense ratio ~0.01% versus 0.30-0.60% typical active debt fund — all yield stays with the investor.</li>
+                        <li>Quasi-sovereign credit basket (REC/PFC/NABARD/NHAI/IRFC-type AAA GoI-owned issuers) — near-zero historical default incidence at this rating tier.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Multi-hike regime: BofA's 100 bps cumulative path (terminal 6.25% by H1 2027) or Barclays' 5.75% terminal could drive the 10Y to 7.4-7.6% → NAV down roughly 5-8% given ~4.9 modified duration.</li>
+                        <li>Crude sustained above $110 with INR past ₹98 would force an aggressive RBI path — the single biggest scenario risk to the entry thesis.</li>
+                        <li>Duration-tilted H2 issuance (15/30/40-year supply) keeps pressure on the long end even if the mid-curve eases.</li>
+                        <li>ETF execution risk: premium/discount to iNAV on retail tickets; intraday liquidity thinner than G-Sec ETFs on larger orders.</li>
+                        <li>Single-issuer downgrade tail risk within the AAA PSU basket — extremely low probability, but the fund is a concentration of similar-sector quasi-sovereigns, not a diversified corporate pool.</li>
+                        <li>Effective lock-in if held to maturity: capital is committed until April 2033 (though the ETF can be sold on NSE/BSE anytime, at prevailing price).</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li>Position size at ₹1-7 lakh, capped at ≤15% of the total portfolio or ≤20% of the fixed-income sleeve.</li>
+                <li>Tranche entry: deploy ~50% now, hold ~50% for post-October 7 MPC clarity — add on a dip toward ₹1,270 or on a balanced-stance outcome.</li>
+                <li>Use limit orders within 0.5% of iNAV; never market-order an ETF ticket of this size.</li>
+                <li>Conditional tactical exit only if <strong>all three</strong> trigger together: NAV < ₹1,235 (-5%), 10Y G-Sec sustained above 7.5% for 10+ sessions, and Brent above $115 — a regime-shift signal, not MTM noise. Otherwise ignore interim drawdowns and hold to April 2033.</li>
+                <li>Barbell the rest of the fixed-income sleeve: pair this duration vehicle with zero-duration FRSB (8.05%) and short-duration funds so a continued hiking cycle is partially compensated.</li>
+                <li>Check ETF price versus iNAV before every transaction; if premium exceeds 0.5%, buy via the Edelweiss AMC direct plan instead.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-7 lakh (units ~₹1,300 each; minimum 1 unit; AMC direct plan minimum ₹1,001)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 15% of total portfolio or ≤20% of the fixed-income sleeve; split into 2 tranches across sessions</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Groww / Angel One (search EBBETF0433 on NSE/BSE); Edelweiss AMC direct plan for lump sums > ₹2 lakh</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low — weekly NAV glance; the October 7 MPC outcome is the one date that matters most; monthly portfolio disclosure review</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>12-15 months primary horizon; full payoff if held to April 18, 2033 maturity (tactical exit only on triple-trigger)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Debt-growth structure: post-Finance Act 2023, gains on units bought after April 1, 2023 are taxed at slab rate on redemption regardless of holding period (no 12.5% LTCG, no indexation); no TDS; tax deferred until sale — unlike direct bond coupons, which are taxed annually</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li><strong>October 7 MPC outcome:</strong> hike size and guidance tone — "calibrated tightening" versus one-and-done framing is the pivot for the second tranche and for MTM expectations.</li>
+                <li><strong>10Y G-Sec trajectory:</strong> a sustained move above 7.5% combined with crude >$115 and NAV < ₹1,235 activates the tactical exit assessment; otherwise no action.</li>
+                <li><strong>Inflation prints:</strong> monthly CPI versus the 4% band; festive/Q3 trajectory decides whether the "transitory external drivers" thesis holds.</li>
+                <li><strong>Fund disclosures:</strong> monthly portfolio statement — verify credit composition and watch for any rating-action notices on basket issuers (REC/PFC/NABARD et al.).</li>
+                <li><strong>Execution hygiene:</strong> compare ETF price to iNAV before any buy/sell — keep premium within 0.5%; switch to AMC direct plan if the ETF trades away from NAV.</li>
+                <li><strong>February 1, 2027 Budget:</strong> FY28 borrowing mix and any FPI inclusion/G-Sec policy changes that reshape mid-curve supply demand balance.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>This week (before the October 7 MPC decision): place a limit order for 30-50 units of EBBETF0433 around ₹1,290-1,305 on NSE — or via the Edelweiss AMC direct plan for larger tickets. Hold roughly half the intended capital for a post-MPC tranche: add on a dip toward ₹1,270, or on a balanced-stance outcome that confirms the yield peak. Full YTM ~7.35-7.40% locks in either way once holding to April 2033 is the base case.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on October 3, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
