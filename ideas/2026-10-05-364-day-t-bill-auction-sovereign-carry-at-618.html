@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>364-Day T-Bill at 6.18%: Bid the Oct 7 Auction, Beat the Hike Cycle, Hold the Sovereign Carry | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>364-Day T-Bill at 6.18%: Bid the Oct 7 Auction, Beat the Hike Cycle, Hold the Sovereign Carry</h1>
+            <p>Bid non-competitively in the 364-day T-bill auction on October 7 (RBI Retail Direct) at ~6.18% — 91 bps over repo and 100+ bps above savings/FD rates — and lock a full year of sovereign carry that survives every MPC outcome.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 October 5, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 12 months (held to maturity, Oct 2027)</span>
+                <span class="meta-pill return">📈 Expected: 6.2-6.5% p.a. absolute, 0% drawdown if held</span>
+                <span class="meta-pill risk">⚠️ Very Low (sovereign credit, zero mark-to-market at hold-to-maturity)</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> 364-Day Treasury Bill, next auction Wednesday, October 7, 2026 (₹7,000 crore notified); then every Wednesday through Dec 30, 2026</p>
+            <p><strong>Exchange:</strong> RBI Retail Direct (rbiretaildirect.org.in) — non-competitive bidding at cut-off price</p>
+            <p><strong>Strategy Type:</strong> Fixed Income Accrual — Sovereign Discount-Bill Laddering</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> The money market has violently repriced before the MPC has acted: the 364-day T-bill cut-off jumped from 5.91% (Sep 2) to 6.18% (Sep 30) ahead of the Oct 5-7 MPC, where economists expect a 25-bps hike to 5.50% with a second possible hike in December. Retail non-competitive bidders get the auction cut-off price with a guaranteed allocation share — meaning you lock a sovereign 1-year yield ~90 bps above repo without any F&O or secondary-market effort, and your maturity return is fixed the day you bid.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Entry is through the weekly auction, not the secondary market: place a non-competitive bid on the Retail Direct portal between 10:30-11:00 am on auction Wednesday. You pay the auction cut-off price (same as banks' marginal bid), so there is no negotiation, no timing skill and no price risk at entry — the realized annualized return equals the cut-off yield by construction. Exit is the ₹100 redemption at maturity; the NDS-OM-Retail secondary venue exists only as an emergency liquidity valve.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">Non-competitive bid in Oct 7 auction; expected cut-off ~₹94.0-94.3 (YTM ~6.2-6.4%). 91d/182d cut-offs expected ~5.5-5.7%/~6.0-6.2% for ladder legs</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹100 face-value redemption at ~Oct 8, 2027; yield realized at cut-off regardless of secondary moves</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">None for buy-and-hold — sovereign zero-default instrument; exit option: sell via NDS-OM-Retail in the secondary if liquidity needed</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item"><div class="rationale-bullet">1</div><div class="rationale-content"><p><strong>The yield spike is not a glitch — it is repricing of a hiking cycle.</strong> The 364-day cut-off rose ~27 bps in four weeks (5.91% → 6.18%) while the repo was parked at 5.25%, and the 1-year OIS at 6.17-6.28% says markets price repo closer to 5.75-6.00% within 12 months. The bill's ~6.2% yield-equivalent is already there.</p></div></div>
+<div class="rationale-item"><div class="rationale-bullet">2</div><div class="rationale-content"><p><strong>Non-competitive retail bidding removes all execution skill from the trade.</strong> Retail participants win at the marginal cut-off yield, get up to 5% of the notified amount allocated outside competition, and settle T+1 with funds deducted from the Retail Direct linked account — no bidding strategy, no broker, no minimum lot beyond ₹25,000 face value.</p></div></div>
+<div class="rationale-item"><div class="rationale-bullet">3</div><div class="rationale-content"><p><strong>Duration risk is structurally self-extinguishing.</strong> A 364-day bill has ~0.95 modified duration; even a 30-40 bps further shock in upcoming auctions moves its mark-to-market only ~0.3%, which the accrual recovers in ~3 weeks. Held to maturity the price is contractually ₹100.</p></div></div>
+<div class="rationale-item"><div class="rationale-bullet">4</div><div class="rationale-content"><p><strong>Liquidity squeeze and quarterly supply are doing the RBI's work for you.</strong> With the liquidity surplus shrinking on RBI draining and advance-tax outflows, and ₹91,000 crore of 364-day bills scheduled Oct-Dec, banks and funds bid hard for discount bills — pushing auction yields far above the savings-bank ~3.0% and 12-month bank FD ~6.0-6.5% rates retail normally accepts. You simply take the auction's excess instead of a bank's margin.</p></div></div>
+<div class="rationale-item"><div class="rationale-bullet">5</div><div class="rationale-content"><p><strong>A repeatable weekly playbook, not a one-shot trade.</strong> Auctions run every Wednesday (Oct 7 to Dec 30, 2026). Bid the same amount 3-4 weeks running to stack a ladder of 364-day bills — averaging your entry across the hiking cycle without any market-timing decision.</p></div></div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>MPC meets Oct 5-7; consensus expects a 25 bps hike to 5.50% — the first since Feb 2023 — with a December follow-on if crude stays elevated (~60% of economists polled by Reuters in late Sept).</li>
+<li>CPI inflation at 4.82% in August, rising for 10 straight months; RBI projects ~5% headline average for FY27; WPI at 9.9% signals second-round pass-through risk.</li>
+<li>Iran-war-driven crude at multi-year highs — India imports ~85% of its fuel; WPI fuel/power inflation at 22.9% keeps the food-fuel pipeline hot.</li>
+<li>1-year OIS at 6.17-6.28% and the 10-year G-Sec near 7.15% (a 52-week high) confirm the front-end repricing — the whole curve has moved up 20-40 bps in weeks.</li>
+<li>Government's Oct-Dec calendar: ₹2.99 lakh crore of short-term debt, ₹91,000 crore of it in 364-day bills — weekly supply keeps auction yields rich for retail non-competitive bidders.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>Specific cut-off history: Sep 2 = 5.9090% (₹94.4351); Sep 23 = 6.0895% (₹94.2749); Sep 30 = 6.1798% (₹94.1949) — a clean +27 bps rise in one month.</li>
+<li>Oct 7 (Wed) auction: ₹8,000 Cr 91-day + ₹8,000 Cr 182-day + ₹7,000 Cr 364-day notified, settlement Oct 8 (Thursday). Non-competitive bid window: 10:30-11:00 am.</li>
+<li>Retail allocation capped at 5% of the notified amount per auction, allotted at the cut-off — no competitive-bidding skill needed, no price-partiality risk.</li>
+<li>Zero coupon, zero reinvestment risk: the entire return is the discount (₹100 − price), paid as face value at maturity. No coupon tax drag during the year.</li>
+<li>Held to maturity this is a 'term deposit with sovereign guarantee' — at ~90 bps over what any 12-month bank FD currently pays, with no bank credit exposure.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>If the Dec MPC delivers a second hike, later Wednesday auctions could print 6.4-6.6% on 364-day bills — a 3-4 bid ladder captures the full hiking path, averaging 6.3%+.</li>
+<li>If inflation/liquidity ease faster than expected and the front-end rallies in 2027, your locked 6.18% bill marks up on NDS-OM-Retail — an above-par early exit is a bonus, not a requirement.</li>
+<li>Zero coupon: a single ₹100 maturity payment makes the return math exact and the tax event one clean capital-gains line item.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>If the MPC surprises dovish on Oct 7 (no hike), auction yields could retrace 20-30 bps to ~5.9% — your Oct 7 bid then sits at the top of the front-end (opportunity cost, not a loss; maturity value is unaffected).</li>
+<li>Inflation could spike beyond what two hikes defend, forcing 3-4 more — but this only moves the bill's mark-to-market ~0.3-0.4%, never the maturity value.</li>
+<li>Secondary liquidity on NDS-OM-Retail is thin outside bank hours; an emergency pre-maturity sale may take 1-2 extra settlement days.</li>
+<li>Retail allocation is capped at 5% of ₹7,000 crore ≈ ₹350 crore per auction — effectively unlimited headroom for retail tickets of ₹1-4 lakh.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li>Position sizing: cap the T-bill ladder at 25% of your liquid portfolio; keep the rest in a liquid fund for same-day emergencies (T-bills are sellable but settle T+1).</li>
+<li>Only bid non-competitive — you win at the cut-off, never at a speculative price; never attempt competitive bidding as a retail investor.</li>
+<li>Ladder, don't load: split the allocation across 2-4 weekly auctions (e.g. ₹50k face value on Oct 7, 14, 21, 28) to average the entry yield across the hiking cycle.</li>
+<li>Written floor rule: if the 364-day cut-off drops below 5.75% in later auctions (dovish surprise), pause new bids and reassess — the trade's edge is 6%+ carry, not a fixed entry point.</li>
+<li>Maturity alignment: schedule no large planned expenses before Oct 2027 so there is never a forced sale — this is the single most important structural control.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹9,420 per ₹10,000 face value (price ~₹94.2); minimum bid ₹25,000 face value; sweet spot ₹1-4 lakh across the ladder</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 25% of liquid portfolio across the ladder; ₹50k-₹1L face value per auction; total deployable ₹1-4 lakh</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>RBI Retail Direct portal (free, one-time eKYC) — non-competitive segment, 10:30-11:00 am Wednesday; NDS-OM-Retail via Zerodha/Angel One for optional secondary top-ups</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Very low — one login every Wednesday for 4-8 weeks during the auction window, then zero management</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>12 months from settlement (Oct 8, 2026 → Oct 8, 2027)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Zero-coupon: the entire gain (₹100 − purchase price) is taxed as short-term capital gain at your income-tax slab, accruing in the year of maturity/redemption; no periodic interest, so no annual accrual tax event. TDS is not deducted on Govt securities for Retail Direct holders, but the gain must be self-reported in the ITR as capital gains.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>Every Wednesday 10:15 am: log into RBI Retail Direct, confirm the non-competitive window opens at 10:30 am, verify bid size and linked-bank balance.</li>
+<li>Same evening: check the RBI T-bill auction result press release for the 364-day cut-off. Below 5.75% → pause new bids; 6.2%+ with a hawkish MPC → continue the ladder.</li>
+<li>Monthly on the 12th: review the MoSPI CPI print and the 1-year OIS — if OIS 1Y pushes above 6.5%, the December hike is near-certain and the ladder can be sized up.</li>
+<li>Watch the weekly RBI press release for changes to the ₹7,000 crore 364-day notified amount (GoI can modify it on fiscal needs).</li>
+<li>Confirm settlement: funds debited T+1 (Thursday), bill visible in the Retail Direct 'Portfolio' tab within days — reconcile each bid.</li>
+<li>30 days before maturity (early Sep 2027): confirm the bill shows for ₹100 redemption and the linked bank account is active.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Log in to RBI Retail Direct (or register free at rbiretaildirect.org.in — ~15 minutes with PAN + Aadhaar eKYC) and place a non-competitive bid for ₹50,000-₹1,00,000 face value in the 364-day T-bill between 10:30-11:00 am on Wednesday, October 7, 2026. Repeat on the next 2-3 Wednesdays (Oct 14, 21, 28) if the MPC keeps its hawkish line, building a ladder of 3-4 bills at ~6.2-6.4% maturing cleanly in October 2027. Under 10 minutes a week locks in the highest retail-accessible sovereign yield of this hiking cycle.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on October 5, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
