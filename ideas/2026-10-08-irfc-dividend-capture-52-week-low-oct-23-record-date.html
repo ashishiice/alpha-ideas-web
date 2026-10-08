@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRFC Dividend Capture at the 52-Week Low: Quasi-Sovereign Carry + a Hard Oct 23 Record Date | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>IRFC Dividend Capture at the 52-Week Low: Quasi-Sovereign Carry + a Hard Oct 23 Record Date</h1>
+            <p>Buy Indian Railway Finance Corp (NSE: IRFC) at ~₹76 — a 13.8x P/E, zero-NPA quasi-sovereign at its 52-week low — ahead of the Oct 15 Q2 board meeting and Oct 23 interim dividend record date, harvesting the dividend plus a mean-reversion move back toward ₹86.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 October 8, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 1-3 months (catalyst-anchored)</span>
+                <span class="meta-pill return">📈 Expected: 9-13% (dividend + mean reversion)</span>
+                <span class="meta-pill risk">⚠️ Low-Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Indian Railway Finance Corporation Ltd (NSE: IRFC)</p>
+            <p><strong>Exchange:</strong> NSE</p>
+            <p><strong>Strategy Type:</strong> Dividend Capture + Valuation Mean Reversion</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> IRFC is India's cheapest large financier at 13.8x trailing P/E versus an NBFC peer median of 19.6x — a 30% valuation discount on a zero-NPA, sovereign-guaranteed-legacy loan book that leases wagons and coaches to Indian Railways. The Oct 7 hike-cycle shock (10Y gilt at 7.27%, a 3-year high) has knocked the stock to its 52-week low exactly as a dated catalyst arrives: the board meets Oct 15 to consider Q2 FY27 results AND an interim dividend, with record date Oct 23. This is a two-legged trade — a near-certain ~₹1.05/share payout (2.7% trailing yield) inside 3 weeks, plus 6-9% price mean-reversion as the gilt-driven panic bleeds out of a stock whose asset quality does not depend on rates.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Accumulate in the ₹74-77 band over 2-3 sessions before Oct 15, sized so the record-date dividend covers a slice of entry risk; trim two-thirds at ₹84-86 and keep the rest for a railway-capex re-rating.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹74-77 (52-week low zone; limit orders at ₹75-76)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹84-86 (re-rating to ~17x FY27E P/E; trail the last third)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹68 daily-close (≈ -10%; below the Oct 2025 swing low)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                
+                <div class="rationale-item"><div class="rationale-bullet">1</div><div><strong>Dated, near-certain catalyst:</strong> IRFC's board meets Oct 15 to consider Q2 FY27 results and an interim dividend; record date Oct 23. The company has paid an interim dividend every October for years (₹1.05/share in both Oct 2025 and Feb 2026) with a ~31% payout ratio — this payout is about as close to pre-announced as equities get.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">2</div><div><strong>Rate-shock mispricing, not credit repricing:</strong> the stock's 5.1% slide last week mirrors the 10Y gilt moving to 7.27% — but IRFC's book is on-lending to Indian Railways at administered spreads, with gross NPAs at zero for decades. Rising yields squeeze its borrowing cost, not its credit book; the equity is being sold as if it were a duration instrument when it is a spread book.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">3</div><div><strong>Deep valuation discount:</strong> 13.8x trailing P/E vs NBFC peer median 19.6x, dividend yield 2.7-2.8% vs peer median ~1.1%, Piotroski F-Score 7/9 and ROE ~12.8%. A re-rate to just 17x FY27E earnings puts the stock at ₹84-86 without any earnings beat.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">4</div><div><strong>Borrowing-cost tailwind is already in guidance:</strong> FY26-27 borrowings were refinanced at cheaper coupons in H1 FY27, and each bond refinancing cycle that outlives the hike spike improves NIM. The hawkish spike is a buying window precisely because it is temporary in IRFC's funding plan — ~46% of obligations are maturing within 12 months and get rolled at market.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">5</div><div><strong>Capex flow underwrites the franchise:</strong> Indian Railways' FY27 capex plan (~₹2.6 lakh Cr) keeps IRFC's lease-asset pipeline full; Q1 FY27 disbursements stayed robust and net interest income grew, despite a thinner spreads year. The railway monopsony is intact regardless of where the repo rate is in December.</div></div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>RBI MPC hiked repo 25 bps to 5.50% on Oct 7 — first hike since Feb 2023 — shifting to calibrated tightening.</li>
+                <li>Benchmark 10Y gilt at 7.27%, a ~3-year high; rate-hike expectations for Dec/February remain live, keeping front-end pressure on rate-sensitives.</li>
+                <li>Hike was 25 bps ("largely priced") not 50 — the shock is the stance change, and stance-driven selloffs in quasi-sovereign names mean-revert faster than credit-driven ones.</li>
+                <li>Nifty at ~24,600 (-0.6% post-MPC): broad de-risking, not stock-specific deterioration, drove IRFC to its low.</li>
+                <li>FY27 CPI projection revised up (Q3 seen ~6%): higher-for-longer rates hurt bond-heavy PSU sentiment more than underlying PSU cash flows.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>Board meeting Oct 15, 2026: Q2 FY27 results + interim dividend consideration; record date Oct 23, 2026 (company announcement).</li>
+                <li>Interim dividend history: ₹1.05/share paid in Oct 2025, ₹1.05 in Feb 2026, ₹1.00 in Mar 2026 — payout ratio steady ~31%.</li>
+                <li>Valuation: ₹76 / 13.8x trailing P/E vs NBFC median 19.6x; book ₹43.4, P/B 1.75x, dividend yield ~2.76% (91st percentile of NSE).</li>
+                <li>Credit quality: zero gross NPA track record since inception as the sole term-financier to Indian Railways; ~46% of borrowings mature within 12 months (annual refinancing churn).</li>
+                <li>FY26-27 borrowing programme approved Mar 2026 — market-borrowing guidance unchanged despite the hike, confirming funding plan stability.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Oct 15 dividend confirmation acts as a floor-builder: dividend stocks historically outperform in the run-up window (T+15 to record date).</li>
+                <li>Payout can nudge above ₹1.05 if Q2 disbursements beat — FY27 leasing pipeline is full.</li>
+                <li>Any RBI signalling that the Dec hike is "data-dependent" unwinds the gilt shock and re-rates PSU financers first.</li>
+                <li>Peer re-rating catch-up: even 17x on FY27E EPS (~₹5.4) gives ₹84-86, +11-13% from entry including dividend.</li>
+                <li>PSU inclusion flows and railway-theme momentum return quickly once rate panic subsides.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>A December repo hike (to ~5.75%) plus fresh gilt supply could push IRFC lower before the dividend story plays out — the market conflates funding-cost squeeze with credit risk.</li>
+                <li>Dividend is subject to board approval on Oct 15 — a cut or skip (unlikely given 31% steady payout) would remove the catalyst.</li>
+                <li>Ex-dividend price drop on ~Oct 22 mechanically trims the price by the dividend amount around the record date.</li>
+                <li>PSU disinvestment or Railway budget announcements can create headline volatility.</li>
+                <li>Liquidity in the ₹74-77 zone is thin versus the ₹80+ cluster; limit orders are mandatory, market orders will slip.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li>Position sizing: max 5-8% of the equity sleeve (₹1-5 lakh absolute), never the largest single-stock position.</li>
+                <li>Hard stop: ₹68 on a daily close (-10%) — mechanically exit, no averaging down below entry zone.</li>
+                <li>Buy only with limit orders in ₹74-77; if the price gaps above ₹78 before Oct 15, skip the trade — the dividend math no longer compensates the risk.</li>
+                <li>Time-stop: if the stock is still below ₹74 ten sessions after the dividend record date (early Nov), close — the thesis has failed to attract bid-side interest.</li>
+                <li>Hedge proxy: pair the entry with a 364-day T-bill or liquid fund allocation (per the Oct 5 idea) so the sleeve's duration risk is offset by sovereign carry.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-5 lakh (≈1,300-6,600 shares)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 5-8% of equity sleeve; single-entry limit order, no averaging below ₹74</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww (CNC delivery)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low-moderate — 3 event checks (Oct 15 board, Oct 23 record, early-Nov exit review)</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>1-3 months (event window 15 days, full thesis 8-10 weeks)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Dividend taxed at slab rate (no ₹5,000 exemption above threshold for large holdings; TDS 10% if annual dividends > ₹5,000). Price gains on sale within 12 months = STCG at 20% slab; beyond 1 year = LTCG 12.5% above ₹1.25 lakh exemption. The 1-3 month horizon makes this an STCG trade — size accordingly.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>Oct 15: board outcome — dividend amount declared vs ₹1.05 baseline; any change to record date.</li>
+                <li>Oct 23 / ex-date (≈Oct 22): confirm entitlement, watch price behavior around the ex-dividend drop.</li>
+                <li>Weekly: 10Y gilt trajectory — if yields back above 7.35%, tighten the trailing discipline on the final third.</li>
+                <li>Weekly: Nifty PSU-bank/fin index breadth — IRFC rarely moves alone; peer strength confirms the re-rate.</li>
+                <li>Q2 results detail: disbursement growth and NIM commentary vs Q1 FY27; any asset-quality slippage is an immediate exit trigger regardless of price.</li>
+                <li>Dec 2026 MPC preview: market odds of another hike; if >70% priced and gilt >7.4%, consider trimming early.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>This week (Oct 8-9): place a CNC limit order at ₹75-76 on Zerodha Kite / Angel One / Groww for ₹1-5 lakh notional. Hold through the Oct 15 board meeting and Oct 23 record date. Trim two-thirds at ₹84-86, stop at ₹68 daily close, time-stop in early November.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on October 8, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
