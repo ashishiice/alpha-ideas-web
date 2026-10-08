@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank of Baroda at 0.72x Book: NMC Overhang Absorbed, Clean-Base Q2 Re-Rating Ahead | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Bank of Baroda at 0.72x Book: NMC Overhang Absorbed, Clean-Base Q2 Re-Rating Ahead</h1>
+            <p>India's cheapest big-6 PSU bank — 6.7x P/E, 0.72x book, 3.6% dividend yield — took the entire US$600M NMC settlement in Q1, and the clean-base Q2 print in early November is the catalyst to re-rate the stock toward ₹290 at its 52-week-low price zone.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 October 9, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months (medium-term, catalyst-anchored)</span>
+                <span class="meta-pill return">📈 Expected: 16-22% (price + dividend)</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Bank of Baroda Ltd (NSE: BANKBARODA | BSE: 532134)</p>
+            <p><strong>Exchange:</strong> NSE / BSE (regular lot, any retail broker)</p>
+            <p><strong>Strategy Type:</strong> Special-Situation Value + Earnings Base Effect</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> BoB charged the entire ₹5,680 Cr NMC Group settlement to Q1 FY27, wiping one-time noise from the book while core engines stayed intact — NII +9.5%, GNPA at 1.99%, credit cost 0.29%. At ₹234 (0.72x book, ~6.7x trailing P/E, 3.6% dividend yield) the stock prices in distress that no longer exists. The Q2 FY27 clean print in early November forces the street to re-anchor on the ₹5,500 Cr quarterly run-rate, and RBI's tightening cycle — normally a headwind — becomes a NIM tailwind for BoB's largely floating-rate book.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Accumulate in two tranches over the next 2-3 weeks while the rate-hike fear premium keeps the stock pinned near 52-week lows. Size full position BEFORE the Q2 FY27 results print (early November) — the base-effect catalyst is a news event, not a drift.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹225-238 (52-wk low zone: ₹223.82)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹285-300 (0.9-1.0x book; 52-wk high ₹325.50)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">Weekly close below ₹212 (~-9%)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                                <div class="rationale-item"><div class="rationale-bullet">1</div><div>BoB absorbed the entire US$600M (₹5,680 Cr) NMC Group litigation settlement as a one-time exceptional charge in Q1 FY27 (reported PAT ₹1,278 Cr vs adjusted ₹5,528 Cr) — the legacy overhang is now fully provided for and gone from the book.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">2</div><div>Q2 FY27 results in early November create an extraordinary base effect: any normal ₹5,000-6,000 Cr quarterly profit reads as a ~300% YoY jump headline, historically triggering PSB re-ratings as retail flows chase the optical EPS recovery.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">3</div><div>The stock sits at ₹234 vs a 52-week low of ₹223.82 — down 28% from its 52-week high of ₹325.50 — while trailing P/E is ~6.7x and P/B ~0.72x, the cheapest of the big-6 PSU banks despite ROE of ~12.7%.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">4</div><div>RBI's Oct 7 hike to 5.50% (calibrated tightening) is a margin tailwind for lenders: floating-rate loan books reprice upward faster than deposit costs peak, so NIMs (currently 2.77% global / 2.93% domestic) should trough and recover through FY27.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">5</div><div>Core asset quality is at multi-year bests — GNPA 1.99% (-29bps YoY), NNPA 0.50%, PCR 93.28%, credit cost 0.29% vs 1.00-1.25% guidance — meaning provisions have enormous release capacity once the exceptional item is behind.</div></div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>Repo raised 25bps to 5.50% on Oct 7, 2026 — first hike since Feb 2023; stance shifted to "calibrated tightening" with street expecting 5.75-6.00% terminal rate in FY27</li>
+<li>10-year G-Sec yield at ~7.22%, an 18-month high — banks' floating-rate loan books reprice up, gradually restoring NIMs from the 2.77% trough</li>
+<li>CPI at 4.8% (Aug) after 10 straight monthly rises keeps RBI hawkish, but GDP forecast was RAISED 40bps to 7.1% — credit demand stays strong in a tightening window</li>
+<li>H2FY27 G-Sec supply (₹7.86 lakh Cr gross dated borrowing) pressures bond yields but OMO sales are absorbed; banks' treasury marks are near cycle-worst, leaving upside on reversal</li>
+<li>PSU bank index down ~7% over 6 months on rate-hike fear — sector-wide de-rating, not BoB-specific distress, is driving the price</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>Q1 FY27 adjusted net profit ₹5,528 Cr; NII +9.5% YoY to ₹12,524 Cr; global business +15.4% YoY to ₹30.5 lakh Cr</li>
+<li>NMC settlement (US$600M / ₹5,680 Cr) fully booked as one-time exceptional — management called it a "commercially prudent" closure of a legacy dispute</li>
+<li>Domestic advances +16.1% YoY; RAM (retail/agri/MSME) share up to 62.9% — higher-yield mix improving through the cycle</li>
+<li>Cost of deposits down 39bps YoY to 4.66% while loan yields reprice — operating leverage as hikes transmit</li>
+<li>Trailing P/E ~6.7x, P/B ~0.72x, dividend ₹8.50/sh = 3.6% yield; ROE ~12.7% — a yield-and-book double cushion at 52-week-low prices</li>
+<li>Write-offs fell to ₹625 Cr (from ₹2,116 Cr) and slippage ratio 0.91% — the credit engine needs far less provisioning</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Clean-base Q2 print (early Nov) delivers a ~300% YoY optical profit jump and restores the FY27 earnings trajectory the street had written off</li>
+<li>NIM recovery to 2.9-3.0% as rate hikes transmit through floating-rate books — every 10bps of NIM ≈ ₹950 Cr annualized profit</li>
+<li>Provision releases: credit cost at 0.29% vs 1.0-1.25% guidance leaves room for write-backs boosting visible PAT</li>
+<li>Re-rating to just 0.9x book (its 3-yr average) implies ₹290+; to 1.0x book, ₹326 = the 52-week high</li>
+<li>3.6% dividend yield accrues if held past the May 2027 ex-date — adds a second return layer on the medium horizon</li>
+<li>PSU bank sector inflows resume once the hike cycle peaks; BoB is the highest-beta cheapest name in the big-6 set</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>GNPA rose sequentially for two straight reads (1.89% → 1.99%) — if Q2 slippage reaccelerates, the asset-quality narrative breaks first</li>
+<li>More RBI hikes (5.75-6.00% terminal) extend deposit-cost competition and delay the NIM recovery by 1-2 quarters</li>
+<li>Treasury losses deepen if the 10Y G-Sec pushes beyond ~7.50% on crude + supply — Q2 other-income line was already down 59.9%</li>
+<li>Hidden NMC-style legacy disputes: one international settlement cleaned does not certify the rest of the overseas book</li>
+<li>PSU bank flows can stay out of favour; value traps in PSBs historically linger 2-3 quarters past the valuation floor</li>
+<li>Government stake-sale or capital allocation headlines (e.g., forced acquisition support) can cap re-rating</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li>Position sizing: max 10% of your equity allocation — this is a single-name PSB call, not a sector ETF</li>
+<li>Hard stop: weekly close below ₹212 (-9% from entry midpoint) — a break under the 52-week low zone invalidates the floor thesis</li>
+<li>Time-based exit: if Q2 FY27 results (early Nov) show slippage ratio > 1.2% or NIM contracting below 2.6%, exit regardless of price</li>
+<li>Stage the entry: half the position at ₹234-238, half on any dip toward ₹225 (52-week low) — never chase above ₹245</li>
+<li>Expected max drawdown with the stop: ~10-12%, well inside the 25% ceiling</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-10 lakh (any size works; no lot constraints)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 10% of equity allocation; single-stock PSB exposure cap</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww — regular cash market</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low-Moderate — weekly close check + one deep review at Q2 results</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-9 months (Q2 print early Nov → re-rating window through March 2027)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Listed equity: STCG 20% if sold within 12 months; LTCG 12.5% above ₹1.25 lakh exemption if held >1 year — selling inside 9 months means STCG on gains; ₹8.50/sh dividend taxed at slab rate when received</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>Q2 FY27 results (expected early Nov 2026): check slippage ratio ≤ 1.2%, NIM ≥ 2.7%, and NO new exceptional items</li>
+<li>Weekly close vs ₹212 stop level and vs 52-week low ₹223.82 — track accumulation vs breakdown</li>
+<li>RBI December MPC verdict: a second hike delays NIM recovery — reassess thesis if terminal-rate guidance moves above 6%</li>
+<li>Deposit-growth vs loan-growth gap in monthly data: deposit costs rising faster than yields = thesis on hold</li>
+<li>10Y G-Sec yield: sustained move above 7.50% = treasury-mark pressure; below 7.0% = re-rating accelerator</li>
+<li>Any new litigation/settlement disclosure in exchange filings — exit trigger, no second NMC gets absorbed at this P/B</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>This week: place a limit order for 50% of intended position at ₹235-238 on your broker app, and a GTT trigger buy at ₹225 for the second tranche. Mark your calendar for BoB Q2 FY27 results (early Nov 2026) — hold through the print as long as slippage stays ≤1.2% and no new exceptional items appear.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on October 9, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
