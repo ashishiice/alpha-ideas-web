@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NALCO at 8.7x P/E: Aluminium at 4-Year Highs, Q2 + First Interim Dividend Due Mid-November | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>NALCO at 8.7x P/E: Aluminium at 4-Year Highs, Q2 + First Interim Dividend Due Mid-November</h1>
+            <p>Buy NALCO (NSE: NATIONALUM) near ₹318 — India's lowest-cost integrated aluminium producer is down 28% from its September high of ₹445 despite LME aluminium near 4-year highs, with a dated mid-November catalyst: the Q2 FY27 board meeting and first FY27 interim dividend on a debt-free balance sheet printing 51% operating margins.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 October 16, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 1-3 months (catalyst) + 6-9 months (full re-rate)</span>
+                <span class="meta-pill return">📈 Expected: 15-20% (price + dividend)</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> National Aluminium Company Ltd (NSE: NATIONALUM)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Equity Cyclical Re-Rating + Dividend Capture</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> The market has priced NALCO as if the aluminium super-cycle ended: the stock is 28% off its ₹445 high while LME aluminium sits near 4-year highs on Gulf supply destruction, and the company just reported the best quarter in its history (51% OPM, ₹2,003 Cr PAT) at 8.7x trailing earnings. A liquidity-driven derating — RBI's hike and the 10Y yield at 7.40% — has compressed the multiple, not the cash flows. The mid-November Q2 FY27 board meeting (which last year produced a dividend declaration on Nov 2) provides a dated catalyst that forces the market to re-price peak operating performance.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Scale in over 2-3 sessions in the ₹310-325 zone, complete the position by the November board meeting, and hold through the interim dividend record date.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹310-325 scale-in (spot: ₹318.40 as of Oct 15 close)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹385-395 (≈10.5-11x TTM P/E of ₹36.77) in 6-9 months</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">Daily close below ₹270 (-13%); escalate to full exit if LME aluminium also breaks $3,000/t</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item">
+                <div class="rationale-number">1</div>
+                <div class="rationale-content">
+                    <h4>The Rare Price-Metal Divergence</h4>
+                    <p>LME aluminium trades near 4-year highs (~$3,500-3,700/t) after US-Iran conflict damage to Gulf smelters, yet NALCO is down ~28% from its September high of ₹445 to ₹318. The entire metal complex was sold off as bond-proxy beta when RBI hiked to 5.50% and the 10Y G-Sec hit 7.40% — a liquidity-driven derating of fundamentally unchanged cash flows. That is the definition of a buyable divergence.</p>
+                </div>
+            </div>
+            <div class="rationale-item">
+                <div class="rationale-number">2</div>
+                <div class="rationale-content">
+                    <h4>Peak Margins at a Trough Multiple</h4>
+                    <p>Q1 FY27 (June quarter): revenue ₹5,302 Cr, OPM 51%, PAT ₹2,003 Cr — the best quarter in the company's history. TTM EPS is ₹36.77 and growing ~18%, yet the stock trades at just 8.7x P/E versus its ~11-12x 5-year average. P/B of 2.7x with 29.4% ROE and 39.6% ROCE is cheap for India's lowest-cost integrated bauxite-alumina-aluminium producer.</p>
+                </div>
+            </div>
+            <div class="rationale-item">
+                <div class="rationale-number">3</div>
+                <div class="rationale-content">
+                    <h4>Hard Catalyst: Q2 Print + First FY27 Interim, Mid-November</h4>
+                    <p>Last year's cycle: Q2 results with a dividend announcement landed November 2. FY26 delivered ₹11.50/share (230% of face value) — a record ₹2,112 Cr payout. On entry near ₹318, the trailing yield is 3.6%. The November board meeting gives investors a dated, board-approved income event inside a 1-3 month window, not a hope-based thesis.</p>
+                </div>
+            </div>
+            <div class="rationale-item">
+                <div class="rationale-number">4</div>
+                <div class="rationale-content">
+                    <h4>Debt-Free Fortress in a Tightening Cycle</h4>
+                    <p>NALCO carries virtually zero debt (interest cost ₹101 Cr vs PBT ₹9,023 Cr TTM) with ~₹4,900 Cr cash and investments on the Mar-2026 balance sheet. In an RBI calibrated-tightening regime that is hammering leveraged real estate and NBFC valuations, the debt-free metal PSU is structurally immune to the rate shock — its 39.6% ROCE has no interest expense drag.</p>
+                </div>
+            </div>
+            <div class="rationale-item">
+                <div class="rationale-number">5</div>
+                <div class="rationale-content">
+                    <h4>Sentiment Trough Framing</h4>
+                    <p>Nifty just made its 2026 low (below 22,400) amid FII capitulation and a rupee defense by the RBI (CRR to 99% daily maintenance, OMO sales, forward purchase restrictions). Historically, FII-outflow extremes in PSU cyclicals with intact earnings mark multi-month entry zones. The September-quarter macro damage is in the price; the earnings are not yet delivered.</p>
+                </div>
+            </div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>LME aluminium near 4-year highs (~$3,500-3,700/t) on Gulf smelter damage from the US-Iran conflict — a supply-driven, not demand-hope, price move</li>
+                <li>Alumina co-product prices elevated; NALCO is the world's lowest-cost integrated bauxite-alumina producer, giving maximum margin capture per LME dollar</li>
+                <li>RBI at repo 5.50%, stance calibrated tightening; 10Y G-Sec at 7.40% (3.5-year high) has force-de-rated all dividend stocks — including ones with intact fundamentals</li>
+                <li>FII outflows + Nifty 2026 low under 22,400: broad sentiment capitulation, DII absorption ongoing</li>
+                <li>RBI defending the rupee (99% CRR maintenance, OMO sales, 20% CRR on FX forwards) — a weak INR directly lifts USD-linked LME realizations for exporters</li>
+                <li>India aluminium end-demand (power T&D, EVs, solar frames) growing 8-10% p.a. irrespective of global cycle</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>TTM EPS ₹36.77; P/E 8.7x vs 11-12x 5-year average; P/B 2.7x against ROE 29.4% / ROCE 39.6%</li>
+                <li>Q1 FY27 was the best-ever quarter: revenue ₹5,302 Cr, OPM 51%, PAT ₹2,003 Cr</li>
+                <li>FY26 total dividend ₹11.50/share (230% of ₹5 FV) = record ₹2,112 Cr outgo; GoI (51.28% holder) received ₹1,083 Cr — payout intent is GoI-aligned</li>
+                <li>Debt-free: interest cost ₹101 Cr TTM vs PBT ₹9,023 Cr; ~₹4,900 Cr cash + investments (Mar 2026)</li>
+                <li>Angul Phase-2 expansion (CWIP ₹6,395 Cr) ramps FY28 — embedded, self-funded capacity growth</li>
+                <li>Last year's Q2 results + dividend fell on Nov 2 board meeting — the FY27 equivalent is the dated catalyst</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Gulf conflict persists → LME retests $3,700+/t → NALCO re-rates toward 10-11x P/E on spot margins</li>
+                <li>Nifty correction ends (FII flows turn) → high-beta metal catch-up rally on the most under-owned PSU cyclical</li>
+                <li>Q2 beat + FY27 interim at or above 230% payout → dividend-announcement-season flows into high-yield PSUs</li>
+                <li>Alumina merchant price spike (any Western refinery outage echoes Alunorte 2023-style tightening)</li>
+                <li>FY27 Union Budget capex tilt (power/railways) re-rates India aluminium demand narrative</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>US-Iran ceasefire + Gulf smelter restart → LME rolls back 12-15% → margins and the thesis compress together</li>
+                <li>China supply response: Yunnan smelter restarts or aluminium export-policy shifts flooding ex-China market</li>
+                <li>Input-side squeeze: Utkal-D&E captive coal linkage dilution or bauxite auction competition raising costs 200-300bps of OPM</li>
+                <li>Q2 volume/margin miss vs the 51% OPM peak (smelter pot-line or refinery maintenance slippage)</li>
+                <li>Capex cash burn: Angul Phase-2 spend may trim the FY27 payout ratio below FY26's ~36-40% — disappointing income hunters</li>
+                <li>Persistent RBI tightening keeps the 10Y above 7.4% → dividend PSUs stay de-rated as bond proxies for longer</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li>Scale-in tranches: 40% at ₹310-325 (current zone ₹318), 30% at ₹290-300, final 30% only on a ₹280-285 panic flush — never chase above ₹330</li>
+                <li>Hard stop: daily close below ₹270 (-13% from avg entry ≈ ₹310) — an LME-driven close below $3,000/t alongside it escalates to full exit</li>
+                <li>Position cap: max 10% of the equity allocation — this is a single-commodity PSU cyclical, not a core holding</li>
+                <li>Event discipline: hold at least through the mid-November Q2 board meeting and interim record date before judging the trade</li>
+                <li>Profit rule: exit on ₹385-395 (≈10.5-11x P/E) or if price runs >₹390 while LME fails to hold $3,300/t — do not pay for momentum the metal doesn't support</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-10 lakh (100 shares ≈ ₹32,000 at entry)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 10% of equity allocation — commodity PSU cyclical, not a core position</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Any Zerodha / Angel One / Groww equity account (NSE/BSE cash segment)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low-Moderate — weekly LME check, then daily through the Nov results window</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-9 months (first checkpoint: mid-November Q2 results + interim dividend)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Dividends taxed at your income slab (TDS 10% if aggregate dividends > ₹5,000/yr). Sale within 12 months: STCG 20%. Beyond 12 months: LTCG 12.5% above ₹1.25 lakh exemption. A 6-9 month exit means STCG — factor 20% on gains.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>Weekly: LME aluminium 3-month price (check ~$3,000/t stop-hedge trigger and $3,700/t breakout)</li>
+                <li>Week of Nov 2±7 days: NALCO board meeting announcement for Q2 FY27 results and first interim dividend — BSE corporate filings</li>
+                <li>Q2 print vs Q1 benchmark: revenue ≥ ₹4,800 Cr, OPM ≥ 45%, dividend declaration</li>
+                <li>NALCO price action vs trigger levels: ₹318 entry / ₹270 stop / ₹390 partial-profit zone</li>
+                <li>Ex-date and record date capture: shares must sit in demat before the record date for the interim</li>
+                <li>Macro check: 10Y G-Sec yield and FII flow data — a sustained yield break above 7.5% or fresh outflow leg is a size-down signal</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>On the next red or flat session, place an equity order for tranche 1 (40% of intended size) at the ₹310-318 zone on your broker app (NSE: NATIONALUM). Set a ₹270 close-basis stop alert and a calendar alert for the Q2 board meeting announcement (expected week of Oct 27) and results (expected week of Nov 2). Do not deploy tranches 2-3 unless ₹290-300 / ₹280-285 print.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on October 16, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
