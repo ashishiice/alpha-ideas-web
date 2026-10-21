@@ -976,7 +976,9 @@
             }
             
             empty.style.display = 'none';
-            list.innerHTML = ideas.map(idea => `
+            // Newest first, regardless of insertion order in the source array
+            const sorted = [...ideas].sort((a, b) => new Date(b.date) - new Date(a.date));
+            list.innerHTML = sorted.map(idea => `
                 <div class="idea-card" onclick="window.location.href='${idea.url}'">
                     <a href="${idea.url}">
                         <div class="idea-header">
