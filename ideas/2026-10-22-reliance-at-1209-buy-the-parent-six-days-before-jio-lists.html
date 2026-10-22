@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reliance at ₹1,209: Buy the Parent Six Days Before Jio Lists | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Reliance at ₹1,209: Buy the Parent Six Days Before Jio Lists</h1>
+            <p>Jio's ₹30,213-crore IPO was over 3x subscribed on day one and lists on Oct 28 at a 22% grey-market premium — yet RIL, which owns 66.43% of it, sits 25% below its 52-week high and 4.9% above its low.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 October 22, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 3-6 months</span>
+                <span class="meta-pill return">📈 Expected: 12-17%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Reliance Industries Ltd (NSE: RELIANCE / BSE: 500325) — core; Jio Platforms IPO application — satellite</p>
+            <p><strong>Exchange:</strong> NSE / BSE (delivery) + UPI IPO application</p>
+            <p><strong>Strategy Type:</strong> Event-Driven Value Re-rating</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> RIL owns 66.43% of Jio Platforms, and on Oct 28 that stake gets a public price for the first time. At the ₹1,119 upper band Jio is worth about ₹10.3 lakh crore; RIL's post-issue 64.5% is worth ₹6.64 lakh crore — 40.6% of RIL's own ₹16.35 lakh crore market cap. The market is therefore valuing everything else RIL owns, which produced 70% of group EBITDA last quarter, at ₹9.72 lakh crore. That is a holding-company discount applied to a company that is about to stop being opaque.<table class="execution-table" style="margin-top:1.25rem;"><tr><th>Valuation bridge</th><th>₹ lakh crore</th><th>Basis</th></tr><tr><td>Jio Platforms, post-money</td><td>10.30</td><td>₹1,119 × ~920.5 cr shares</td></tr><tr><td>RIL's stake (64.5%)</td><td>6.64</td><td>593.5 cr shares × ₹1,119</td></tr><tr><td>RIL market cap at ₹1,209</td><td>16.35</td><td>1,353 cr shares</td></tr><tr><td><strong>Jio stake as % of RIL</strong></td><td><strong>40.6%</strong></td><td>one asset, two-fifths of the price</td></tr><tr><td>Implied value of everything else</td><td>9.72</td><td>O2C + Retail + E&amp;P + New Energy + JFSL</td></tr><tr><td>RIL mcap / annualised Q1 EBITDA</td><td>7.6x</td><td>₹16.35 / ₹2.16 lakh crore</td></tr></table>
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Buy the ₹1,195-1,215 band over two sessions; the stock closed at ₹1,209 on Oct 21 after gaining 3.35% in the week to Oct 17. Do not chase above ₹1,240, the Oct 21 intraday high. Exit in two tranches: 50% at ₹1,350 once the listing week settles, 50% at ₹1,420 or on the Q2 print, whichever comes first. The stop is on a closing basis.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹1,195-1,215</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹1,350 / ₹1,420</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹1,145 close / ₹1,120 hard</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <div><strong>The mark becomes public in six days.</strong> Jio prices at ₹1,119, valuing it at roughly ₹10.3 lakh crore post-issue. RIL owns 66.43% of the pre-IPO equity; after the 27-crore-share fresh issue it holds about 64.5%, worth ₹6.64 lakh crore. RIL's entire market capitalisation at ₹1,209 is ₹16.35 lakh crore — a single subsidiary is 41% of the price, and nobody has had to mark it publicly until now.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <div><strong>Day-one demand was institutional, not retail froth.</strong> The ₹30,213-crore issue — India's largest ever — was fully subscribed in under two hours and over 3x by the close of day one, with 13.56 lakh applications. The anchor book drew ₹2.5 lakh crore of bids for ₹8,110 crore of shares, 30 times covered, with BlackRock, Fidelity, GIC and LIC on the register at the top of the band.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <div><strong>The residual is being priced at 7.6x EBITDA.</strong> Back out the Jio stake and the market is paying ₹9.72 lakh crore for O2C, Reliance Retail, upstream E&P, new energy and the JFSL stake — everything that produced 70% of group EBITDA last quarter. RIL's ₹16.35 lakh crore market cap is 7.6 times annualised Q1 FY27 EBITDA of ₹54,067 crore. That is a conglomerate discount, not a conglomerate premium.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <div><strong>You are buying after the de-rating, not before it.</strong> RIL printed a 52-week low of ₹1,152.20 on Oct 13 — five days before the price band was announced — and closed at ₹1,209 on Oct 21, still 25% below its ₹1,611.80 high and only 4.9% above that low. The stock is down roughly 26% this calendar year. The fear is already in the price; the catalyst is not.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">5</div>
+                    <div><strong>A second catalyst is queued behind the first.</strong> RIL's Q2 FY27 results are still undated — the trading window closed on Sep 30 and last year's September-quarter print came on Oct 17 — so the numbers land inside the same six-week window. Nuvama models EBITDA of ₹53,700 crore, up 17% year-on-year, led by O2C. Centrum separately values Jio's equity at ₹11.5 lakh crore, 12% above the IPO mark.</div>
+                </div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                                <li>Nifty 50 closed at 22,811.35 on Oct 21 — 13.5% below its 52-week high of 26,373.20 and just 2.8% above its 52-week low of 22,179.90. Index beta has been a losing trade all year; single-name catalysts are where the money is.</li>
+                <li>The RBI hiked the repo to 5.50% on Oct 7, the first increase since February 2023, and moved the stance to calibrated tightening. The Oct 21 minutes showed a unanimous vote driven by inflation spilling into a broad range of goods.</li>
+                <li>The 10-year G-Sec closed at 7.44% — up about 40bps in a month and 90bps year-on-year. A rising discount rate caps multiple expansion, which is precisely why the market is paying nothing for RIL's optionality today.</li>
+                <li>Brent settled at $108.82 on Oct 21. High crude cuts both ways for RIL: stronger refining cracks on O2C, but higher working-capital intensity and feedstock risk.</li>
+                <li>The rupee closed at 94.4/USD, a six-week high, on dollar inflows linked to the Jio IPO, RBI intervention and hopes of an India-US trade deal. IPO-linked inflows are a dated, mechanical support for large-cap sentiment.</li>
+                <li>Foreign capital arriving for this issue has to be deployed somewhere in Indian large caps — and the largest, most liquid proxy for the asset being sold is the seller's parent.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                                <li>All-fresh issue of 27 crore shares at ₹1,065-1,119 — no promoter or PE selling. Up to ₹27,500 crore of the proceeds will prepay or repay Reliance Jio Infocomm borrowings, directly deleveraging the telecom arm.</li>
+                <li>Calendar is tight and tradeable: bidding Oct 21-23, allotment Oct 26, refunds and demat credit Oct 27, listing on BSE and NSE on Oct 28.</li>
+                <li>Over 3x subscribed on day one with 13.56 lakh applications; the anchor book was 30 times covered at ₹2.5 lakh crore of bids against ₹8,110 crore allotted.</li>
+                <li>Post-issue register: RIL 64.5%, Meta 9.98%, Google 7.73% — a globally benchmarked shareholder base from the first trade.</li>
+                <li>RIL Q1 FY27 (June quarter): consolidated revenue ₹340,257 crore (+24.5% YoY), record recurring EBITDA ₹54,067 crore (+10.1%), PAT ₹23,196 crore (+6.1%).</li>
+                <li>Q2 FY27 results are undated as of Oct 21; Nuvama expects EBITDA of ₹53,700 crore (+17% YoY) led by O2C margins and throughput.</li>
+                <li>Centrum expects Jio revenue, EBITDA and PAT to compound at 14%, 16% and 16% through FY29, and models a ~12% tariff hike within three to four months.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                                                <li>Jio lists at the ₹1,365 grey-market-implied price (+22%): RIL's stake marks up by roughly ₹1.3 lakh crore, about 8% of market cap, before any holding-company re-rating.</li>
+                        <li>The holdco discount compresses. Religare's ₹1,696 target (+40%) is built exactly on this: an independent mark for the piece the market refuses to value inside a conglomerate.</li>
+                        <li>An O2C beat on Q2 — Nuvama's ₹53,700 crore EBITDA is a modest bar if September refining cracks held near August levels.</li>
+                        <li>A ~12% tariff hike within three to four months lifts Jio ARPU and group EBITDA with no incremental capex.</li>
+                        <li>Index mechanics: a listed Jio becomes eligible for MSCI and FTSE flows, and eventually the Nifty — global passive money forced to own Indian telecom, with RIL still the controlling shareholder.</li>
+                        <li>A US trade deal would strengthen the rupee, cool imported inflation and pull FII money back into large caps — RIL is the highest-beta large cap to that flow.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                                                <li>Sell-the-news and holdco de-rating. Once Jio trades separately, an investor can own the growth asset directly; RIL can be re-priced as a remainder conglomerate. This is the single biggest risk to the trade and it is structural, not temporary.</li>
+                        <li>Jio lists below ₹1,119. The grey-market premium is unofficial, unregulated and has already ranged from ₹85 to ₹275 during the bidding period. A weak debut marks down the stake and hits sentiment at the same moment.</li>
+                        <li>O2C squeeze. Brent at $109 raises working capital and feedstock cost, and fuel-export uncertainty has been an overhang on RIL for most of this year.</li>
+                        <li>Retail slowdown. Discretionary weakness has been cited as a full-year drag; a poor festive quarter would compress the sum-of-the-parts.</li>
+                        <li>Rate headwind. With the 10-year at 7.44% and the RBI tightening, multiple expansion for a leveraged conglomerate is hard work.</li>
+                        <li>Mechanical supply. Funds buying Jio in the listing week may fund it by trimming RIL — price-insensitive selling exactly when the trade needs support.</li>
+                        <li>Single-name, single-date risk. This is one company and one binary event, not a diversified position.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                                <li>Hard stop at ₹1,145 on a daily close, beneath the Oct 13 52-week low of ₹1,152.20, with ₹1,120 as the intraday disaster stop. Maximum realised loss on the position is about 5.3%.</li>
+                <li>Cap the position at 20% of equity allocation — ₹1-2 lakh of a ₹10 lakh book. Drop to 10% if you also take the IPO leg.</li>
+                <li>Size before Oct 28, never after. The catalyst is dated and binary; adding into the print is gambling dressed as conviction.</li>
+                <li>If Jio's grey-market premium falls below ₹80 (roughly 7%) by the Oct 23 close, halve the planned RIL position. The whole premise is a strong mark.</li>
+                <li>Ring-fence any IPO application as a separate ₹2 lakh. Never fund it by selling the RIL position — that converts a hedged idea into a doubled bet.</li>
+                <li>Pre-commit the exit: 50% at ₹1,350 regardless of how good the story sounds on listing day. Event trades that quietly become permanent holdings are how drawdowns are born.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-3 lakh (₹1-2 lakh core position, ₹2 lakh optional IPO leg)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 20% of equity allocation; 10% if also applying for the IPO</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww (delivery); UPI mandate for the IPO</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Active Oct 22 - Nov 3, then monthly</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>3-6 months (core); 8 days (IPO satellite)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Delivery held over 12 months: LTCG at 12.5% above the ₹1.25 lakh annual exemption. Held under 12 months, including any listing-day IPO exit: STCG at 20%. Rates per the post-July-2024 regime — confirm with your CA.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                                <li><strong>Oct 22-23, 5:00 PM:</strong> Jio subscription by category. Retail above 3x and QIB above 10x by the close on Oct 23 confirms the mark is real.</li>
+                <li><strong>Oct 26-27:</strong> allotment and unblock. Confirm the final issue price — ₹1,119 versus a cut-off at ₹1,065 moves the Jio mark by about 5%.</li>
+                <li><strong>Oct 28:</strong> the listing print. Single most important number for the RIL leg. Above ₹1,300 and the base case is on track; below ₹1,119 and the thesis is broken.</li>
+                <li><strong>Oct 28-31:</strong> RIL's own tape. A close below ₹1,152 in the listing week means the holdco de-rating is happening — exit early, don't argue.</li>
+                <li><strong>Q2 FY27 (date to be announced):</strong> EBITDA against the ₹53,700 crore consensus, plus O2C EBIT margin, Retail revenue growth and Jio ARPU.</li>
+                <li><strong>Standing triggers:</strong> Brent above $115 or 10-year above 7.60% — trim 25%. An announced Jio tariff hike — hold, do not chase.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Today: place a delivery limit buy on RELIANCE at ₹1,209 or better, sized at no more than 20% of your equity allocation, and set a GTT stop at ₹1,145. This week: if you want the IPO leg, apply for Jio Platforms at cut-off ₹1,119 for ₹2 lakh per PAN before 5:00 PM on Oct 23 and approve the UPI mandate by 7:00 PM — ₹2 lakh keeps you in the retail category, where allotment odds are best. Diarise Oct 28 (listing) and the Q2 result date. Do not add after the listing.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on October 22, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
