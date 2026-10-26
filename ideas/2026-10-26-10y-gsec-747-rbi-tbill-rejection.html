@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 10-Year at 7.47%: The RBI Rejected ₹23,000 Crore of T-Bill Bids — It Won't Deliver the 100bp the Market Is Paying For | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>The 10-Year at 7.47%: The RBI Rejected ₹23,000 Crore of T-Bill Bids — It Won't Deliver the 100bp the Market Is Paying For</h1>
+            <p>India's 10-year sits at 7.4768% — a three-year high and 198bp over repo — because the curve prices more than 100bp of further hikes. But on 21 October the RBI rejected every one of ₹23,000 crore of T-bill bids at 1.6-2.4x cover, including ₹15,425 crore of retail money, rather than let the 364-day clear near 6.60%. A central bank capping the front end is not a central bank about to deliver 100bp. Buy the benchmark at 7.45-7.50%, ladder the second half at 7.65%, target 7.05-7.20% — and let the 7.47% coupon pay you while you wait.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 October 26, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 9-12 months</span>
+                <span class="meta-pill return">📈 Expected: 8.5-11% total</span>
+                <span class="meta-pill risk">⚠️ Moderate — 6.8 duration, ~4% max MTM, 7.47% coupon cushion</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> 6.94% GS 2036 — on-the-run 10-year GoI benchmark (ISIN as listed on RBI Retail Direct; search '6.94% GS 2036')</p>
+            <p><strong>Exchange:</strong> RBI Retail Direct (primary auction + NDS-OM secondary); G-sec ETF on NSE as a one-click proxy</p>
+            <p><strong>Strategy Type:</strong> Sovereign duration — term-premium compression + high-carry accrual</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> The market is charging you 198bp over repo for a hike cycle the RBI has already shown it does not intend to deliver at that size. On 21 October the RBI refused ₹23,000 crore of T-bill supply that was 1.6-2.4x covered rather than let the 364-day bill clear at 6.60% — 99bp over repo, a four-year high — while simultaneously running FX reserves, a 20% forward-dollar cash margin, an OMC dollar window and a 99% daily CRR maintenance floor instead of rate hikes. That is the 2013 playbook, and in that playbook the 10-year peaks before the last hike. You collect 7.4768% — 72-147bp over the best 1-year bank deposit — with a 3.6-point discount to par that converts part of the return into 12.5%-taxed capital gain, and you own the most liquid sovereign paper in the country in case the oil shock resolves before the rate cycle does.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Two tranches, both price-defined, no discretion. <strong>Tranche 1 — 50% now</strong> at a YTM of 7.45% or better (clean price ≤ ₹96.60 per ₹100 face; the benchmark closed at 7.4768% / ₹96.40 on 23 October and 7.48% on 26 October). <strong>Tranche 2 — 50%</strong> as a resting order at 7.65% or better (≤ ₹95.30), which fills only if Brent pushes through $125, the FOMC is hawkish on 28 October, or the 2-4 December MPC delivers 50bp. Do not chase tranche 2 below 7.65%: if it never fills you hold 50% at 7.47% and keep the rest in a 364-day T-bill at 6.49% or a 1-year FD at 6.50-6.75%. Exit 50% at 7.20% (₹98.23) and the balance at 7.05% (₹99.25), or at the 12-month mark, whichever comes first. The stop is a five-session close above 7.85% (₹93.99) — a thesis-invalidation trigger, not a loss limit, because 7.85% means the RBI has chosen to deliver the cycle the market is pricing.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">YTM ≥ 7.45% (₹96.60)<br>T2 at YTM ≥ 7.65% (₹95.27)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">YTM 7.20% (₹98.23)<br>then 7.05% (₹99.25)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">5-session close &gt; 7.85%<br>(₹93.99) → exit</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                
+                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <p><strong>The RBI's own auction tape is the tell, and almost nobody read it.</strong> On 21 October the Reserve Bank walked away from the entire ₹23,000 crore T-bill programme rather than accept the market's price: 91-day bids ₹15,366.60 crore against ₹8,000 crore notified (1.9x), 182-day ₹18,925.50 crore against ₹8,000 crore (2.4x), 364-day ₹11,352.50 crore against ₹7,000 crore (1.6x) — every competitive bid rejected, and every non-competitive bid rejected too, including ₹12,028.76 crore of 91-day retail money (total retail ₹15,425 crore). The prior week's cut-offs were 5.73% / 6.29% / 6.49%; the Reuters poll had forecast 5.85% / 6.42% / 6.60%. The RBI refused to pay it. That 364-day 6.49% was 99bp over a 5.50% repo — a four-year high — after the three cut-offs had already jumped 64bp / 83bp / 69bp in the five weeks to 14 October. A sovereign that rations its own short-term paper at 1.6-2.4x cover is telling you something about where it thinks short rates should be.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <p><strong>The 198bp term premium is being fought with quantity tools, not the repo.</strong> Look at what the RBI has actually deployed since the 7 October hike: a 20% cash reserve on forward dollar purchases above $2 million (FX Risk Reserve), a special dollar window for the public-sector oil marketing companies, the daily minimum CRR maintenance raised to 99% from 90% (a liquidity drain without touching the CRR rate), a ₹25,000 crore OMO <em>sale</em> on 13 October, and simultaneously a 4-day Variable Rate Repo on 26 October. That is the 2013 taper-tantrum playbook: defend the currency with reserves, liquidity plumbing and FX curbs so you do not have to defend it with the policy rate. In that playbook the 10-year's peak arrives <em>before</em> the last hike, because the market prices the rate path while the RBI is still managing the currency.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <p><strong>The market's 100bp fails an arithmetic test.</strong> Traders now price slightly more than 100bp of hikes over 12 months, with some positioning for 50bp on 2-4 December. Take repo from 5.50% to 6.50% with September CPI at 5.54%, food inflation at 7.74%, Brent at $115 and the RBI's own FY27 GDP forecast of 7.1%. That is a 100bp tightening into a 77%-YoY oil shock — a policy error, not a base case. Each 25bp of over-priced tightening is worth roughly ₹1.70 per ₹100 face on this bond (25bp × modified duration 6.81). Fifty basis points of pricing error is ₹3.40, or 3.5% — more than half of the entire 12-month expected return.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <p><strong>You are paid 72-147bp over the best bank deposit to wait, on the sovereign.</strong> The RBI's own published term-deposit range for &gt;1 year is 6.00-6.75%. The 10-year pays 7.4768% with zero credit risk and ₹34,000 crore of weekly secondary liquidity behind it (the 16 October re-issue alone cleared ₹34,000 crore at a cut-off of ₹96.91, or 7.36-7.40%). And the tax shape helps: bought at ₹96.40 against a ₹100 redemption, ₹3.60 of the return is capital gain (12.5% LTCG after 12 months) rather than slab-taxed interest. At a 30% slab, holding to a 7.20% exit nets ~6.71% versus ~4.72% on a 6.75% FD — a 198bp after-tax edge for taking the view.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">5</div>
+                    <p><strong>Oil is the switch, and oil spikes mean-revert.</strong> Brent is $115.27, up 77.6% year-on-year, inside a 52-week range of $58.72-126.10. India imports roughly 90% of its crude; at ~5.0 million barrels a day, every $10/bbl is about $18 billion a year, or ~0.45% of GDP on the external account. That is why the rupee is at ₹95.15 and why the 10-year is at 7.47%. Every geopolitical supply premium since 2022 has bled out within three to five months once the headline risk stopped escalating. A $20 retreat takes CPI toward 4.8-5.0%, keeps the RBI at one 25bp hike or fewer, and puts the 10-year at 7.05-7.15% without a single rate cut.</p>
+                </div>
+
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li><strong>Policy:</strong> repo 5.50% (hiked 25bp on 7 October — the first hike since February 2023), SDF 5.25%, MSF and Bank Rate 5.75%, stance "calibrated tightening". Next MPC: <strong>2-4 December 2026</strong>. October minutes (published 21 October): rate cuts off the table, members flagging inflation.</li>
+                <li><strong>Inflation:</strong> September CPI 5.54% (August 4.83%), food 7.74%. That is above the RBI's own FY27 path of 5.2% and leaves the 10-year at a 1.94% real yield — thin, but positive, and far better than the negative real yields of 2020-22.</li>
+                <li><strong>Oil:</strong> Brent $115.27 on 26 October (-1.24% on the day), +77.6% YoY, 52-week range $58.72-126.10. India imports ~90% of consumption. This is the single variable that decides the trade.</li>
+                <li><strong>Currency:</strong> USD/INR 95.1549 (FBIL, 1pm 26 October) after closing 95.19-95.22, a record low and the third straight down session. The RBI is defending with reserves, a 20% cash margin on forwards above $2m, an OMC dollar window and a 99% daily CRR maintenance floor.</li>
+                <li><strong>Liquidity:</strong> M3 growth is running ~16% YoY — nominal money is not scarce. The squeeze is interbank, engineered through the CRR maintenance floor and OMO sales, and partly offset by VRR injections.</li>
+                <li><strong>The curve (23 October close):</strong> 91D 5.73% / 182D 6.29% / 364D 6.49% / 2Y 6.75% / 5Y 7.35% / 10Y 7.47% / 15Y 7.60% / 30Y 7.87%. The entire hike premium is crammed into the 3-month-to-2-year bucket; the 5s10s is only 12bp.</li>
+                <li><strong>Equity:</strong> Nifty 22,753.20 (+0.68% on 26 October after a four-day slide), Sensex 73,606.75, at ~15.5-16.8x one-year forward. Equity is discounting the same oil shock — this is not a lone signal.</li>
+                <li><strong>Global:</strong> FOMC decision 28 October. The Fed hiked 25bp in September; a pause is the base case and would take global yields down with it.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li><strong>6.94% GS 2036</strong> is the on-the-run 10-year benchmark: re-issued for ₹34,000 crore on 16 October at a cut-off of ₹96.91 (7.36-7.40%). It is the deepest, most liquid G-sec in India — which matters more than 12bp of carry, because you can get in and out in size on NDS-OM without moving the price.</li>
+                <li>At ₹96.40 the bond carries a <strong>7.4768% YTM</strong>, a 7.20% current yield on price, and ₹3.60 of accretion to par by 2036.</li>
+                <li><strong>Modified duration 6.81:</strong> every 10bp of yield move is 0.68% of price. That is the cost of the view, and it is the number to size against.</li>
+                <li>The <strong>5s10s is only 12bp</strong> (5Y 7.35% vs 10Y 7.47%). Be clear-eyed: the 10-year is not paying you for the extra duration via roll-down. You own it for term-premium compression and liquidity, not for curve-riding. If the 5s10s steepens past 40bp, the 5-year becomes the better expression of the same view.</li>
+                <li><strong>10Y SDL (8.03% Karnataka 2036)</strong> pays 56bp over the G-sec. That is the income alternative if you do not want duration; the state paper carries quasi-sovereign risk and thinner secondary liquidity.</li>
+                <li><strong>364-day T-bill at 6.49%</strong> (99bp over repo, a four-year high) is the funding leg for the barbell — and the RBI is now rationing that supply, which caps how much higher the front end can go.</li>
+                <li><strong>10Y real yield 1.94%</strong> against September CPI of 5.54%. For most of 2015-2025 the 10-year traded 50-150bp over repo; it is now at 198bp.</li>
+            </ul>
+        </div>
+        
+
+        <!-- Curve Arithmetic -->
+        <div class="section">
+            <h2>📐 The Curve You Are Actually Buying</h2>
+            <p>Sovereign curve, 23 October 2026 close (FBIL / CCIL). Two things jump out: the entire hike premium is in the 3-month-to-2-year bucket, and the 5s10s is essentially flat — so the 10-year is a term-premium trade, not a roll-down trade.</p>
+            <table class="execution-table">
+                <tr><th>Tenor</th><th>Security</th><th>Yield</th><th>Spread vs repo</th><th>Read</th></tr>
+                <tr><td>91-day</td><td>91 DTB (14 Jan 2027)</td><td>5.73%</td><td>+23bp</td><td>No hike priced before January</td></tr>
+                <tr><td>182-day</td><td>182 DTB (15 Apr 2027)</td><td>6.29%</td><td>+79bp</td><td>Hikes priced from Q4 FY27</td></tr>
+                <tr><td>364-day</td><td>364 DTB (14 Oct 2027)</td><td>6.49%</td><td>+99bp (4-yr high)</td><td>RBI rejected all bids here on 21 Oct</td></tr>
+                <tr><td>2-year</td><td>7.06% GS 2028</td><td>6.75%</td><td>+125bp</td><td>Peak-hike pricing lives here</td></tr>
+                <tr><td>5-year</td><td>6.53% GS 2031</td><td>7.35%</td><td>+185bp</td><td>Better carry per unit of duration</td></tr>
+                <tr><td><strong>10-year</strong></td><td><strong>6.94% GS 2036</strong></td><td><strong>7.47%</strong></td><td><strong>+198bp</strong></td><td><strong>This trade — liquidity + term premium</strong></td></tr>
+                <tr><td>15-year</td><td>7.06% GS 2041</td><td>7.60%</td><td>+210bp</td><td>Only 13bp more for 5 extra years</td></tr>
+                <tr><td>30-year</td><td>7.24% GS 2055</td><td>7.87%</td><td>+237bp</td><td>Worst risk-adjusted point on the curve</td></tr>
+                <tr><td>10Y SDL</td><td>8.03% Karnataka 2036</td><td>8.03%</td><td>+253bp</td><td>+56bp over the G-sec; income, not duration</td></tr>
+            </table>
+            <div class="highlight-box">
+                <strong>The uncomfortable detail:</strong> the 10-year yields just 12bp more than the 5-year while carrying 2.6 extra years of duration. If your only objective were carry per unit of risk, you would own the 5-year. You own the 10-year because the <em>term premium</em> is the thing that compresses when the RBI stops fighting the currency — and because it is the only G-sec where ₹1-10 lakh transacts instantly on NDS-OM in both directions.
+            </div>
+        </div>
+
+        <!-- Return Math -->
+        <div class="section">
+            <h2>🧮 Return Math — Nothing Hand-Waved</h2>
+            <p>Reference entry ₹96.40 per ₹100 face (7.4768% YTM, ~9.7 years residual, semi-annual coupons, modified duration 6.81). Returns are total: price change plus 7.47% accrual over 12 months. Probability weights are my own.</p>
+            <table class="execution-table">
+                <tr><th>Scenario</th><th>Exit YTM</th><th>Exit price</th><th>Price P&amp;L</th><th>Carry</th><th>Total 12M</th><th>Prob.</th></tr>
+                <tr><td><strong>Bull</strong> — Brent &lt;$95, RBI pauses, OMO purchases return</td><td>6.95%</td><td>₹99.93</td><td>+3.67%</td><td>+7.47%</td><td><strong>+11.1%</strong></td><td>25%</td></tr>
+                <tr><td><strong>Base</strong> — one 25bp hike on 4 Dec, then pause</td><td>7.20%</td><td>₹98.23</td><td>+1.91%</td><td>+7.47%</td><td><strong>+9.4%</strong></td><td>50%</td></tr>
+                <tr><td><strong>Bear</strong> — 50bp in December, Brent $130</td><td>7.95%</td><td>₹93.35</td><td>-3.16%</td><td>+7.47%</td><td><strong>+4.3%</strong></td><td>25%</td></tr>
+                <tr><td><strong>Probability-weighted expectation</strong></td><td>—</td><td>—</td><td>—</td><td>—</td><td><strong>+8.6%</strong></td><td>100%</td></tr>
+            </table>
+            <p style="margin-top:1rem"><strong>With the full 50/50 ladder</strong> (50% at ₹96.40, 50% at ₹95.27 → average ₹95.83, 7.56% YTM): Bull +11.8%, Base +10.1%, Bear +5.0%. That is the point of laddering — the bear case still clears your 6% hurdle.</p>
+            <p><strong>Downside bound:</strong> a 40bp back-up to 7.85% is -2.50% of price (₹93.99), which six months of carry (+3.7%) fully covers. A 65bp back-up to 8.10% (₹92.41) is -4.13% of price, or roughly flat over six months. The realistic maximum drawdown on this position is 4-5% of the sleeve, against a 25-30% sleeve cap — about 1.3% of the debt portfolio. That is the whole risk budget.</p>
+            <p><strong>After-tax, 30% slab, 12 months:</strong> a 6.75% bank FD nets ~4.72%. This bond, exited at 7.20%, nets ~6.71% (₹6.94 coupon × 70% + ₹1.83 price gain × 87.5%, divided by a ₹96.40 outlay) — a 198bp edge for holding a sovereign instead of a deposit.</p>
+        </div>
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li><strong>Brent $115 → $90-95:</strong> CPI drifts to 4.8-5.0%, the December move shrinks to 25bp or nothing, the 10-year goes to 7.05-7.15% — +2.3% to +2.9% of price on top of 7.47% carry.</li>
+                        <li><strong>Rupee stabilises below ₹95:</strong> the FX Risk Reserve and forward-market curbs get unwound, interbank liquidity returns, OMO sales give way to OMO purchases and the term premium compresses 30-40bp on flow alone.</li>
+                        <li><strong>FOMC pauses on 28 October</strong> and the September Fed hike proves terminal: India's 10-year typically follows US 10-year moves with a 0.5-0.7 beta.</li>
+                        <li><strong>A dovish MPC surprise on 2-4 December</strong> — 25bp and a shift out of "calibrated tightening" — is worth 30-50bp on the 10-year in a session.</li>
+                        <li><strong>Supply relief:</strong> FY27 gross borrowing is already budgeted. If the RBI restores OMO purchases in H2 FY27, it absorbs the ₹34,000 crore/week of 10-year supply that is currently sitting on the market.</li>
+                        <li><strong>Tax shape:</strong> 12.5% LTCG on the ₹3.60 discount-to-par versus 30% slab on FD interest = ~198bp of after-tax edge at a 30% slab.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li><strong>Brent to $130+</strong> (the 52-week high is already $126.10): CPI to 6.2-6.5%, a 50bp December hike plus 25bp in February, 10-year to 7.95-8.10% = -3.2% to -4.1% of price.</li>
+                        <li><strong>Rupee through ₹97:</strong> forces a harder liquidity drain and possibly a repo response; short rates spike, the curve steepens and the 10-year is dragged to 7.75-7.90% even without a hike.</li>
+                        <li><strong>Unabsorbed supply:</strong> ₹34,000 crore of 10-year paper every week with no OMO bid can push the term premium to 7.9-8.0% on technicals alone.</li>
+                        <li><strong>Hawkish FOMC on 28 October</strong> plus another Fed hike: EM debt outflows, India 10-year +20-25bp in a week.</li>
+                        <li><strong>Fiscal slippage:</strong> oil subsidies plus higher interest cost. Watch the H2 FY27 borrowing calendar in late January — an expansion is the cleanest bear catalyst.</li>
+                        <li><strong>The rejection could mean the opposite of my read:</strong> if the RBI skipped the T-bill auctions because it intends to keep the system tight through other instruments, short rates stay elevated and the 10-year grinds up rather than down. This is why the entry is laddered and the stop is hard.</li>
+                        <li><strong>Mark-to-market is real:</strong> a 50bp back-up is -3.4% before carry. Over six months the 7.47% coupon covers it; over six weeks it does not.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li><strong>Cap the duration at 25-30% of the debt allocation</strong> (max ~15% of the total portfolio). The balance sits in 364-day T-bills at 6.49% or 1-year FDs at 6.50-6.75% — zero mark-to-market — so a 50bp back-up costs the blended book ~1%, not 3.4%.</li>
+                <li><strong>Ladder the entry 50/50 at 7.45% and 7.65%.</strong> Never take the full size in one print into a supply-heavy week or an FOMC.</li>
+                <li><strong>7.85% is the last tranche, not a new opportunity.</strong> No averaging down below it — that rule is what separates a position from a grudge.</li>
+                <li><strong>Time stop as well as price stop:</strong> if the 10-year has not touched 7.30% by 30 June 2027, sell half and reassess. A flat 12 months is a failed thesis even with a 7.5% coupon.</li>
+                <li><strong>No leverage, no borrowing, no selling equity at a loss to fund this.</strong> The edge is the coupon, not the gearing.</li>
+                <li><strong>Switch rule:</strong> if the 5s10s steepens beyond 40bp, move the position to the 5-year (6.53% GS 2031) — that is where the hike premium is actually stored.</li>
+                <li><strong>Event gate:</strong> a 50bp hike with a hawkish stance on 4 December means exit at market on 5 December, before the February MPC prices in more.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-10 lakh. Minimum ₹10,000 face on Retail Direct; ₹1 lakh buys ~1,037 units at ₹96.40. Size so the sleeve never exceeds 25-30% of your debt book.</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 25-30% of the debt allocation, max ~15% of total portfolio; barbell the rest in 364-day T-bills / 1-year FDs</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>RBI Retail Direct (+ NDS-OM secondary, activated from the same account) — free, no broker needed. ICICI Direct / HDFC Securities debt segment as an alternative. NSE-listed 8-13yr G-sec ETF if you want one-click.</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low-moderate — 10 minutes a week, plus four marked event dates</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>9-12 months (targets can hit in 6)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Coupon taxed at your slab, semi-annual payouts. Price gains on listed G-sec held &gt;12 months: LTCG at 12.5%, no indexation; under 12 months: slab. The ₹3.60 purchase discount to par is capital gain, not interest — at a 30% slab that is worth ~198bp of after-tax edge versus a 6.75% FD. Confirm the accretion treatment with your CA before you size.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li><strong>Brent daily</strong> — the one input that sets both the CPI path and the RBI's reaction function. $115 base, $125 stress trigger, $100 all-clear.</li>
+                <li><strong>USD/INR</strong> — ₹95.15 today. ₹97 breaks the thesis; ₹93 confirms it.</li>
+                <li><strong>10-year benchmark YTM</strong> (RBI homepage, updated daily): 7.45% / 7.65% entry gates, 7.20% / 7.05% exits, 7.85% stop.</li>
+                <li><strong>Wednesday T-bill cut-offs</strong> (91D / 182D / 364D). If the 364-day clears above 6.75%, the RBI has lost the front end and the 10-year follows within a fortnight.</li>
+                <li><strong>RBI OMO announcements</strong> — a switch from OMO <em>sale</em> to OMO <em>purchase</em> is the single most bullish event possible for this position.</li>
+                <li><strong>Marked dates:</strong> 28 October FOMC · 12 November October CPI · 2-4 December MPC · late January H2 FY27 borrowing calendar.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Log into RBI Retail Direct → NDS-OM secondary market → search '6.94% GS 2036' → check the live YTM. Work a bid at a clean price of ₹96.60 or lower (YTM 7.45%+), 50% of intended size. Then check the Primary Market tab: if a GoI dated auction is notified for this week (the 16 October one re-issued this exact security for ₹34,000 crore), bid non-competitive instead — you get the cut-off, no bidding skill required. Before you log off, set two alerts: tranche 2 at 7.65% / ₹95.27 and the stop at 7.85% / ₹93.99. That is the whole trade.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on October 26, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
