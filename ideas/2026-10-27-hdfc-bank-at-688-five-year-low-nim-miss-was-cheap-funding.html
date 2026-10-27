@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDFC Bank at ₹688: A Five-Year Low, a 13.25x Multiple, and a NIM 'Miss' That Was Really Cheap Funding | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>HDFC Bank at ₹688: A Five-Year Low, a 13.25x Multiple, and a NIM 'Miss' That Was Really Cheap Funding</h1>
+            <p>India's best bank trades 0.9% above a five-year low at 1.76x book while core PAT grows 12.6% and GNPA improves to 1.11% — the 8bp NIM dip that drove the selling was the cost of pre-funding three-year dollars through the RBI's concessional swap window, and the leadership overhang ends today.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 October 27, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 3-12 months (dual horizon)</span>
+                <span class="meta-pill return">📈 Expected: 28-30% in 12m</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> HDFC Bank Ltd (NSE: HDFCBANK / BSE: 500180)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Quality-at-a-Discount Re-rating / Core Banking Recovery</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> At ₹688.05 the stock sits 0.9% above its 52-week low of ₹681.90 and 32.4% below its high of ₹1,017.50, valued at 1.76x a ₹391 book and 13.25x earnings, for a franchise that grew loans 16.4% and improved GNPA to 1.11% in Q2 FY27. Three things are unwinding at once: an 8bp QoQ NIM dip that was the carrying cost of FCNR(B) dollars raised through the RBI's 3.5% concessional swap and not yet deployed; a ₹1,610 crore year-on-year collapse in treasury gains as the 10-year hit 7.47%; and the leadership overhang, which ends today as Anup Bagchi takes charge. With 70% of the book floating, further rate hikes expand NIM rather than compress it — so this position pays whether or not the bond market is right about the RBI.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Buy in two tranches. The first 50% executes now in the ₹682-695 band — that is 1.74-1.78x book, and it is buying within 2% of a five-year low rather than chasing. Reserve the second 50% for ₹640-650 (1.64-1.66x book) with a GTT order valid to 31 December 2026; if it never fills, you simply hold the first half. Exit in thirds: ₹760 (tactical, +10.5%) around the December MPC, ₹880 (base case, +27.9%) as the 12-month target on a 1.6x December-2028 adjusted book plus ₹100 of subsidiaries, and let a final slice run to ₹925-950 if NIM recovers above 3.30% with credit cost still under 0.50%.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹682-695</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹880 (12m)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹615 weekly close</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item"><div class="rationale-bullet">1</div><div>The 8bp NIM "miss" was a liquidity-timing artifact, not competitive erosion. Q2 FY27 net interest margin fell 8bp QoQ to 3.16% on total assets (3.32% on interest-earning assets) <em>explicitly because of FCNR(B) flows</em>. Indian banks mobilised <strong>$132.98 billion</strong> of FCNR(B) deposits before the RBI's 31 August 2026 deadline, and the RBI's scheme let them swap those dollars at a <strong>fixed 3.5% per annum for a three-year minimum tenor — 100bp below the prevailing market swap rate</strong>. HDFC Bank's share of that arrived as rupee liquidity in Q2 that had not yet been deployed against 16.4% loan growth. You pay the carry in the quarter you raise it and earn the spread for the following three years. The market booked the cost and ignored the asset.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">2</div><div>Core earnings grew 12.6% while headline PAT grew 4.7%. The entire gap is treasury: trading gains collapsed to <strong>₹780 crore from ₹2,390 crore</strong> year-on-year as the 10-year went to a 3.5-year high. That is a mark-to-market consequence of the rate cycle, not a credit or franchise problem. Asset quality actually <em>improved</em> — GNPA 1.11% (from 1.17% QoQ and 1.24% YoY), NNPA 0.37%, credit cost 0.44%, provisions ₹3,570 crore.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">3</div><div>Rate hikes are a NIM <em>tailwind</em> for this specific book, not a headwind. Roughly <strong>70% of HDFC Bank's loans are EBLR/floating</strong>. Repo went 5.25% to 5.50% on 7 October and the market prices another 100bp by February 2027. A floating book reprices within one reset cycle — typically one quarter — while deposit costs reprice with a two-to-three quarter lag. That mechanical gap is the source of the margin recovery, and it means this position pays you even if yesterday's "RBI won't deliver 100bp" bond call is wrong.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">4</div><div>The leadership overhang expires <strong>today</strong>. Anup Bagchi, 56 — 34 years at the ICICI Group, former Executive Director of ICICI Bank and until now MD &amp; CEO of ICICI Prudential Life, IIT-Kanpur and IIM-Bangalore — takes charge as Managing Director and CEO for a three-year term from <strong>27 October 2026</strong>. Jagdishan's term ended 26 October. Five years of dead money was substantially about governance and succession after the chairman's abrupt exit; that specific discount has nothing left to price.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">5</div><div>Valuation has decoupled from book-value compounding. Book value is <strong>₹391 per share</strong> and has compounded every year; the stock is <strong>~8% below where it traded in October 2021</strong>. That is a P/B de-rating from roughly 3.5x to <strong>1.76x</strong> against an essentially unchanged 13.6% ROE — the multiple moved, the business did not. Every major house has a target above ₹880: Jefferies ₹880, Elara ₹923, Motilal Oswal ₹925, Dolat ₹940, Prabhudas Lilladher ₹950, Anand Rathi ₹966, Citi ₹970, JPMorgan ₹990, Kotak Institutional ₹1,050, Emkay ₹1,225.</div></div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>Repo at <strong>5.50%</strong> after the 7 October 2026 hike; stance is <em>calibrated tightening</em>; the market prices a further 50bp in December 2026 and 50bp in February 2027.</li>
+<li>Brent around <strong>$114</strong> with Houthi strikes on Saudi infrastructure. September merchandise imports were <strong>$74.61 billion</strong> — a widening current account deficit forces the RBI to stay hawkish, which is precisely what re-prices a floating loan book higher.</li>
+<li>10-year G-sec at <strong>7.47%</strong>, a 3.5-year high and 198bp over repo. That level is already inside the Q2 treasury base — a retreat to 7.20% reverses the drag rather than merely stopping it.</li>
+<li>Banking-system liquidity surplus collapsed to <strong>₹50,000 crore (0.2% of NDTL)</strong> as of 23 October; the RBI is injecting funds and the average G-sec auction cost rose 20bp to 7.60% on a 1.9x bid-to-cover versus a 2.8x norm. Tight liquidity is bad for deposit costs and good for loan pricing.</li>
+<li>FPIs sold <strong>₹52,928 crore</strong> of Indian equity in October alone while DIIs bought ₹61,719 crore. The domestic bid is absorbing it — that is who you are buying alongside.</li>
+<li>US 10-year at <strong>4.99%</strong>, gold 28% and silver 56% below their highs: global real rates are the binding constraint. India's 198bp term premium has already discounted a great deal of that.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li><strong>Today, 27 October 2026:</strong> Anup Bagchi's first day as MD &amp; CEO. Succession risk goes to zero as a valuation variable.</li>
+<li>Q3 FY27 results, mid-January 2027 — the first quarter where the FCNR(B) liquidity is actually deployed into loans, and the first NIM print under new management.</li>
+<li>The RBI's concessional swap window for ECBs and OFCBs stays open until <strong>31 December 2026</strong> — more three-year fixed-cost rupee funding is available to banks that want it.</li>
+<li>Loan growth <strong>16.4% YoY</strong>, well ahead of system. Loan-to-deposit ratio guided down from 94.6% (FY26) toward 93.5% (FY27E) as deposits grow 15.3% — the funding mix is improving, not deteriorating.</li>
+<li>Trailing dividend <strong>₹13 per share (1.89%)</strong> on a 26.1% payout, comfortably covered at a 13.6% ROE. You are paid to wait.</li>
+<li>Q2 FY27: PAT ₹19,510 crore, NII ₹34,619 crore (+9.7%), cost-to-income 39.1%, net revenue ₹48,450 crore.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Re-rating to 1.6x December-2028 adjusted book plus ₹100 of subsidiaries = <strong>₹880, +27.9%</strong>; the street range runs ₹880-1,225.</li>
+<li>NIM recovery as FCNR(B) liquidity is deployed into a 16.4% growth book — each 5bp of NIM is roughly ₹1,100 crore of annual NII.</li>
+<li>Treasury gains normalise off a ₹1,610 crore/quarter depressed base if the 10-year peaks at 7.47-7.60%.</li>
+<li>ROE travelling from 13.6% toward 15% closes the P/B gap to ICICI at 2.7x — that is the whole re-rating in one line.</li>
+<li>FII ownership at 39.4% is a coiled spring: the same flow that took it from 44.1% in March reverses violently on any turn in India allocation.</li>
+<li>A tactical 3-month checkpoint at <strong>₹760 (+10.5%)</strong> on a December-MPC-driven NIM narrative.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>A further 100bp of hikes raises deposit costs faster than loan repricing if CASA growth keeps lagging — NIM stays at 3.16% and there is no re-rating.</li>
+<li>Foreign ownership of 39.4% makes HDFC Bank the exit liquidity for any India de-allocation. October's ₹52,928 crore outflow proves that flow is live, not hypothetical.</li>
+<li>Credit cost is 0.44% — benign. Over 500bp of cumulative tightening could push it to 0.70-0.80%, which is roughly a 15% PAT cut.</li>
+<li>Management churn: Kaizad Bharucha has requested early cessation. Senior exits under a new external CEO can disrupt execution for two to three quarters.</li>
+<li>Growth-at-any-price risk: if Bagchi re-risks into unsecured and SME to lift ROE, credit costs rise with a two-year lag and the market will pre-empt it.</li>
+<li>A move in the 10-year to 7.85% triggers another treasury mark-to-market round and hits book value directly.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li><strong>Two-tranche entry.</strong> 50% at ₹682-695 now; the second 50% only at ₹640-650 (1.64x book). Do not average down above ₹650 — a fill there means the thesis is already broken.</li>
+<li><strong>Hard stop on a weekly close below ₹615</strong> (1.57x book). That is −10.6% from entry and −7.7% on the blended cost of ₹666.5 if both tranches fill.</li>
+<li><strong>Position cap of 15% of the equity portfolio.</strong> This is a single-name bank with a 39.4% foreign register; the correlated risk is a flows event, not a credit event.</li>
+<li><strong>Pre-committed fundamental stop:</strong> exit if GNPA exceeds 1.35% or NIM prints below 3.00% for two consecutive quarters. Those are franchise breaks; the price stop alone will not catch them.</li>
+<li><strong>Drawdown rule satisfied:</strong> the pessimistic 1.5x book case is ₹586, or −14.8% — comfortably inside the 25% maximum.</li>
+<li><strong>Do not add on a treasury-led beat.</strong> Add only on NIM expansion with stable credit cost — otherwise you are buying the mark-to-market, not the franchise.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-5 lakh (100 shares ≈ ₹68,800)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 15% of equity portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Groww / Angel One</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low-moderate — quarterly results, weekly flow and yield check</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>9-12 months (3-month tactical checkpoint)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Sold under 12 months: STCG 20%. Held over 12 months: LTCG 12.5% above the ₹1.25 lakh annual exemption on listed equity. Dividends taxed at your slab rate — the ₹13 trailing payout is not tax-free. Confirm the FY27 treatment with your CA before booking.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li><strong>Weekly — 10-year G-sec.</strong> Sustained below 7.30% is the treasury-gains trigger; above 7.70% is the danger zone for book value.</li>
+<li><strong>Weekly — FII/DII flows.</strong> With 39.4% foreign ownership, HDFC Bank is the liquidity exit for India de-allocation. Watch the daily provisional FPI number, not the monthly narrative.</li>
+<li><strong>Q3 FY27, mid-January 2027 — NIM.</strong> Versus 3.16% on total assets / 3.32% on interest-earning assets. This is the entire thesis: needs +5bp or better.</li>
+<li><strong>Quarterly — GNPA and credit cost.</strong> Versus 1.11% and 0.44%. Exit on GNPA above 1.35%.</li>
+<li><strong>Quarterly — loan growth and CASA.</strong> Versus 16.4% growth. Growth without CASA is growth without margin.</li>
+<li><strong>December MPC.</strong> A 50bp hike should help the floating book; read the deposit-repricing commentary carefully — that is where the NIM story fails.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Place the first tranche today — 50% of intended size, limit order in the ₹682-695 band on NSE. Simultaneously set a GTT buy at ₹645 valid to 31 December 2026 for the second tranche, and a GTT sell at ₹760 for the tactical third. Then do nothing until the Q3 FY27 NIM print in mid-January: the only number that matters is whether 3.16% becomes 3.21% or better.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on October 27, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
