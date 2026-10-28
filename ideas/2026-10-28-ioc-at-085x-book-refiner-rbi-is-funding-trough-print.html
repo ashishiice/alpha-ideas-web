@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOC at 0.85x Book: The Refiner the RBI Is Funding, Two Days Before the Trough Print | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>IOC at 0.85x Book: The Refiner the RBI Is Funding, Two Days Before the Trough Print</h1>
+            <p>Indian Oil trades at ₹131.75 — 30% below its 52-week high, at 0.85x a ₹155 book, 5.5x trailing earnings and a 6.3% dividend yield — while four October tailwinds (a 67% diesel export-duty cut, the RBI's own dollar window, Brent down 5.1% on Iran talks and a 2% rupee recovery) all landed after the quarter that produced the loss. Q2 prints on Friday, 30 October.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 October 28, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-12 months</span>
+                <span class="meta-pill return">📈 Expected: 18-24% total</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Indian Oil Corporation Ltd (NSE: IOC / BSE: 530965)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Cyclical Trough / Deep-Value Mean Reversion</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> IOC is the cheapest large refiner in India at 0.85x book and 5.5x trailing earnings, and it has just posted the worst quarter in its history — a ₹1,141 crore consolidated loss in Q1 FY27 as retail prices stayed frozen against $114 Brent. Everything that fixes that arithmetic happened <em>after</em> the quarter closed: the diesel export duty was cut to ₹8.5/litre from ₹25, the RBI began supplying IOC its dollars directly, Brent has fallen 5.1% in three sessions on Tehran peace talks, and the rupee has recovered 2% from its record low. You are buying a policy-cycle trough at book value, two days before the print that should mark it.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Buy in two tranches — the first half now inside ₹126-134, the second half only after Friday's print confirms the trough. Exit on a re-rating to book value (₹155), not on a heroic multiple.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹126-134</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹155 (1.0x book)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹122 weekly close</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item"><div class="rationale-bullet">1</div><div>The trough is already in the base. Q1 FY27 (April-June) consolidated revenue was <strong>₹2,66,407 crore (+20.1% YoY)</strong> but EBITDA collapsed 69.4% to ₹4,062 crore — a <strong>1.5% operating margin</strong> against 7% a year earlier — and PAT swung to a <strong>₹1,141 crore loss</strong> (EPS -₹1.15). The cause was arithmetic, not demand: retail petrol and diesel prices were frozen while Brent averaged above $110 through the quarter. A refiner printing 1.5% OPM earned <strong>12% OPM in Mar-2026 and 13% in Sep-2023</strong>; that is the range this business reverts to when crude and the rupee stop fighting it.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">2</div><div><strong>Four tailwinds landed after the quarter closed.</strong> (a) Effective 16 October the diesel export duty was cut to <strong>₹8.5/litre from ₹25</strong> six weeks earlier, while the petrol levy rose only to ₹2.5 — a net transfer to IOC's export barrel that does not appear in the Q2 numbers at all. (b) From <strong>12 October</strong> the RBI opened a special dollar window meeting the <em>entire</em> daily dollar requirement of IOC, HPCL and BPCL through designated banks — no FX premium, no market impact, on India's largest corporate dollar buyer. (c) Brent fell <strong>5.1% in three sessions</strong>, from $116.72 on 23 October to $110.78 today, on Tehran talks involving Saudi Arabia, Turkey, Pakistan and Iran. (d) The rupee recovered from <strong>96.85 (7 October) to 95.01</strong> — a 2% tailwind to every barrel IOC imports.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">3</div><div><strong>The floor is book value plus a 6.3% dividend.</strong> Book value is <strong>₹155 per share</strong>; at ₹131.75 you pay <strong>0.85x</strong> for a business with 18.7% ROCE and 20.5% ROE, 31.2% of India's refining capacity (10 refineries, 80.75 MMTPA) and ₹8.58 lakh crore of trailing revenue. Trailing dividend yield is <strong>6.26%</strong> on a 32.3% payout. The peer set tells you how violently the market has separated the three OMCs: <strong>BPCL at 9.1x, MRPL at 8.0x, HPCL at 52.4x</strong> — IOC is the cheapest of the large three precisely because its marketing book is the biggest and therefore absorbed the most frozen-price pain.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">4</div><div><strong>Positioning already shows accumulation at the low.</strong> On 27 October IOC rose 0.69% on <strong>2.3x its average volume</strong>, with <strong>71.4% of NSE volume taken to delivery against a 53.9% twenty-session average</strong>, while futures open interest fell <strong>61.9%</strong>. Shorts covered into genuine cash buying, 5.5% above the 52-week low. That is the footprint of a stock being accumulated, not distributed — and it happened the day before the pre-results blackout.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">5</div><div><strong>Friday's print is the gate, and that is the point.</strong> The board meets <strong>30 October</strong> (analyst call intimated to the exchanges on 27 October). Consensus is braced for a second weak quarter because July-September carried the highest crude of the war — which is exactly why the stock is at 0.85x book and not 1.2x. If the consolidated loss comes in at <strong>₹1,100 crore or less</strong> — no deterioration from Q1's ₹1,141 crore — the "peak pain" narrative breaks and the re-rating toward book value (+17.6%) begins. You are not buying the print; you are buying the quarter after it, at the price the print has already forced.</div></div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>Brent <strong>$110.78</strong> (28 Oct) against $116.72 on 23 October — down 5.1% in three sessions on Tehran de-escalation talks, but still near six-month highs with attacks around Hormuz continuing. The risk premium is compressed, not gone.</li>
+<li>USDINR <strong>95.01</strong> versus the 96.96 all-time low; the RBI's 10 October package (special dollar window for the three OMCs plus forex curbs) bought a 2% recovery and drew a line under the rupee.</li>
+<li>India 10-year at <strong>7.435%</strong> (27 Oct), down from the 7.498% cycle high — falling crude is already doing the RBI's work. Repo 5.50% with a calibrated-tightening stance; Deutsche Bank sees 6.25% by H1 2027.</li>
+<li>US 10-year <strong>4.99%</strong> with the FOMC decision tonight (2:00 pm ET, 11:30 pm IST). Consensus is a hawkish hold at 3.75-4.00%; a hawkish surprise strengthens the dollar and is the main external risk to this trade.</li>
+<li>Nifty at <strong>22,749.75</strong>, 13.6% below its 52-week high. FPIs sold ₹52,928 crore of Indian equity in October while DIIs bought ₹61,719 crore.</li>
+<li>Gold at <strong>$4,060/oz</strong>, 28% below its high, with silver worse: global real rates near 5% are the binding constraint on every non-yielding asset. Crude is the one commodity the war premium still supports.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>Q2 FY27 board meeting <strong>30 October 2026</strong>; analyst conference call intimated to NSE on 27 October.</li>
+<li>Q1 FY27 consolidated: revenue ₹2,66,407 crore (+20.1% YoY), operating profit ₹4,062 crore (-69.4%), OPM 1.5%, net loss ₹1,141 crore, EPS -₹1.15.</li>
+<li>FY26 consolidated: revenue ₹7.84 lakh crore, PAT ₹43,677 crore, net worth ₹2,25,547 crore, trailing EPS about ₹30.</li>
+<li>10 refineries, 80.75 MMTPA = <strong>31.2% of India's refining capacity</strong>; petroleum products 91% of revenue, pipelines and petrochemicals the rest.</li>
+<li>Valuation: P/E 5.5x, P/B 0.85x, dividend yield 6.26% on a 32.3% payout, market cap ₹1,86,047 crore.</li>
+<li>Board approved the ₹2,448.70 crore Kochi-Kanyakumari-Thoothukudi gas pipeline (424.65 km, 6.84 MMSCMD) — small against net worth, but it is contracted transmission return.</li>
+<li>Technicals: 9.7% below the 200-DMA, RSI 51.1, nearest support ₹130.53, nearest resistance ₹136.03.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>An Iran deal that takes Brent to $95-100 restores marketing margins of ₹2-3/litre and normalised EPS of ₹20-25 — a 6-7x multiple on that is ₹150-175 with no re-rating at all.</li>
+<li>Reversion to 1.0x book is ₹155 (+17.6%); the 52-week high of ₹188.96 was 1.22x book, so book value is not the ceiling — it is the first stop.</li>
+<li>Diesel export economics improve by 67% at the duty margin from the 16 October cut.</li>
+<li>The RBI dollar window strips an FX transaction cost and a liquidity premium off roughly $100 billion of annual crude purchases.</li>
+<li>A 6.26% dividend yield and 20.5% ROE mean you are paid to wait through one more weak print.</li>
+<li>Short covering (open interest -61.9%) plus 71.4% delivery says the marginal seller is exhausted in the ₹125-132 band.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li><strong>Q2 can be worse than Q1.</strong> July-September carried the highest Brent of the conflict, and IOC holds roughly 60 days of inventory — a falling crude price creates inventory losses in the quarter it falls, even as it helps the next one.</li>
+<li><strong>Policy risk is the real risk.</strong> New Delhi can cut retail petrol and diesel prices to pass on cheaper crude, capping the marketing margin exactly when it recovers. IOC's earnings are a policy derivative, not a pure commodity derivative.</li>
+<li>A failed Tehran round or a Hormuz disruption takes Brent back above $125 and IOC to ₹110-115.</li>
+<li>A hawkish Fed tonight pushes USDINR back toward 96-97 and widens working-capital losses.</li>
+<li>The H1 FY27 loss may force a dividend cut — the 6.3% yield is trailing, not contractual.</li>
+<li>Global refining overcapacity keeps GRMs at $5-6/bbl; there is no refining boom coming to rescue the marketing book.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li><strong>Two tranches, print-gated:</strong> 50% at ₹126-134 now; the second 50% only if Q2's consolidated loss is ₹1,100 crore or less (or a profit). If the loss exceeds ₹2,500 crore, cancel the balance.</li>
+<li><strong>Hard stop on a weekly close below ₹122</strong> — 0.79x book, -7.4% from the midpoint of the entry zone.</li>
+<li><strong>Cap at 10% of the equity sleeve</strong> and no more than ₹1.5 lakh on a ₹10 lakh book, so a Hormuz gap of -15% costs 1.5% of the portfolio.</li>
+<li><strong>No leverage, no F&amp;O, no averaging down</strong> below the stop. Hold in demat only.</li>
+<li><strong>Pair awareness:</strong> this is the mirror of our 18 October ONGC idea. If you own both, halve each — a Brent break below $100 hurts ONGC and helps IOC, so the pair is roughly neutral on oil.</li>
+<li><strong>Review Brent and USDINR every Monday;</strong> exit early if Brent &gt; $125 or USDINR &gt; 97.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-3 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 10% of the equity allocation (₹1.5 lakh on a ₹10 lakh book)</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Groww / Angel One (NSE: IOC)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Medium — weekly Brent and USDINR, daily around 30 October</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-12 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Held beyond 12 months the gain is LTCG at 12.5% above the ₹1.25 lakh annual exemption; inside 12 months it is STCG at 20%. Dividends are taxed at slab. Confirm current rates with your CA before filing.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li><strong>30 October:</strong> consolidated Q2 loss ≤ ₹1,100 crore = add tranche 2; loss &gt; ₹2,500 crore = do not add, tighten the stop to ₹128.</li>
+<li><strong>Brent front-month:</strong> exit if &gt; $125 (Hormuz escalation); take partial profits if &lt; $95 (peace dividend fully priced).</li>
+<li><strong>USDINR:</strong> exit if &gt; 97; add confidence if &lt; 94.</li>
+<li><strong>Retail price action:</strong> any petrol or diesel price cut above ₹2/litre is a margin negative — re-underwrite the thesis.</li>
+<li><strong>India 10-year:</strong> below 7.30% confirms the disinflation leg that lifts the entire OMC complex.</li>
+<li><strong>Delivery percentage on down days:</strong> above 65% means institutions are absorbing; below 45% means the bounce is hollow.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Place a delivery buy for 50% of the position at ₹126-134 before Friday's board meeting. On 30 October, after the print, check one number — the consolidated net loss. ₹1,100 crore or less and you buy the second half; ₹2,500 crore or worse and you cancel the balance and leave the ₹122 weekly-close stop in place.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on October 28, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
