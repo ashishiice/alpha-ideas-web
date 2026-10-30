@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RBI Retail Direct SDL Ladder + Coal India Dividend-Capture Barbell | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>RBI Retail Direct SDL Ladder + Coal India Dividend-Capture Barbell</h1>
+            <p>Lock 7.3% sovereign-grade accrual in RBI Retail Direct SDLs while capturing a 9%+ tax-free dividend yield from Coal India for a blended 12-15% total return over 6-9 months.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 June 28, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months</span>
+                <span class="meta-pill return">📈 Expected: 12-15% blended</span>
+                <span class="meta-pill risk">⚠️ Low-Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> State Development Loans (SDLs) via RBI Retail Direct + Coal India Ltd (NSE: COALINDIA)</p>
+            <p><strong>Exchange:</strong> RBI Retail Direct / NSE</p>
+            <p><strong>Strategy Type:</strong> Fixed-Income Accrual + Defensive Dividend Capture</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> A 70/30 barbell between sovereign SDLs and Coal India captures the best of today's elevated-rate environment: the SDL leg locks in 7.2-7.4% running yield with near-zero credit risk, while the Coal India leg delivers a 9%+ tax-free dividend yield and a modest re-rating kicker as PSU valuations normalize. The blend lowers portfolio volatility versus a pure equity bet while still beating inflation and fixed deposits by 300-400bps after tax.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Deploy capital in two tranches. Allocate ~70% to SDLs via RBI Retail Direct at current secondary-market yields, and ~30% to Coal India on any dip near current levels. Rebalance if Coal India rallies >25% or if 10-year SDL yields fall below 6.7%.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">SDL YTM 7.25-7.40%; Coal India ₹420-440</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">SDL capital gain 3-4% on rate-cut; Coal India ₹520-540</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">Coal India close below ₹370; SDLs held to maturity</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <p><strong>Elevated real rates are temporary.</strong> CPI is cooling toward 4.5% while 10-year SDLs still offer 7.3% — a 250bps real carry that is historically rich and likely to compress as RBI eases in late 2026.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <p><strong>Sovereign credit eliminates default risk.</strong> SDLs carry the joint guarantee mechanism and RBI's backstop, making them safer than corporate FDs while offering 100-150bps more yield.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <p><strong>Coal India is a cash-franchise disguised as a commodity stock.</strong> It trades at ~8x earnings, generates ₹25,000Cr+ annual FCF, and pays a 9% dividend that is largely tax-free up to ₹10 lakh under Section 10(34)/10(35) for retail holders.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <p><strong>PSU re-rating is a live theme.</strong> Government capex, dividend discipline, and index inclusion flows are compressing the valuation discount across state-owned cash generators.</p>
+                </div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                                <li><strong>RBI pivot ahead:</strong> Core inflation softening and global central-bank easing create room for 50-75bps of rate cuts in H2 2026, lifting duration assets.</li>
+                <li><strong>Fiscal consolidation with capex intact:</strong> Government's FY27 capex outlay keeps power, coal, and railway demand stable while PSU dividends remain a non-negotiable revenue source.</li>
+                <li><strong>Sovereign spreads are wide:</strong> SDL-Gilt spread of 35-45bps and PSU NCD-Gilt spread of 90-110bps are at the upper end of the 3-year range.</li>
+                <li><strong>Liquidity flowing to duration:</strong> EPFO, insurers, and debt mutual funds are extending duration in anticipation of cuts, supporting bond prices.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                                <li><strong>Coal India production target:</strong> FY27 target of ~1 billion tonnes, with e-auction premiums recovering and cost per tonne under control.</li>
+                <li><strong>Coal India dividend policy:</strong> Government-owned entity maintains high payout ratio; interim + final dividend typically yields 8-10% at current price.</li>
+                <li><strong>RBI Retail Direct access:</strong> Retail investors can buy SDLs in the primary auction or secondary market with no brokerage, no custody fees, and direct RBI settlement.</li>
+                <li><strong>Coal India balance sheet:</strong> Net cash position and negligible debt provide downside protection even if commodity prices weaken.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                                        <li>Each 25bps rate cut adds ~2-2.5% capital appreciation to a 7-year SDL portfolio.</li>
+                <li>Coal India re-rating from 8x to 10x P/E adds 20-25% standalone return on top of dividends.</li>
+                <li>Falling crude and diesel costs lower Coal India's production costs, expanding EBITDA/tonne.</li>
+                <li>Foreign flows into Indian sovereign debt on JP Morgan GBI-EM index inclusion provide technical support.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                                        <li>RBI stays on hold longer than expected if food inflation spikes; SDL prices stagnate.</li>
+                <li>Global coal prices crash and India's power mix shifts faster than expected, hurting Coal India e-auction realizations.</li>
+                <li>Coal India's government-mandated dividend payout could moderate if power sector losses balloon.</li>
+                <li>Duration risk: if yields rise 50bps, SDL portfolio marks down ~3-4% before recovery.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                                <li><strong>Position sizing:</strong> Keep the barbell to 20-25% of total portfolio; do not over-concentrate in a single SDL or single stock.</li>
+                <li><strong>SDL ladder:</strong> Split the bond allocation across 3-4 maturities (2029, 2031, 2033, 2035) to smooth reinvestment and duration risk.</li>
+                <li><strong>Coal India stop-loss:</strong> Exit the equity leg if it closes below ₹370 for three consecutive sessions — a 15% drawdown from current levels.</li>
+                <li><strong>Rebalancing rule:</strong> If Coal India rallies >25% from entry, trim 1/3 of the position and reinvest into SDLs to restore the 70/30 mix.</li>
+                <li><strong>Tax planning:</strong> Hold Coal India >12 months to qualify for 12.5% LTCG; keep SDLs in RBI Retail Direct to receive tax-efficient coupon accrual.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-10 lakh (minimum ₹1 lakh practical for SDL lot sizes)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>70% SDL ladder / 30% Coal India; max 25% of total portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>RBI Retail Direct (SDLs) + Zerodha/Angel One/Groww (Coal India)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low—monthly RBI policy + quarterly Coal India results</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-9 months; SDLs can be held to maturity</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>SDL interest taxed at slab; capital gains on sale taxed as STCG (>20% with indexation unavailable) if held <12 months or LTCG at 12.5% beyond ₹1.25L threshold. Coal India dividends are tax-free in recipient's hands up to ₹10 lakh; LTCG at 12.5% beyond ₹1.25 lakh annual exemption.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                                <li>Track 10-year G-Sec yield; consider adding duration if it stays above 6.8%.</li>
+                <li>Review Coal India e-auction premiums and production updates monthly.</li>
+                <li>Watch RBI MPC minutes for guidance on the timing of the first rate cut.</li>
+                <li>Check Coal India dividend record dates and adjust entry timing if buying specifically for dividend capture.</li>
+                <li>Rebalance if the 70/30 mix drifts beyond 65/35 or 75/25.</li>
+                <li>Review fiscal deficit and state borrowing calendars for SDL supply shocks.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Open or fund your RBI Retail Direct account this week and place a limit order for Coal India near ₹430. Build the SDL ladder first to anchor the yield, then layer in the equity tranche on weakness.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on June 28, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>

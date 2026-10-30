@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank of Baroda: India's Most Undervalued Large PSU Bank at 0.7x Book | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Bank of Baroda: India's Most Undervalued Large PSU Bank at 0.7x Book</h1>
+            <p>Buy India's third-largest PSU lender at a generational valuation discount — 15% credit growth, a 3.5% dividend yield, and an international franchise that no other PSU bank can replicate. The market is pricing BoB like a broken bank despite best-in-class GNPA trajectory and ROE inflection.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 June 12, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months</span>
+                <span class="meta-pill return">📈 Expected: 20-25%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Bank of Baroda Ltd (NSE: BANKBARODA)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Deep Value + Dividend + Re-rating</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> Bank of Baroda trades at 0.7x book value despite 15% credit growth, declining GNPAs, and a 3.5%+ dividend yield. India's third-largest PSU bank is being priced for permanent impairment when the reality is an ROE inflection driven by retail/MSME mix improvement, international profitability, and operating leverage. A re-rating from 0.7x to 1.0x book — still a 30% discount to SBI — delivers 20-25% total return in 6-9 months.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Accumulate on dips in the ₹220-240 range. The stock has consolidated in a 10% band for 3 months as institutional selling from index rebalancing exhausted. The technical base is firm at ₹210 (200-DMA). Target price of ₹290-300 is derived from 1.0x trailing book — still conservative versus historical PSU bank multiples.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹220 — ₹240</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹290 — ₹300</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹195</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <p><strong>Valuation Gap is Extreme:</strong> At 0.7x book, BoB trades at a 40% discount to its own 5-year average PB of 1.15x and a 45% discount to SBI (1.2x). Even a partial reversion to 1.0x book implies 35%+ capital appreciation.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <p><strong>Asset Quality Inflection is Real:</strong> GNPA has declined from 13.5% (FY19) to under 3.5% (FY26). PCR is now above 75%. The balance sheet is the cleanest in 15 years, yet the market hasn't repriced the equity for this transformation.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <p><strong>International Franchise is Underappreciated:</strong> BoB is India's most internationalized PSU bank with 100+ offices across 20 countries. The overseas book (15% of loans) is now profitable after years of NPA cleanup, adding a hidden earnings lever absent in SBI/PNB.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <p><strong>Retail + MSME Mix Shift:</strong> The bank has consciously pivoted from corporate (40% to 28%) to retail+MSME (35% to 48%) over 4 years. Retail loans command 100-150bps higher NIMs and lower volatility. This is a structural ROE driver.</p>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">5</div>
+                    <p><strong>Dividend Yield Floor:</strong> At a 3.5%+ dividend yield with the government committed to PSU dividend payouts, the stock offers a defensive income floor that private banks cannot match. For a 30% tax bracket investor, the gross-equivalent yield is ~5%.</p>
+                </div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>RBI rate hold at 6.50% has stabilized NIMs for PSU banks; any future cut is a tailwind, not a necessity</li>
+                <li>Government's ₹11 lakh crore infrastructure capex in FY27 directly flows through PSU bank disbursements</li>
+                <li>PSU bank recapitalization (₹1.5 lakh crore over 5 years) eliminates tail-risk of dilutive equity raises</li>
+                <li>Above-normal monsoon forecast boosts rural/agri loan book quality — 22% of BoB's advances</li>
+                <li>Credit growth at 14-15% with deposit mobilization improving via digital channels</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>Q1 FY27 results (August 2026) expected to show sub-3% GNPA and NIM stabilization above 3.15%</li>
+                <li>Management guidance for 15%+ credit growth with retail share crossing 50% by FY27-end</li>
+                <li>Potential inclusion in Nifty Next 50 rebalancing if market cap sustains above ₹1.1 lakh crore</li>
+                <li>Dividend declaration season (July-August) typically provides a 3-4% yield capture window</li>
+                <li>International subsidiary profit turnaround in UK and East Africa operations</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Re-rating from 0.7x to 1.0x book = 35% standalone upside before yield</li>
+                        <li>3.5% dividend yield adds 1.5-2% quarterly income cushion</li>
+                        <li>PSU bank index inclusion could trigger passive inflows of ₹300-500 Cr</li>
+                        <li>International profitability surprise could add 5-8% to consensus EPS</li>
+                        <li>Any large-cap PSU rally (SBI/PNB-led) lifts BoB sympathetically</li>
+                        <li>ROE expansion from 12% to 15% over 18 months justifies 1.2x+ book</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Sudden spike in corporate NPA (real estate/power exposure at ~8%)</li>
+                        <li>RBI PCA-like restrictions if CET1 falls below threshold</li>
+                        <li>Government divestment/overhang fears (though unlikely in near term)</li>
+                        <li>NIM compression if deposit costs don't moderate with CASA</li>
+                        <li>Sector rotation out of PSU banks into cyclicals or tech</li>
+                        <li>International book risk (UK/East Africa economic slowdown)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li>Position sizing: Max 12-15% of total portfolio to avoid single-stock concentration</li>
+                <li>Entry strategy: Stagger purchases over 3-4 weeks (SIP-style) to average out volatility</li>
+                <li>Stop-loss: Hard stop at ₹195 (11% below lower entry band) to limit drawdown to under 15%</li>
+                <li>Hedge: Pair with 20% allocation to a short-duration debt fund (Bharat Bond ETF) to reduce beta</li>
+                <li>Review trigger: If GNPA reverses above 4% or NIM falls below 3.0%, reassess thesis</li>
+                <li>Exit discipline: Take 50% profits at ₹275, trail stop on remainder to ₹260</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1 — ₹8 lakh</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 15% of equity portfolio; pair with 20% short-duration debt allocation</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww (all support NSE cash equity)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low — review quarterly results and monthly price action only</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6 — 9 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>LTCG at 12.5% if held >1 year (exempt up to ₹1.25 lakh); STCG at 20% if &lt;1 year. Dividends taxable at slab rate.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review monthly:</p>
+            <ul>
+                <li>Stock price vs 200-DMA: If it breaks below ₹210 with volume, reassess technical thesis</li>
+                <li>Quarterly GNPA and PCR trends: Must remain below 3.8% and above 70% respectively</li>
+                <li>NIM trajectory: Quarterly NIM should hold above 3.10%; any contraction below 3.0% is a red flag</li>
+                <li>Credit growth vs deposit growth: Maintain positive CD ratio; watch for ALM stress</li>
+                <li>Sector flow data: If FIIs continue selling PSU banks for 3+ consecutive months, consider reducing</li>
+                <li>Dividend announcement: Ensure payout ratio stays above 20% to justify yield floor</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Log into your broker account and place a limit order for BANKBARODA at ₹230 for 30% of your intended position. Set a secondary limit order at ₹220 for the next 40%. Keep 30% dry powder for any panic dip below ₹210. Activate a GTT stop-loss at ₹195. If the stock closes above ₹245 on two consecutive days with volume above 5-day average, deploy the remaining 30% aggressively — the re-rating has begun.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on June 12, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
