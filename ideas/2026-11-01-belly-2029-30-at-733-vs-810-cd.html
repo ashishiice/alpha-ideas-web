@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 1-Year CD Pays More Than the 5-Year G-Sec: Buy the 2029-30 Belly at 7.33%, Not the 10-Year at 7.55% | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>The 1-Year CD Pays More Than the 5-Year G-Sec: Buy the 2029-30 Belly at 7.33%, Not the 10-Year at 7.55%</h1>
+            <p>The RBI has quietly delivered a second 25bp hike through liquidity, not rates: the call rate sits at 5.70%, 1-year bank CDs print 8.10%, and the 2-year G-Sec has repriced 90bp in a month. That is a funding panic, not a rate cycle, and funding panics mean-revert. Buy 2.9 years of duration at 7.33% where a 63bp selloff over three months still leaves you in profit.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 November 1, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-12 months (3-month tactical window)</span>
+                <span class="meta-pill return">📈 Expected: 8.0-8.8%</span>
+                <span class="meta-pill risk">⚠️ Low-Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> 7.32% GS 2030 (ISIN IN0020230135) + 7.10% GS 2029 (ISIN IN0020220011)</p>
+            <p><strong>Exchange:</strong> RBI Retail Direct — NDS-OM</p>
+            <p><strong>Strategy Type:</strong> Sovereign curve carry — belly over duration</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> The front end of the Indian curve has repriced 80-90bp in five weeks on a squeeze the RBI engineered deliberately: five undersized VRR auctions, dollar sales to defend a 95 rupee, GST outflows and festive cash. The policy repo moved only 25bp. The result is a credit curve inverted against the sovereign curve (a 1-year AAA bank CD at 8.10% yields 78bp more than the 5-year G-Sec at 7.32%) and a 2-year G-Sec at 7.12% that has moved three times as far as the 1-year OIS. You are paid 7.33% to own 2.9 years of duration while the 10-year pays just 22bp more for 6.8 years, and 63bp of further selloff in three months still leaves you whole.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Two tranches, both price-defined on RBI Retail Direct's NDS-OM screen. Buy 60% in <strong>7.32% GS 2030</strong> at a YTM of 7.40% or better (clean price ≤ ₹99.78). Buy the remaining 40% in <strong>7.10% GS 2029</strong> at 7.23% or better (clean ≤ ₹100.26). Keep one add-on tranche in reserve: if Brent clears $120 or the 4 December MPC delivers 50bp, the 2030 should print 7.65% (₹98.93) and that is where you add — not on a blind average down. Exit on the 2-year reaching 6.60%, or at the twelve-month mark, whichever comes first.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">7.40% (₹99.78) — 60%<br>7.23% (₹100.26) — 40%</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">6.95% (₹101.32) 2030<br>6.85% (₹101.10) 2029</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">10Y 5-session close &gt; 7.90%<br>or 2030 &lt; ₹98.09</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                
+<div class="rationale-item">
+    <div class="rationale-bullet">1</div>
+    <div><strong>The second hike already happened — in the call market, not at the MPC.</strong> The RBI raised repo 25bp on 7 October. Since 14 October the weighted average call rate has run at <strong>5.70%</strong>, 20bp above the new repo, because the RBI under-supplied five straight variable-rate repo auctions (on 26 October it offered ₹1,50,000 crore against ₹1,86,000 crore of bids). Latha Venkatesh's read in Moneycontrol on 27 October was right: that is a second 25bp hike, delivered through liquidity. A liquidity-driven tightening reverses far faster than a rate-driven one, because the central bank can undo it in a single auction rather than waiting for the next policy meeting.</div>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">2</div>
+    <div><strong>The credit curve has inverted against the sovereign curve, and that is not a credit signal.</strong> On 27 October a 1-year AAA bank CD printed <strong>8.10%</strong> (from 7.50% on 14 October) and a 1-year NBFC commercial paper <strong>8.40%</strong> (from 7.85%). A one-year bank liability now yields <strong>78bp more than a five-year sovereign</strong>. Bank and NBFC credit has not deteriorated by 55-60bp in thirteen days — the funding market has. When a one-year CD pays more than a five-year G-Sec, the market is charging you for cash, not for risk, and cash panics are the most reliably temporary thing in a bond market.</div>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">3</div>
+    <div><strong>The 2-year moved three times as far as the OIS market — that arithmetic does not close.</strong> The 2-year G-Sec went from 6.22% on 28 September to 7.00% on 28 October and <strong>7.12% by 30 October</strong>, a 90bp repricing. Over the same fortnight the 1-year OIS moved only 31bp (6.35% to 6.66%) and the 6-month OIS 36bp. If this were a genuine repricing of the policy path, the OIS curve — the purest read on expected repo — would have moved with it. It did not. The 46bp gap between the 2-year bond and the 1-year OIS is a liquidity and balance-sheet premium, and it is the part of the yield that mean-reverts without the RBI cutting a single rate.</div>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">4</div>
+    <div><strong>You are being paid 22bp to take 2.4 extra years of duration.</strong> Five-year 7.32%, ten-year 7.55%. The 5s10s spread is 23bp and the 2s10s just 43bp — a curve with slope on a chart and almost no compensation in the hand. Per unit of duration the belly pays roughly twice what the long end does: 7.33% for 2.9 years against 7.55% for 6.8 years. In a market where a $115 Brent print can add 15bp in a session, take the carry and refuse the convexity bill.</div>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">5</div>
+    <div><strong>The breakeven is the trade.</strong> Three months of carry on the ladder is <strong>1.83%</strong>. At a blended duration of 2.9 that means yields can rise <strong>63bp</strong> and you still break even; on the ten-year, a 28bp selloff wipes out a full quarter of carry. Over twelve months you would need yields roughly 290bp higher to lose money. That is the whole idea — not a forecast that yields fall, but a structure in which being wrong for another quarter costs almost nothing while the squeeze unwinds.</div>
+</div>
+
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                
+<li><strong>Brent settled near $115</strong> on 30 October after tanker attacks near the Strait of Hormuz and reports of US strike options on Iran — a $11 move in twelve days (Moneycontrol: $105 on 14 October to $116 on 26 October).</li>
+<li><strong>The rupee closed at 94.91</strong> on 30 October. The RBI is defending it with spot dollar sales, a 20% forward-dollar cash margin and an OMC dollar window rather than with the policy rate — which is precisely why the defence shows up as a liquidity squeeze instead of a hike.</li>
+<li><strong>Repo 5.50% since 7 October</strong>, stance "calibrated tightening". Next MPC 2-4 December, decision 4 December at 10:00 IST. SBI Research retains a 50bp December hike call on broadening inflation.</li>
+<li><strong>The US 10-year fell from 5.36% on 6 October to below 5.00% by mid-October</strong>, removing the external yield pull that drove September's selloff. India's selloff since then is entirely domestic and entirely liquidity.</li>
+<li><strong>Festive currency withdrawal</strong> (typically ₹1.5-2 lakh crore) reverses from mid-November, and the 20 October GST outflows are already behind us — both are mechanical liquidity relief that require no RBI decision.</li>
+
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                
+<li><strong>WACR:</strong> 5.31% (13 Oct) → 5.52% (14 Oct) → 5.75% (15 Oct) → 5.70% since 19 Oct, against a 5.50% repo. That is a 20bp policy breach.</li>
+<li><strong>1-year CD</strong> 7.50% → 8.10%; <strong>1-year NBFC CP</strong> 7.85% → 8.40%; <strong>1-year OIS</strong> 6.35% → 6.66%; <strong>6-month OIS</strong> 6.00% → 6.36% (14 Oct → 27 Oct).</li>
+<li><strong>Five VRR auctions in eight days</strong> (19, 21, 22, 23, 26 Oct), every one filled below the bid — 26 October: ₹1,50,000 crore offered against ₹1,86,000 crore bid.</li>
+<li><strong>Curve on 30 October:</strong> 2-year 7.12%, 5-year 7.32%, 10-year 7.55%, 30-year 7.76%. The 10-year is the highest since March 2023.</li>
+<li><strong>Off-the-run paper is 20-28bp cheap to the fitted curve.</strong> The 7.32% GS 2030 quotes 7.39-7.44% against a fitted 4-year of 7.16%; the 7.10% GS 2029 quotes 7.23% against a fitted 3-year of 7.08%. That cheapness alone is worth 0.6-0.8% of price over twelve months as it converges.</li>
+<li><strong>The bonds are liquid enough for retail size:</strong> the 2030 is a ₹1.2 lakh crore outstanding benchmark and the 2029 is a standard NDS-OM line — ₹1-3 lakh orders execute at the screen price without moving it.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        
+<li><strong>Liquidity normalization is mechanical:</strong> festive cash returns in November, GST outflows done, and the RBI has already demonstrated it will run VRRs. A 30-40bp front-end rally needs no policy change at all.</li>
+<li><strong>A 25bp hike with neutral guidance on 4 December</strong> — the classic last-hike rally that takes the 3-5 year sector 40-50bp lower and pays you 1.4-1.7% of price on top of carry.</li>
+<li><strong>Brent back below $105</strong> on any US-Iran de-escalation → rupee to 92-93 → RBI stops selling dollars → the squeeze ends without another hike.</li>
+<li><strong>FPI demand returns</strong> into FAR (fully accessible route) securities and index-tracker buying once the rupee stabilises, concentrated in 3-7 year paper.</li>
+<li><strong>20-28bp of off-the-run cheapness converges to the fitted curve</strong> — an extra 0.6-0.8% of price with no yield move required.</li>
+
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        
+<li><strong>Brent through $125</strong> on a Hormuz disruption → the RBI hikes 50bp and drains harder → 10-year to 7.85-7.90% and the belly +40bp, a mark-to-market loss of about 1.2%.</li>
+<li><strong>The rupee breaks 97</strong> → heavier dollar sales → the squeeze deepens before it eases. The front end leads the pain in that scenario.</li>
+<li><strong>Fiscal slippage or a surprise H2 FY27 borrowing increase</strong> re-introduces supply at the long end; the belly holds up better but still marks lower.</li>
+<li><strong>A hawkish 50bp hike with explicit guidance for more</strong> breaks the peak-hawkishness premise outright.</li>
+<li><strong>Issuance mix shifts toward 3-5 year paper</strong>, adding supply precisely where this trade sits.</li>
+
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                
+<li><strong>Two-tranche entry, 60/40</strong>, with a third tranche reserved for 7.65% on the 2030 — no blind averaging into a squeeze.</li>
+<li><strong>Hard duration cap:</strong> blended 2.9 years, no bond longer than 4 years to maturity. This is a carry trade, not a duration bet.</li>
+<li><strong>Position size capped at 25% of the debt book</strong> — ₹2.5 lakh on a ₹10 lakh portfolio — so a 3% mark-to-market hit costs 0.75% of the book.</li>
+<li><strong>Hold-to-maturity fallback:</strong> the 2029 bond matures 18 April 2029 and the 2030 on 13 November 2030. A mark-to-market loss is recovered by accrual if the thesis merely takes longer than expected.</li>
+<li><strong>Condition stop:</strong> a 5-session 10-year close above 7.90% (2030 at ₹98.09) — a ~1.7% realised loss, not a 10% one.</li>
+<li><strong>Mechanical profit rule:</strong> if the 2-year trades below 6.60% before 31 March 2027, take the gain and roll into 364-day T-bills.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-3 lakh (₹1 lakh face of the 2030 costs about ₹99,770)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 25% of the debt book — ₹2.5 lakh on a ₹10 lakh portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>RBI Retail Direct (NDS-OM); HDFC Securities or ICICI Direct as NDS-OM alternate</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low — weekly yield check, daily only in MPC week (30 Nov-4 Dec)</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-12 months (12-month base case; 3-month tactical window)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Coupon taxed at slab (30% for most retail) with no TDS above the ₹10,000 threshold filing; price gain after a 12-month hold taxed at 12.5% LTCG. The 2029 bond trades near par, so there is little premium-amortisation drag. Avoid the 9.20% GS 2030: it trades at a premium and converts your return into slab-taxed coupon.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                
+<li><strong>WACR versus repo — every morning.</strong> A print below 5.60% is the thesis confirming itself; a print above 5.80% means the squeeze is tightening.</li>
+<li><strong>RBI VRR and OMO announcements.</strong> A fully subscribed VRR — offered amount equal to bids — is the turn.</li>
+<li><strong>1-year CD and 1-year OIS weekly.</strong> A CD-OIS spread below 100bp (from 144bp) means the funding panic has broken.</li>
+<li><strong>Brent and USD/INR weekly.</strong> $120 and 96.50 are the two levels that force a re-think, not necessarily a stop.</li>
+<li><strong>5s10s spread.</strong> Widening through 40bp means the belly is being paid for the risk; inverting below 10bp means exit.</li>
+<li><strong>4 December MPC.</strong> 25bp plus neutral = add the reserve tranche. 50bp plus hawkish guidance = hold, do not add, and let carry work.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Log into RBI Retail Direct → NDS-OM secondary market → search ISIN <strong>IN0020230135</strong> → place a limit order at a clean price of <strong>₹99.78 (7.40% YTM)</strong> for ₹1.5 lakh face. Then ISIN <strong>IN0020220011</strong> at <strong>₹100.26 (7.23% YTM)</strong> for the remaining ₹1 lakh. Both are central-government paper: no credit risk, no lock-in, T+1 settlement, coupons paid semi-annually into your account.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on November 1, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
