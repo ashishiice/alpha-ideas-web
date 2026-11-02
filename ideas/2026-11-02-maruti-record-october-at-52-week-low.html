@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maruti at ₹11,397: The Best October Ever, Priced Like the Worst | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Maruti at ₹11,397: The Best October Ever, Priced Like the Worst</h1>
+            <p>India's largest carmaker sold a record 2,76,120 vehicles in October and posted its highest-ever domestic volume — while the stock sits 34% below its 52-week high, one margin quarter away from a re-rating.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 November 2, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 5-6 months</span>
+                <span class="meta-pill return">📈 Expected: 15-18%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Maruti Suzuki India Ltd (NSE: MARUTI | BSE: 532500)</p>
+            <p><strong>Exchange:</strong> NSE / BSE (cash delivery)</p>
+            <p><strong>Strategy Type:</strong> Quality Cyclical — Trough-Margin Re-rating + Un-traded Event Catalyst</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> Q2 FY27 was Maruti's margin trough: revenue rose 26% YoY to ₹53,355 crore on record quarterly volumes of 696,654 units, but EBITDA margin was crushed to 8.9% from 12.0% by steel, copper and a rupee at 95. Everything that hurt margins is cyclical and is now reversing — Brent has slipped on Iran peace talks, three price hikes (~1%) are already in the price list with another planned in H2, and Sunday's record October print has not yet been traded. At ₹11,397 you are paying 20x FY28E earnings for a franchise gaining 220bp of market share a year with a 270,000-unit order backlog.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Buy in two tranches, cash only. Tranche 1 (60%) at Monday's open, capped at ₹11,650 — today is the first session that can price Sunday's record October print, and GIFT Nifty was at 23,258 (+0.9%) pre-open. Tranche 2 (40%) on a pullback into ₹11,050-11,250, or on a weekly close above ₹11,900 if the pullback never comes. Scenario map: base ₹13,400 (+17.6%), bull ₹14,800 (+30%, the Street target), stop ₹10,900 (-4.4%).</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹11,350-11,650</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹13,400 (bull ₹14,800)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">Weekly close < ₹10,900</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                
+                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <div><strong>Record October is un-traded.</strong> Maruti sold 2,76,120 vehicles in October (+25% YoY) — its highest ever — with domestic PV dispatches at 2.12 lakh (+20%) and total domestic sales of 2,16,789, also a record. The release went out on Sunday, November 1. Monday, November 2 is the first session that can price it.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <div><strong>The margin trough is in the print.</strong> EBITDA margin bottomed at 8.2% in Q1FY27 and recovered 70bp to 8.9% in Q2; raw material cost fell to 76.1% of sales from 76.9%. Three price increases totalling just over 1% have been taken and management has guided to another in H2 — the operating leverage on a 2.82m-unit FY27 volume base is violent.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <div><strong>The math is convex.</strong> Every 100bp of EBITDA margin on FY27E revenue of ₹2,180 billion is ≈₹2,180 crore of EBITDA ≈ ₹1,630 crore of PAT after tax ≈ 12% of FY27E earnings. Motilal Oswal models margin at 9.8% in Q3 and 10.9% in Q4 — the recovery alone is worth more than a third of FY27 profit.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <div><strong>You are buying the low, not the high.</strong> At ₹11,397 the stock trades at 20.0x FY28E EPS of ₹570 and 2.8x FY28E book, 34% below its 52-week high of ₹17,372 and 4% above its 52-week low of ₹10,984. The Street target is ₹14,800; our base case of ₹13,400 is only 23.5x FY28E — a discount to the Street despite the same earnings.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">5</div>
+                    <div><strong>Demand is policy-supported, not borrowed.</strong> GST 2.0 put small cars in the 18% band — that portfolio grew 35.9% YoY in Q2 — while the 40% band grew 39.6%. Rural penetration rose 2.2pp to 52%, CNG demand is strong precisely because petrol is expensive, and the pending order book hit 270,000 units by Dussehra.</div>
+                </div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                
+                <li><strong>Oil is the whole macro trade.</strong> Brent at $111.84, down 1.4% on Monday after a third straight day of Iran-Qatar talks to end the US-Israeli war on Iran; WTI $102.30 and OPEC+ held December targets. Crude sets India's CPI, the rupee and the auto buyer's monthly budget.</li>
+                <li><strong>The RBI is hiking into a supply shock.</strong> Repo was raised 25bp to 5.50% on October 7 (SDF 5.25%, MSF 5.75%), the first hike since February 2023, with a "calibrated tightening" stance. Emkay models another 75bp by February 2027 — a path that a peace deal would end early.</li>
+                <li><strong>The rupee is the margin tax.</strong> USDINR at 94.94 against a 52-week high of 96.88; every 1% of depreciation hits imported content and the yen-denominated royalty directly, and Q2 already absorbed 40bp of forex damage.</li>
+                <li><strong>Flows are the re-rating fuel.</strong> US 10Y at 4.93% leaves an India-US spread of only ~248bp, and FPIs have pulled ₹3.12 lakh crore out of Indian equities in 2026. A stable rupee plus falling oil is exactly what turns that flow around.</li>
+                <li><strong>Positioning is washed out.</strong> Nifty at 23,053, down 12% YTD and 12.5% below its 52-week high; India VIX 15.3. Light positioning plus a positive GIFT Nifty means good news travels fast.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                
+                <li>October 2026: highest-ever monthly sales of 2,76,120 units (+25% YoY), highest-ever domestic sales of 2,16,789, domestic PV dispatches 2.12 lakh (+20%) despite a high base. Announced Sunday, November 1.</li>
+                <li>Q2 FY27: revenue ₹53,355 crore (+26% YoY), 696,654 units (+26.5%), EBITDA margin 8.9% (+70bp QoQ), PAT ₹2,466 crore (-26.4%) after mark-to-market losses on surplus investments.</li>
+                <li>Market share 40.8% in Q2, up 220bp YoY; channel inventory at 17 days; pending customer orders at 270,000 units by Dussehra (October 20).</li>
+                <li>Management guidance: ~10% domestic volume growth in H2FY27, 7-10% total, mid-teens for the full year; another price increase planned "at an appropriate time" in H2.</li>
+                <li>Motilal Oswal: BUY, target ₹14,800 (26x FY28E EPS), FY27E volumes 2.82m units (+16.4%), FY28E PAT ₹179 billion, 11% earnings CAGR FY26-28E.</li>
+                <li>Valuation: 24.9x FY26, 26.7x FY27E, 20.0x FY28E EPS; 1.3% dividend yield; RoE recovering to 14.1% by FY28E.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        
+                        <li>Peace deal lands: Brent to $85-90, rupee to 91-92, RBI pauses — Maruti re-rates on both EPS and multiple at once</li>
+                        <li>H2 margin delivery of 10.9% (Q4E) puts FY28E EPS of ₹570 in play; 26x on that is ₹14,800</li>
+                        <li>270,000-unit backlog plus two new plants ramping into FY28 gives volume visibility beyond the festive season</li>
+                        <li>Rural recovery and the GST cut keep entry-level demand alive; CNG leadership monetises high petrol prices</li>
+                        <li>Returning FPI flows land first in benchmark heavyweights — Maruti is the highest-quality large-cap in the sector</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        
+                        <li>Talks collapse and Brent goes back above $120: CPI overshoots, the RBI delivers the 75bp, auto loan EMIs rise and entry-level demand stalls</li>
+                        <li>Commodity inflation persists — only ~1% of price hikes taken against a 300bp+ margin hit; management flags steel and copper as the key risks</li>
+                        <li>Rupee to 98-100 raises imported content and yen royalty costs further</li>
+                        <li>More mark-to-market losses on the surplus investment book if yields keep rising — the 10Y moved from 7.14% to 7.41% and already cost Q2 other income</li>
+                        <li>Rural stress: IMD rainfall deficit of ~20%, with Rajasthan, Madhya Pradesh and Karnataka flagged by management</li>
+                        <li>Structural de-rating risk: small-car mix, SUV competition and a slow EV transition</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                
+                <li><strong>Two tranches, 60/40.</strong> Never take the full position on a gap-up open; the second tranche is for a dip into ₹11,050-11,250 or a weekly close above ₹11,900.</li>
+                <li><strong>Position cap 12% of the equity portfolio</strong> (₹10 lakh book → ₹1.2 lakh), with total auto-sector exposure capped at 20%.</li>
+                <li><strong>Thesis-invalidation stop:</strong> a weekly close below ₹10,900 — under the 52-week low of ₹10,984 — means the market is telling you the margin recovery is not coming. Exit, do not average.</li>
+                <li><strong>Disaster stop ₹10,600 intraday</strong> (-7%) for gap-down days; maximum realised drawdown on the position is ~7%.</li>
+                <li><strong>Macro circuit-breaker:</strong> if Brent crosses $120 or the RBI hikes again before Q3 results, halve the position regardless of price.</li>
+                <li><strong>Cash-only delivery</strong> — no F&O, no leverage, no averaging down without a new confirmed catalyst.</li>
+                <li><strong>Park the undeployed 40%</strong> in a 1-year CD or T-bill at ~8.0% — the carry pays you to be patient.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1.15-1.20 lakh (10 shares at ₹11,350-11,650)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 12% of equity portfolio; two tranches of 5 shares</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Groww / Angel One (delivery)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low-medium — monthly sales print, weekly crude/rupee check</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>5-6 months (exit by May 2027)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>STCG 20% if sold within 12 months; LTCG 12.5% above ₹1.25 lakh if held longer. Dividend (~1.3% yield) taxed at slab.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                
+                <li><strong>1st of every month:</strong> dispatch numbers — compare domestic PV growth against the ~10% H2 guidance; two consecutive misses kill the thesis.</li>
+                <li><strong>Weekly:</strong> Brent (peace talks), USDINR, India 10Y at 7.41%. A Brent break above $120 is an automatic de-risk signal.</li>
+                <li><strong>December MPC:</strong> any further hike or hawkish tone → cut the position by half.</li>
+                <li><strong>Late January 2027:</strong> Q3 FY27 results — confirm EBITDA margin ≥9.8%, raw material cost down QoQ, no fresh mark-to-market loss.</li>
+                <li><strong>Commodity basket:</strong> steel HRC, copper, aluminium — the three inputs management explicitly flagged.</li>
+                <li><strong>Channel check:</strong> festive discounts and inventory (17 days at end-Q2). Inventory above 30 days means demand, not supply, is the problem.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Today at 09:15: Zerodha → search MARUTI → buy 5 shares at market with a limit of ₹11,650 → place a GTT stop at ₹10,900 → calendar the December 1 sales print and the December MPC. Keep ₹57,000 ready for the second tranche at ₹11,050-11,250.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on November 2, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
