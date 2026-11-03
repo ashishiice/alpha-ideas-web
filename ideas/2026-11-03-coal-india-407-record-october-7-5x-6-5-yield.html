@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coal India at ₹407: Record October, 7.5x Earnings, 6.5% Yield | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Coal India at ₹407: Record October, 7.5x Earnings, 6.5% Yield</h1>
+            <p>India's cheapest large-cap energy proxy just printed its first-ever 70 MT supply month — and the stock is still 17% below its 52-week high.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 November 3, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months</span>
+                <span class="meta-pill return">📈 Expected: 16-20%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Coal India Ltd (NSE: COALINDIA)</p>
+            <p><strong>Exchange:</strong> NSE</p>
+            <p><strong>Strategy Type:</strong> Value + Dividend Carry (PSU Energy)</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> Coal India is priced as if the FY27 volume target is already lost: 7.5x trailing earnings, a 6.45% dividend yield, and a share price 17% below its 52-week high. October's operating print — production of 67.2 MT (+19.3% YoY) and offtake of 70.3 MT (+18.7%), the first 70 MT month in CIL's history — is the first hard evidence that the post-monsoon H2 ramp is real, not seasonal hope. At 7.5x with a ~6.4% forward yield, you are paid to wait for the December and January production prints to close the gap to Elara's ₹522 target.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Accumulate in two tranches: 60% at ₹407-410 now, the balance on a dip to ₹396. Exit in three steps — sell one-third at ₹448, one-third at ₹470, and trail the last third with a ₹440 stop. The whole position carries a hard stop at ₹372, below the 52-week low of ₹369.60.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹398-412 (spot ₹407)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹470 (+15.5%)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹372 (-8.6%)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                
+<div class="rationale-item"><div class="rationale-bullet">1</div><div><strong>The H1 miss is being fixed in real time.</strong> CIL produced 321 MT in April-September, down 2.5% YoY, which is exactly why the stock de-rated to 7.5x. October changed the trajectory: production rose 19.3% YoY to 67.2 MT — the highest ever for the month — and offtake rose 18.7% to 70.3 MT, the first 70 MT month in the company's history. April-October production is now +0.7% YoY versus -2.5% at the half-year.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">2</div><div><strong>The FY27 target needs ~85 MT/month for five months — hard, but no longer implausible.</strong> To reach 815 MT, CIL needs about 427 MT in November-March. October's 67.2 MT was the first step, and the company's own release says it is "on the cusp of stock accretion" at both pit-heads and power plants. The usual November-March peak plus a normal monsoon recovery is the difference between a miss and a meet; the market is pricing a miss.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">3</div><div><strong>Q2 was a volume quarter; the miss was cost, not demand.</strong> Revenue rose 21% to ₹44,179 crore and PAT 53% to ₹6,516 crore; EBITDA rose 28.9% to ₹8,490 crore. The stock fell 4% because the EBITDA margin missed on wage and contract costs — a cyclical cost issue, not a reserve or demand problem. E-auction volumes rose 50.6% YoY to 22.8 MT, the high-margin part of the mix.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">4</div><div><strong>You are paid ~6.4% to wait.</strong> The board declared a second interim dividend of ₹10.25 (record date November 4), taking H1 to ₹15.75/share. FY27's total payout should land near ₹26/share — about 6.4% at ₹407 — backed by roughly ₹40,000 crore of annual operating cash flow against ~₹17,000 crore of capex. At 7.5x, the earnings yield is 13.3% versus a 7.34% 10-year G-Sec: a ~600bps spread, near the wide end of the last five years.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">5</div><div><strong>Imported coal is expensive again.</strong> Brent at ~$105 makes seaborne coal plus freight uncompetitive: India's coal imports fell 5.83% YoY to 104.57 MT in August, and power-plant blending of imported coal dropped 35% to 3 MT. Every tonne that stays domestic is CIL's, and power-sector supply hit an all-time high of 57.1 MT in October while thermal plant stocks remain low.</div></div>
+
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                
+<li>Brent at ~$105 on the Iran conflict keeps seaborne coal plus freight uncompetitive; India's imported-coal share fell to 19.3% in August from 21.2% a year earlier.</li>
+<li>Record power demand: CIL's October power-sector supply of 57.1 MT was an all-time high, with several thermal plants still at critically low stock.</li>
+<li>RBI repo at 5.50% after the October hike, 10-year G-Sec at 7.34%; a 6.4% dividend yield is competitive carry while the RBI finishes tightening.</li>
+<li>October GST collections of ₹2.32 lakh crore (+23% YoY) confirm industrial activity — and therefore electricity demand — is holding up.</li>
+<li>Nifty at 23,565 is still 10.6% below its 52-week high; in a market paying up for earnings certainty, a 7.5x monopoly with contracted volumes is an outlier.</li>
+
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                
+<li>October production 67.2 MT (+19.3% YoY), offtake 70.3 MT (+18.7%), power-sector supply 57.1 MT (+19%), average loading 310 rakes/day — all records.</li>
+<li>Q2 FY27: revenue ₹44,179 crore (+21%), PAT ₹6,516 crore (+53%), EBITDA ₹8,490 crore (+28.9%); e-auction volumes 22.8 MT (+50.6%).</li>
+<li>H1 FY27: production 321 MT (-2.5%), offtake 384.2 MT (+7.6%) — the production gap is the bear case, and October is the rebuttal.</li>
+<li>Dividend: ₹10.25 second interim (record date November 4); H1 total ₹15.75/share.</li>
+<li>Subsidiary mix: MCL 20.8 MT (+25.3%), SECL 14.3 MT (+17.4%), WCL +64.7%, CCL +26.1%; only NCL fell (-4.3%).</li>
+<li>Elara Securities has a BUY with a ₹522 target; the stock trades at 7.5x TTM EPS of ₹54.12 with a 6.45% trailing yield.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        
+<li>November and December production prints confirm the H2 ramp — the trigger for consensus FY27 EPS upgrades.</li>
+<li>A modest re-rating from 7.5x to 8.5-9x FY27E EPS puts the stock at ₹465-495, in line with Elara's ₹522 target.</li>
+<li>The ~₹26/share FY27 dividend (6.4%) provides a valuation floor and pays you while you wait.</li>
+<li>Imported coal stays out of the system as long as Brent holds above $100, handing CIL incremental domestic volume.</li>
+<li>Low thermal plant stocks plus record power demand give volume visibility through the winter peak.</li>
+
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        
+<li>H1 production fell 2.5% YoY; the 815 MT target needs ~85 MT/month for five months. A weak November print (December 1) would break the thesis.</li>
+<li>Cost inflation — wages, diesel, contractor costs — compressed Q2 EBITDA margin; a repeat squeezes EPS even if volumes recover.</li>
+<li>E-auction realisations fall if global coal prices soften on an Iran peace deal, hitting the highest-margin slice of the mix.</li>
+<li>Periodic government supply/OFS headlines can cap the stock regardless of operations.</li>
+<li>Longer term, renewables displacing thermal coal is a structural de-rating risk; this is a 6-9 month trade, not a forever hold.</li>
+<li>The stock has been range-bound between roughly ₹370 and ₹490 for two years — a re-rating needs the volume data to keep improving.</li>
+
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                
+<li>Hard stop at ₹372, below the 52-week low of ₹369.60 — maximum loss ~8.6%, well inside the 25% drawdown budget.</li>
+<li>Two tranches: 60% at ₹407-410, 40% at ₹396. No averaging below ₹372.</li>
+<li>Position cap of 8% of the equity portfolio (4% if you already own PSU energy or another coal proxy).</li>
+<li>Pre-committed exit rule: if the December 1 print shows production below 65 MT or offtake below 68 MT, cut the position to half regardless of price.</li>
+<li>Dividend carry (~₹26/share, 6.4%) lowers the effective cost and cushions a sideways market.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-5 lakh (245-1,225 shares at ₹407)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 8% of equity portfolio</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Groww / Angel One</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low — monthly data, one results review</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-9 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Sold under 12 months: STCG at 20%. Held over 12 months: LTCG at 12.5% above the ₹1.25 lakh annual exemption. Dividends are taxed at your slab rate.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                
+<li><strong>December 1:</strong> November production and offtake print. Threshold: production above 65 MT, offtake above 68 MT.</li>
+<li><strong>January 1:</strong> December print — the H2 run-rate must be trending toward 72+ MT/month for the 815 MT target to stay alive.</li>
+<li><strong>Late January:</strong> Q3 results — EBITDA per tonne, e-auction premium, wage cost trajectory.</li>
+<li><strong>Weekly:</strong> Brent (imported-coal parity), 10-year G-Sec yield (opportunity cost), Nifty PSU energy rotation.</li>
+<li><strong>February 1:</strong> Union Budget — any change to coal cess, royalty or GST on coal.</li>
+<li><strong>Record date November 4:</strong> confirm the ₹10.25 interim dividend credit.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Buy 60% at ₹407-410 today and place a 30-day GTT for the balance at ₹396. Put a GTT stop at ₹372 for the full quantity. Do not chase above ₹420 — the December 1 production print is the next hard checkpoint, and a ₹396 fill is a better risk-reward than a chase.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on November 3, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
