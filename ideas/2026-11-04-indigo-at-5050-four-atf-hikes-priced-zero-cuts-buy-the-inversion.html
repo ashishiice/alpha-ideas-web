@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndiGo at ₹5,050: Four ATF Hikes Priced, Zero Cuts — Buy the Inversion | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>IndiGo at ₹5,050: Four ATF Hikes Priced, Zero Cuts — Buy the Inversion</h1>
+            <p>India's only profitable-at-scale airline just posted its third straight loss on $110 crude. Brent is now $103 and the rupee has turned — the December 1 ATF reset is the first cut in five months.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 November 4, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 2-3 months</span>
+                <span class="meta-pill return">📈 Expected: 15-18%</span>
+                <span class="meta-pill risk">⚠️ Moderate-High</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> InterGlobe Aviation Ltd (NSE: INDIGO)</p>
+            <p><strong>Exchange:</strong> NSE (cash segment, CNC delivery)</p>
+            <p><strong>Strategy Type:</strong> Event-driven operating leverage — crude reversal + margin recovery</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> IndiGo's Q2 FY27 loss was manufactured by fuel, not by demand: revenue rose 25.9% to ₹23,364 Cr and EBITDAR more than doubled to ₹2,460 Cr (10.5% margin vs 6.0%). Delhi ATF is still ₹138.50/litre after a fourth consecutive monthly hike on Nov 1 — a price set off October's $110 average — while Brent has since fallen 7.6% in a session to $103, its lowest in four weeks, and the rupee has recovered to 94.75. Every 1pp of EBITDAR margin on a ~₹97,000 Cr revenue run-rate is worth ~₹970 Cr, and at 11-12x that is 5.5-6% of the ₹1.89 lakh Cr market cap. You are buying a 3pp margin recovery — and the December 1 ATF revision is the first mechanical trigger that delivers it.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>CMP ₹5,050 (Nov 4, 09:25 IST). The stock is +13% off its ₹4,464 low of Oct 23 and +7.5% in three sessions on the crude break, so do not chase full size. Take 40% at ≤₹5,070 today, keep 30% for ₹4,850 and 30% for ₹4,700. Exit 50% at ₹5,900 (the 52-week high is ₹5,919) and the rest at ₹6,200 (Nomura's target). Hard stop on a daily close below ₹4,640 — under the ₹4,675-4,690 base the stock broke out from on Oct 30.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹5,070 (T1, 40%)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹5,900 / ₹6,200</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹4,640 close</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                
+                <div class="rationale-item"><div class="rationale-bullet">1</div><div><strong>The fuel line broke first; the price didn't.</strong> Brent went $108 → $104.77 on Nov 2 (a 7.6% single-session fall, the sharpest since April) and is $103.3-104.3 today — a four-week low — on Qatari-mediated US-Iran talks. Delhi ATF, however, is still ₹138.50/litre after the fourth consecutive monthly hike on Nov 1, because OMCs set it off October's average. The December 1 revision is the first one that sees $103 crude.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">2</div><div><strong>Q2 was a fuel loss, not a demand loss.</strong> Revenue ₹23,364 Cr (+25.9% YoY), EBITDAR ₹2,460 Cr versus ₹1,114 Cr (+121%), margin 10.5% versus 6.0%. The ₹1,879 Cr net loss came from fuel (+67.2%) and a ₹1,155 Cr FX hit — strip FX and the loss was ₹724 Cr. Management says it recovered only ~60% of the fuel surge through fares, which means there is un-recovered pricing power still to land as fuel comes off.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">3</div><div><strong>The rupee is the second, underrated lever.</strong> USDINR settled at 94.75 on Nov 3 (+9 paise, second straight gain) on ₹9,951 Cr of FPI equity buying in two sessions — the highest in a year. IndiGo carries a dollar aircraft and lease book; the FX line swung from a ₹2,686 Cr loss a year ago to ₹1,155 Cr this quarter. A move back to ₹93 reverses that drag without a single operational change.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">4</div><div><strong>Every dated sell-side target is above the price.</strong> Post-Q2 and retained: Motilal Oswal ₹6,000, Nomura ₹6,200, Jefferies ₹5,650, HSBC ₹5,545 — against ₹5,050 today, and 14.7% below the ₹5,919 52-week high. Motilal's case rests on ₹39,900 Cr of free cash (₹399 bn) against a $20.4 bn market cap: the balance sheet, not the P&amp;L, carries you through a bad quarter.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">5</div><div><strong>The seasonal base is almost zero.</strong> Q3 (Oct-Dec) is IndiGo's strongest quarter, and last year's Q3 base was just ₹549 Cr of profit after ₹1,546 Cr of exceptional labour-code provisions. A late-January Q3 print with ATF at ₹125-130 forces the street to mark FY27 from a loss to a profit — the point at which a loss-making airline stops being valued on EV/EBITDAR and starts being valued on earnings.</div></div>
+
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                
+                <li><strong>Brent $103.3-104.3</strong> (Nov 4), down from $108 on Monday; the 7.6% Nov 2 slide was the biggest one-day fall since April, driven by US-Iran de-escalation hopes via Qatar.</li>
+                <li><strong>Rupee at 94.75/USD</strong>, up 9 paise on Nov 3 and higher for a second session on FPI inflows — a stronger rupee cuts both IndiGo's fuel import cost and its dollar lease MTM.</li>
+                <li><strong>FPIs bought ₹6,837 Cr of Indian equities on Nov 3</strong> — the highest single day in a year — after heavy September-October outflows. That flow favours large-cap domestic cyclicals that have lagged.</li>
+                <li><strong>RBI repo 5.50% under "calibrated tightening"</strong> (Oct 7 MPC); SBI Research still forecasts a 50bp December hike on crude-driven inflation. A soft October CPI on <strong>Nov 12, 4:00 pm IST</strong> (September: 5.54%) would price that hike out.</li>
+                <li><strong>FOMC decision tonight</strong> (Nov 4, 2:00 pm ET / 11:30 pm IST); the Fed held at 3.75-4.00% on Oct 28. A dovish outcome weakens the dollar, which is bearish crude and bullish the rupee.</li>
+                <li><strong>ATF is administratively reset on the 1st of every month</strong> off the prior month's international average — December 1 is the first cut opportunity in five months.</li>
+
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                
+                <li><strong>~62-65% domestic market share</strong> with FY28 capacity guidance retained, so unit-cost dilution from fleet additions continues as planned.</li>
+                <li><strong>EBITDAR margin doubled to 10.5%</strong> in the worst fuel quarter in years — the operating engine is intact; only the fuel line is broken.</li>
+                <li><strong>₹39,900 Cr free cash</strong> against a $20.4 bn market cap; the lease and FX book is funded, so a fourth loss quarter is survivable without dilution.</li>
+                <li><strong>Three consecutive quarterly losses</strong> have reset expectations: the stock made its 52-week low of ₹3,943 in this stretch and bottomed at ₹4,464 on Oct 23.</li>
+                <li><strong>Bharatiya Vayuyan Niyam, 2026 notified</strong>, replacing the 1937 Aircraft Rules. Rule 192 requires tariff filing with DGCA and gives the government power to intervene in "extraordinary situations" — a real, if remote, fare-cap overhang.</li>
+                <li><strong>Widebody / IndiGoStretch roll-out</strong> adds depreciation and lease cost ahead of the revenue it earns.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        
+                        <li>Iran-US deal lands → Brent $90-95 → ATF cut of ₹10-14/litre → ~4pp EBITDAR → ₹5,900-6,200, exactly where the four brokers sit.</li>
+                        <li>December 1 ATF cut of ₹5-8/litre even without a deal, simply because November's average ($103-105) is below October's ($110).</li>
+                        <li>Rupee back to ₹93 reverses the FX line — a ₹1,155 Cr quarterly drag becomes a tailwind.</li>
+                        <li>Q3 seasonality into a ₹549 Cr base; a normal fuel quarter prints a profit the street does not model.</li>
+                        <li>FPI rotation into index heavyweights that sat out the four-day, 1,225-point Sensex rally.</li>
+
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        
+                        <li>Talks collapse: Washington struck Iran's Qeshm island on Nov 2 and the two sides remain "far apart". Brent back above $115 puts ATF up again and the stock back at ₹4,400-4,600.</li>
+                        <li>Yield give-back — if crude falls, fares follow. Only 60% of the fuel surge was recovered; a fare war with Air India Express or Akasa hands the saving to passengers, not shareholders.</li>
+                        <li>Government tariff intervention under Rule 192 of the new Vayuyan Niyam — a headline that caps the multiple regardless of earnings.</li>
+                        <li>Rupee to ₹96-97 if the FPI flow reverses; two sessions of buying is not a trend.</li>
+                        <li>No earnings floor: with FY27 likely a loss year, there is no P/E support. At ~9-10x EV/EBITDAR the stock is not statistically cheap.</li>
+                        <li>Q3 is the highest fuel-burn quarter — ATF stuck at ₹138 with soft winter demand means a fourth straight loss.</li>
+
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                
+                <li><strong>Hard stop at a daily close below ₹4,640</strong> — under the ₹4,675-4,690 base the stock broke out from on Oct 30. Max loss on tranche 1 is 8.1%.</li>
+                <li><strong>Staged 40/30/30 entry</strong> at ₹5,070 / ₹4,850 / ₹4,700. Average cost if all three fill is ₹4,893, which is only 5.2% above the stop.</li>
+                <li><strong>Size cap: 10% of the equity portfolio, 5% of net worth.</strong> This is the highest-beta name you will own this quarter.</li>
+                <li><strong>Pre-committed crude invalidation:</strong> Brent above $112, or a confirmed strike on Iranian export infrastructure, means cut to half size regardless of the price.</li>
+                <li><strong>No averaging below ₹4,640</strong>, and no re-entry until Brent is back under $105 and the stock closes above ₹5,000.</li>
+                <li><strong>Take 50% off at ₹5,900</strong> so a second oil spike cannot turn a winner into a loser.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-3 lakh (minimum 5 shares ≈ ₹25,250; a 100-share lot is ₹5.05 lakh)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 10% of equity portfolio / 5% of net worth; add in three tranches</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww — NSE cash, CNC delivery</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Moderate — weekly review plus event days (Dec 1 ATF, Nov 12 CPI, FOMC)</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>2-3 months (Nov 2026 → late-January Q3 print)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Held under 12 months: STCG at 20% plus 4% cess on the gain (rates set in July 2024 and left unchanged in Budget 2026). If it runs past 12 months: LTCG at 12.5% on gains above ₹1.25 lakh. No dividend here — the return is entirely capital gain, so the tax line is the full 20%.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                
+                <li><strong>Brent daily close</strong> — the on/off switch. Below $100 is the green light for tranche 3; above $112 means cut to half.</li>
+                <li><strong>December 1 ATF revision</strong> (OMC announcement) — model ₹4-6/litre cut if November averages $100-105, ₹10-12 if it averages $95.</li>
+                <li><strong>DGCA monthly traffic data</strong> (~10th of each month) — IndiGo passengers, PLF and whether yields are holding as fuel falls.</li>
+                <li><strong>Iran-US mediation headlines</strong> out of Doha; any strike on Iranian export infrastructure is the exit trigger.</li>
+                <li><strong>USDINR</strong> — a break above ₹95.50 is a warning; below ₹94 is a fresh tailwind.</li>
+                <li><strong>Q3 FY27 results, late January 2027</strong> — the number that matters is EBITDAR margin. Below 12% and the thesis is not working; above 14% and ₹6,200 is conservative.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Place a limit buy for 40% of the position at ₹5,070 (NSE: INDIGO, CNC). Set a GTT stop at ₹4,640 and price alerts at ₹4,850, ₹4,700 and Brent $100/$112. Do not add tranche 3 unless Brent prints below $100 — and let the December 1 ATF cut, not hope, be the reason you add.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on November 4, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
