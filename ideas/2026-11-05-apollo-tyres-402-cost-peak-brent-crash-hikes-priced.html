@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apollo Tyres at ₹402: Q2 Was the Cost Peak, Brent Just Fell 16% in a Week, and the Price Hikes Are Already in the Market | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Apollo Tyres at ₹402: Q2 Was the Cost Peak, Brent Just Fell 16% in a Week, and the Price Hikes Are Already in the Market</h1>
+            <p>Apollo just printed a 10.7% EBITDA margin — down 421bps YoY — in the same week Brent fell 16% to $94.5 from a $118 peak. It has already taken 15-16% of cumulative India price hikes, trades at 12x FY28E, and sits 8% off its 52-week low. You are being paid to wait one quarter for the scissors to close.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 November 5, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months</span>
+                <span class="meta-pill return">📈 Expected: 18-28%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Apollo Tyres Ltd (NSE: APOLLOTYRE)</p>
+            <p><strong>Exchange:</strong> NSE — cash segment, CNC delivery</p>
+            <p><strong>Strategy Type:</strong> Cyclical margin recovery — buy the cost peak, sell the price pass-through</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> Apollo's September quarter is the one where the raw-material cycle peaked: cost of materials consumed jumped 33.9% YoY to ₹4,241 Cr, the consolidated EBITDA margin collapsed to 10.73% from 14.94%, and the stock is 25% below its 52-week high and 8% above its low. Since that print, Brent has fallen 16% in a week to $94.5, the rupee has recovered to 94.5 from 95.8, and the company has already pushed 15-16% of cumulative price increases into the India replacement market. You are buying the quarter where price and cost cross — at 15.7x FY27E and 12.1x FY28E, with Citi at ₹500 and consensus at ₹495.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>CMP ₹402.40 (NSE close, November 4, 2026). Do not buy the whole position on the open — GIFT Nifty is pointing to a +1.4% gap and the Q2 analyst call is at 11:00 IST today. Take 40% at ≤₹405, keep 35% for ≤₹385 and 25% for ≤₹368 (only if the Q3 print is soft but the margin thesis is intact). Average entry should land near ₹389. Exit half at ₹470 and half at ₹520. Hard stop on a daily close below ₹358 — 3.7% under the ₹371.80 52-week low, which is where the October capitulation low sits.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">≤ ₹405 (40%) / ₹385 (35%) / ₹368 (25%)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹470 (50%) / ₹520 (50%)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">Daily close below ₹358</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                                <div class="rationale-item"><div class="rationale-bullet">1</div><div><strong>The cost side broke first — and it broke hard.</strong> Brent fell 8.7% on Wednesday to settle at $94.62 and is $93.6-94.5 today, a 16% weekly collapse from Friday's $118 peak and the sharpest weekly drop since April 2020. Roughly 35-40% of a tyre raw-material basket — synthetic rubber, carbon black, nylon cord, processing oils — is crude-derived, and the rest is dollar-denominated. The rupee has already recovered from 95.82 on September 22 to 94.53. Apollo's Q2 basket was set on September's $114 average Brent; Q4's will be set on $94.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">2</div><div><strong>Q2 was a cost problem, not a demand problem.</strong> Revenue rose 16.6% YoY and 7.7% QoQ to ₹7,968 Cr, the highest quarterly run-rate in the company's history, while cost of materials consumed rose 33.9% to ₹4,241 Cr. That gap — 17% revenue growth against 34% material growth — is the entire ₹165 Cr YoY fall in operating profit. Nothing in the top line is broken; India utilisation is running at 90-91% and management has said the country stays capacity-constrained through FY27, which is precisely the condition under which price hikes stick.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">3</div><div><strong>The price is already in the market, not on the come.</strong> Apollo took 7-9% in Q1 and a further ~9% in truck/bus radials and ~11% in other categories in Q2 — a 15-16% cumulative increase in India replacement — and guided to at least two more rounds if costs stayed high. Dealer pipelines carry roughly a four-to-six week lag, so Q2's reported realisation captures only part of it. The reported margin is the trough of the price/cost spread, not the run-rate.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">4</div><div><strong>Natural rubber is the offset — and it is rolling over at the margin.</strong> Domestic RSS4 hit a record ₹300/kg on November 4, which is the bear case and must be respected. But the international market has already turned: RSS4 in the international market is ₹261.87/kg, Osaka rubber is down 6.5% from its October peak of ¥467 to ¥436, and Bangkok sheet fell from ₹267 to ₹263 this week. Peak tapping season in Kerala and Thailand runs December-February, and the domestic deficit of 5.22 lakh tonnes is a stock-and-flow problem that peak production partly addresses. A ₹300 → ₹280 move is another 2% off the basket.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">5</div><div><strong>Valuation and positioning do the rest of the work.</strong> At ₹402 the stock is 15.7x FY27E and about 12.1x FY28E earnings on 6.3x EV/EBITDA — a discount to its own five-year average and to MRF. It is 25% below the ₹536.90 52-week high and 8% above the ₹371.80 low. Citi maintained Buy with a ₹500 target on November 5 (cut from ₹510), the consensus average is ₹495 and the high is ₹590. The Enschede plant in the Netherlands is shut and the ₹26.9 Cr restructuring charge is booked, so the European drag stops worsening from here.</div></div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                                <li>Brent $93.6-94.5, down 16% this week from a $118 peak on Friday — the sharpest weekly fall since April 2020.</li>
+                <li>US midterms: Democrats swept Congress, Trump ruled out immediate strikes on Iran and Qatar is mediating. The war premium is unwinding, not the physical disruption.</li>
+                <li>Hormuz is still physically constrained — prices below $100 remain well above pre-February levels, so this is a two-way market, not a one-way collapse.</li>
+                <li>Rupee at 94.53-94.64 versus 95.82 on September 22 — imported raw material is 1.4% cheaper in rupee terms in six weeks.</li>
+                <li>FIIs bought ₹7,284 Cr of Indian equities on November 4, a fourth straight session; the Nifty is up 5.6% in five sessions to 23,960.</li>
+                <li>Repo at 5.50% after the October 7 hike, with a calibrated-tightening stance — a pause on December 4 is now the base case if crude holds below $100.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                                <li>Q2 FY27 consolidated: revenue ₹7,968.15 Cr (+16.6% YoY, +7.7% QoQ), EBITDA ₹855.35 Cr (-16.2% YoY), margin 10.73% vs 14.94%, PAT ₹292.29 Cr (+13.3%), exceptional charge ₹26.9 Cr.</li>
+                <li>H1 FY27: revenue ₹15,366 Cr, PAT ₹641 Cr. FY26 full year: revenue ₹28,470.6 Cr, PAT ₹1,372.4 Cr.</li>
+                <li>Cost of materials consumed ₹4,241.4 Cr in Q2 versus ₹3,168.4 Cr a year ago — a 33.9% increase on a 16.6% revenue increase.</li>
+                <li>India utilisation 90-91%, capacity-constrained through FY27; replacement is 79% of the India mix, so pricing power sits with the company, not the OEM.</li>
+                <li>Borrowings ₹5,513 Cr at September 2026 against ₹3,675 Cr at March 2026 (+50%); a ₹1,000 Cr privately placed NCD was approved on November 4.</li>
+                <li>Enschede (Netherlands) tyre plant closed; Europe segment result was ₹52 Cr in Q2 versus ₹97 Cr a year ago, with the restructuring charge now taken.</li>
+                <li>Anti-dumping duty on Chinese truck and bus radial tyres remains in force — a structural floor under domestic truck tyre pricing.</li>
+                <li>Q2 analyst and investor call is today, November 5, at 11:00 IST (rescheduled from 15:30); new CFO Ravi Kumar Shingari took charge on November 4.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                                                <li>Brent holds $90-95 → the Q4 FY27 basket prices 5-7% below Q3 → EBITDA margin 13-14% against 10.7% in Q2 → a 30-40% EPS upgrade cycle.</li>
+                        <li>Natural rubber corrects from ₹300 to ₹275-280 as December-February peak tapping arrives — another 2-4% off the basket on top of crude.</li>
+                        <li>A re-rating to 15x FY28E EPS of ₹33 gives ₹495; Citi's ₹500 and the ₹590 street high sit above that.</li>
+                        <li>Europe stops bleeding: the loss-making plant is shut, and every euro of segment loss removed is pure consolidated margin.</li>
+                        <li>Replacement demand is intact — FADA retail printed July +25.9%, August +17.5% and September +31.8% YoY, and Apollo's India book is 79% replacement.</li>
+                        <li>Any decision to hold prices while costs fall drops straight to gross margin, because the 15-16% of hikes are already in the market.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                                                <li>Hormuz re-escalation. Brent back to $110-118 re-inflates the basket and pushes the margin recovery out two more quarters; the same 16% weekly fall can reverse in a week.</li>
+                        <li>Natural rubber stays at ₹300+ — the domestic deficit is 5.22 lakh tonnes and peak tapping may disappoint on labour shortages and lower yields per acre.</li>
+                        <li>CV demand. Commercial vehicles are roughly half of standalone revenue and the recovery has been slow; weak CV volumes would blunt the operating leverage.</li>
+                        <li>Q3 is still a high-cost quarter. CEAT guided its Q3 basket up another 3-3.5%; if Apollo says the same in today's call, the stock can drift back to ₹370 before the Q4 inflection.</li>
+                        <li>Leverage. Borrowings are up 50% since March and the ₹1,000 Cr NCD adds interest cost just as PAT is compressed.</li>
+                        <li>A sector-wide de-rating if the Nifty's five-session, 5.6% relief rally fails and FII flows reverse — tyres are high-beta to the cyclical trade.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                                <li>Stage the entry in three tranches (40/35/25) so a post-call dip works for you rather than against you; target average ≤₹389.</li>
+                <li>Cap the position at 12% of the equity book — ₹1.2 lakh on a ₹10 lakh portfolio, or 300 shares at the current price.</li>
+                <li>Hard stop on a daily close below ₹358. That is 3.7% under the ₹371.80 52-week low — a clean thesis break, not noise.</li>
+                <li>Time stop: exit if Q4 FY27 (reported May 2027) EBITDA margin is below 12.5%, regardless of price.</li>
+                <li>Do not add if Brent prints above $110 for two consecutive weeks. The whole thesis is a falling input cost; a re-spike invalidates it.</li>
+                <li>Offset the crude factor elsewhere in the book — the 2029-30 G-Sec idea of November 1 is a disinflation trade that also benefits if oil stays low.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹40,000-1,20,000 (100-300 shares at ₹402)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 12% of the equity portfolio (₹1.2 lakh on a ₹10 lakh book)</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww — CNC delivery</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Medium — weekly crude and rubber check, quarterly on results</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-9 months (Q3 print early Feb 2027, Q4 print May 2027)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>STCG at 20% if sold within 12 months; LTCG at 12.5% above the ₹1.25 lakh annual exemption if held longer. If the thesis is intact at month 11, the 7.5pp step-down on a ₹1.2 lakh position is worth roughly ₹5,000-7,000 — hold to the LTCG date.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                                <li>Every Monday: Brent front-month. Above $110 for two consecutive weeks → stop adding, tighten the stop to ₹370.</li>
+                <li>Every Monday: Rubber Board RSS4 Kottayam price. Above ₹315/kg → the NR offset has failed; cut the position in half.</li>
+                <li>November 5, 11:00 IST: Q2 analyst call. Listen for two numbers — the guided Q3 raw-material basket and the remaining price-hike quantum. Write them down.</li>
+                <li>Monthly: FADA and SIAM volume prints. India replacement growth must stay positive; two negative months means demand, not cost.</li>
+                <li>Early February 2027: Q3 results. First checkpoint — consolidated EBITDA margin must be at least 11.5% for the thesis to stay on track.</li>
+                <li>May 2027: Q4 results. The payoff quarter — exit on a margin below 12.5% or on either price target, whichever comes first.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Buy the first 40% at ≤₹405 today and sit through the 11:00 IST call. Add 35% at ≤₹385 and the last 25% at ≤₹368. Do not chase above ₹420 — Q3 is still a high-cost quarter and the mechanical inflection is Q4. Hard stop: a daily close below ₹358.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on November 5, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
