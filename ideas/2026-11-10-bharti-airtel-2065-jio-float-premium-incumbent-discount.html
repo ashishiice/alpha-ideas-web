@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airtel at ₹2,065: Jio Is Priced Higher on 38% Less EBITDA — and Only 2.2% of It Trades | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Airtel at ₹2,065: Jio Is Priced Higher on 38% Less EBITDA — and Only 2.2% of It Trades</h1>
+            <p>Jio Platforms and Bharti Airtel now carry the same ₹12.9 lakh crore market cap, but Airtel earns 61% more EBITDA per rupee of market value. The ₹299 plan reversal that took Airtel to ₹2,065 is churn management, not a price war.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 November 10, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 9-12 months</span>
+                <span class="meta-pill return">📈 Expected: 15-19%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Bharti Airtel (NSE: BHARTIARTL)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Large-Cap Relative Value — post-listing re-rating</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> Jio Platforms listed on October 28 at a ₹13.3 lakh crore peak and still carries roughly ₹12.9 lakh crore of market value on a 2.2% free float — the same equity value as Bharti Airtel, which produced ₹35,240 crore of EBITDA last quarter against Jio's ₹21,879 crore at a 57.9% margin, and grew that EBITDA faster year-on-year. Airtel's Q2 was sold as a miss, but the miss was network opex and a ₹299 entry-plan reversal: revenue rose 16.7%, profit 30.9%, free cash flow after interest was ₹12,100 crore, net debt fell ₹38,374 crore in twelve months, and the ₹299-to-₹349 base-plan hike has not yet reached ARPU. You are buying the incumbent at 9.1x annualised EBITDA and 26.2x FY28E earnings while the market pays 14.7x and ~34x for the challenger, into the two quarters where Airtel's interest bill peaks and its tariff repair lands.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Two tranches, because the next six weeks carry two dated macro risks — October CPI on November 12 and the MPC on December 2-4 — and because this stock has been de-rated on its own results, not the market's. Buy 60% in the ₹2,040-2,070 zone; Airtel closed at ₹2,065 on November 9 after touching ₹2,044.10 intraday, so the band is Monday's trading range. Hold 40% for ₹1,950-1,980, which requires a break of the November 3 post-results low of ₹1,994.50 and therefore only fills on a genuine second leg down. If it never fills and the stock closes above ₹2,175 — the 52-week high — on above-average volume, buy the balance there, but do not chase above ₹2,200. Exit at ₹2,390 base or ₹2,530 bull; cut at ₹1,905 on a closing basis.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹2,040-2,070 (60%)<br>₹1,950-1,980 (40%)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹2,390 base (+15.7%)<br>₹2,530 bull (+22.5%)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">₹1,905 close basis<br>(-7.7%)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                
+                <div class="rationale-item"><div class="rationale-bullet">1</div><div><strong>The Jio premium is a float artifact, not a valuation.</strong> Jio Platforms has a free float of about ₹28,500 crore — 2.2% to 2.5% of the company — because a ₹30,213 crore IPO sold only a sliver of a ₹13.3 lakh crore enterprise. What trades is a thin slice setting the price for the whole. Bharti Airtel, with a 50% free float, is priced by two-way institutional flow every single day. On identical arithmetic — market cap divided by annualised quarterly EBITDA — Jio is at 14.7x and Airtel at 9.1x. Jio's ₹12.9 lakh crore is the marginal clearing price of 2.2% of its shares; Airtel's ₹12.9 lakh crore is what the entire company clears at. That gap is not a growth premium anyone can underwrite — it is a scarcity price, and scarcity prices normalise when float expands.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">2</div><div><strong>Airtel out-earns Jio on every operating line, and grew EBITDA faster.</strong> Q2 FY27: revenue ₹60,878 crore vs ₹40,475 crore (+16.7% vs +11.4% YoY); EBITDA ₹35,240 crore vs ₹21,879 crore (+17.8% vs +16.6%); margin 57.9% vs 54.0%; PAT ₹8,887 crore vs ₹8,389 crore; ARPU ₹271 vs ₹218.8. Even India-alone revenue of ₹42,308 crore is larger than Jio's entire ₹40,475 crore. Jio's fair counter is that it converts more EBITDA into profit — 38% versus Airtel's 25% — because Airtel carries Africa, a heavier depreciation book and ₹88,277 crore of net debt. That conversion gap is the entire bear case, and it is precisely the variable now reversing.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">3</div><div><strong>The profit-conversion gap is closing from Airtel's side.</strong> Net debt fell ₹38,374 crore in twelve months to ₹88,277 crore — and a ₹17,900 crore dividend was paid in the same quarter out of free cash flow, not borrowings. Q2 free cash flow after interest was ₹12,100 crore, or ₹48,000 crore annualised: 3.7% of the market cap, with capex flat at ₹12,467 crore and management guiding core telecom capex to stay stable while incremental spend shifts to data centres. The drag is cash interest, which doubled to ₹6,200 crore as the spectrum moratorium ended — a peak, not a trend. ICICI's FY28E EPS of ₹80.5 sits 34% above FY27E, and the multiple on it is 26.2x.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">4</div><div><strong>The tariff repair is only half in the P&amp;L.</strong> Airtel raised its entry 4G plan from ₹299 to ₹349 during the quarter, but ARPU rose only 2.7% sequentially — and part of even that was one extra day in the quarter. The full benefit lands in H2 FY27, and the December quarter is seasonally the strongest. Note what the street did: ICICI pushed its tariff-hike assumption out to FY28E, meaning the FY27 numbers do not need a price increase to work, and still lifted its target to ₹2,430. You are not paying for a hike; you are being given the flow-through of one already taken.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">5</div><div><strong>The ₹299 reversal is churn management, not a price war — which is why the stock is at ₹2,065.</strong> Net adds collapsed to 0.7 million against a ten-quarter average of 3.1 million, and churn rose to 2.9% from 2.6%. Reinstating a ₹299 entry plan is what an operator does when the bottom of the market is churning, not what it does before cutting prices across the book. Jio's ₹219 ARPU gives it 24% headroom to undercut Airtel — but Jio has just listed on a growth story, and a tariff war would destroy the very EBITDA narrative its new shareholders paid 14.7x for. Two listed telcos with a shared interest in ARPU repair is a better equilibrium than one private aggressor.</div></div>
+                <div class="rationale-item"><div class="rationale-bullet">6</div><div><strong>Valuation and positioning give you the entry.</strong> At ₹2,065 Airtel is 5% below its 52-week high of ₹2,175 while the Nifty is 12.7% above its October 8 low. It trades at 9.1x annualised EBITDA, 35.0x FY27E and 26.2x FY28E earnings, with a 29.8% FY28E ROE and a 1.4% dividend yield. Consensus target is ₹2,343; ICICI is at ₹2,430, Citi at ₹2,390 and Axis at ₹2,530. FIIs bought ₹7,212 crore of Indian equity on November 9 after ₹14,975 crore on November 5 — returning foreign money buys the largest, most liquid index weights first, and Airtel is one of them. You are buying a laggard in a rally, not a leader at the top.</div></div>
+
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                
+                <li>Nifty 50 closed at 25,044.65 on November 9, up 12.7% from the October 8 low of 22,231.8 and 4.9% below the 26,328 high. CLSA's long-term buy trigger is a November close above 25,500 — the index is 2% away.</li>
+                <li>India VIX rose 15.4% last week even as the Nifty gained 8.6%. Investors are hedging into strength, not adding conviction.</li>
+                <li>Brent at roughly $95, down 30% from $135.51 on October 2. India imports about 88% of its crude — the biggest terms-of-trade gain since 2022, and it reaches CPI with a two-to-three month lag.</li>
+                <li>The 10-year G-sec (6.94% 2036) closed at 7.1529% on November 9, down 4bps on the day and 22bps on the week — the steepest weekly fall in almost seven years — on cheaper crude and Iran-deal hopes.</li>
+                <li>October CPI prints on November 12 at a 5.93% consensus versus 5.54% in September; a Business Standard poll of 11 economists flags a possible breach of the RBI's 6% band. Repo is 5.50% after the October 7 hike and the December 2-4 MPC is live for another 25bp.</li>
+                <li>The rupee strengthened to 94.47 from 96.88, its best level since October 21, on FII inflows and cheaper oil.</li>
+                <li>FIIs net bought ₹7,212 crore on November 9 while DIIs sold. The US 10-year at 4.876% after strong October payrolls keeps the global backdrop hawkish — which is exactly why India's oil-driven decoupling matters.</li>
+
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                
+                <li>Q2 FY27: revenue ₹60,878 crore (+16.7% YoY, +4.0% QoQ), EBITDA ₹35,240 crore at 57.9%, EBITDAaL ₹31,488 crore at 51.7%, EBIT ₹20,556 crore, PAT ₹8,887 crore (+30.9%), pre-tax annualised ROCE 25.1% against 21.6% for FY26.</li>
+                <li>India mobile: revenue ₹30,900 crore (+10.1% YoY), EBITDA ₹18,900 crore (+11.3%), margin 61.0%, incremental EBITDA margin 67.7%. Subscribers 377 million (+0.7 million QoQ); postpaid 31.2 million (+13.5%); 4G 305 million; 5G base above 200 million; data use 36.5 GB per user versus 28.3 GB a year ago.</li>
+                <li>Homes: 15 million broadband customers (+28.9% YoY), revenue ₹2,300 crore (+25.3%), EBITDA ₹1,100 crore (+22.1%), net adds 676,000 against 473,000 in Q1FY27.</li>
+                <li>Airtel Business: revenue ₹5,880 crore (+11.4%), EBITDA ₹2,500 crore (+15.1%), digital portfolio up 4% QoQ. Nxtra spent ₹2,826 crore on land and is scaling data-centre capacity five-fold to 1 GWh; the payments bank has 125 million active users (+19.5%) and ₹120 crore of quarterly EBITDA (+39.4%).</li>
+                <li>Balance sheet: net debt ₹88,277 crore against ₹1,26,651 crore a year earlier; operating cash flow after lease and interest ₹23,000 crore (-4.5% YoY) as cash interest doubled to ₹6,200 crore on the ending spectrum moratorium; free cash flow after interest ₹12,100 crore; dividend of ₹17,900 crore paid in the quarter.</li>
+                <li>Jio Platforms Q2 FY27: revenue ₹40,475 crore (+11.4%), EBITDA ₹21,879 crore (+16.6%), PAT ₹8,389 crore (+13.7%), ARPU ₹218.8, 9.1 million net adds, more than 30 million home broadband subscribers.</li>
+                <li>Jio's listing: October 28 at ₹1,358, a 21.3% premium to the ₹1,119 IPO price; ₹1,403 on November 6; ₹12.9 lakh crore market cap; free float only ₹28,500 crore (2.2-2.5%); not eligible for the Nifty 50 before September 2027 and not in F&amp;O.</li>
+                <li>Coverage: ICICI BUY ₹2,430 (November 7), Citi BUY ₹2,390 (raised from ₹2,230), Axis BUY ₹2,530, consensus ₹2,343 — every published target above the current price.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        
+                        <li>Tariff flow-through: a ₹50 ARPU increase across 377 million India mobile subscribers is ₹22,600 crore of annualised revenue; at the 67.7% incremental EBITDA margin that is roughly ₹15,300 crore, about 11% of FY27E EBITDA.</li>
+                        <li>Deleveraging arithmetic: every ₹10,000 crore of net debt repaid at 8% saves ₹800 crore of pre-tax interest, roughly ₹600 crore of PAT — 1.7% of FY27E profit per tranche, and net debt has already fallen ₹38,374 crore in a year.</li>
+                        <li>Multiple gap: 12x annualised EBITDA — still below Jio's 14.7x — is ₹2,710 per share, 31% above Monday's close.</li>
+                        <li>Data centres and enterprise: Nxtra's 1 GWh build-out and Airtel Business growing EBITDA 15% give the SoTP optionality that a pure-mobile multiple ignores.</li>
+                        <li>Africa: revenue grew 6.3% QoQ in dollar terms, with constant-currency EBITDA growth running ahead of India.</li>
+                        <li>Flow: FII buying has resumed, Airtel is a top-five Nifty weight, and it is the most liquid way to own Indian telecom without a 2.2% float.</li>
+
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        
+                        <li>Jio price war. Jio's ₹219 ARPU gives it 24% headroom under Airtel's ₹271. A nationwide 10-15% data tariff cut hits net adds and ARPU at once — and Airtel's own ₹299 reversal proves it will defend share before it protects ARPU.</li>
+                        <li>Churn is already real: 0.7 million net adds against a 3.1 million ten-quarter average, churn 2.9% versus 2.6%. Two more quarters below 1.5 million net adds and the premiumisation story stalls.</li>
+                        <li>Cash interest doubled to ₹6,200 crore from ₹2,600 crore as the spectrum moratorium ended. If dues keep escalating, free cash flow after interest compresses even while EBITDA grows.</li>
+                        <li>Macro event risk: October CPI above 6.1% on November 12 plus a hawkish MPC on December 3, into a market already up 12.7% in a month. A 5-8% index correction takes a high-beta large cap down 8-12%.</li>
+                        <li>Global: the US 10-year at 4.876% on strong payrolls. A further rise pulls money out of emerging markets, and a rupee at 94.47 is still weak enough to make that easy.</li>
+                        <li>Regulatory: an adverse AGR ruling, a new licence-fee interpretation, or a TRAI consultation that caps tariffs. Indian telecom risk is regulatory before it is competitive.</li>
+                        <li>Valuation: 35x FY27E is not statistically cheap. If FY28 EPS slips from ₹80.5 to ₹70, the same 26x multiple is ₹1,820 — below the entry.</li>
+
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                
+                <li>Two tranches, 60/40: ₹2,040-2,070 (Monday's close was ₹2,065) and ₹1,950-1,980, the latter below the November 3 low of ₹1,994.50 so it fills only on a genuine breakdown, never on noise.</li>
+                <li>Hard stop at ₹1,905 on a closing basis — 7.7% below entry and 4.5% below the November 3 low. On a ₹2 lakh position the maximum loss is about ₹15,400.</li>
+                <li>Cap the position at 12% of the equity portfolio, roughly 5% of total investable assets. This is a single-name bet on one regulatory regime; at 12%, a 25% adverse move costs 3% of the portfolio.</li>
+                <li>Price-independent invalidation: exit if Jio cuts headline data tariffs by more than 10%, or if India ARPU prints below ₹265 in Q3, or halve the position if net debt rises above ₹1.0 lakh crore.</li>
+                <li>Do not add before November 12 (CPI) and December 4 (MPC) clear. The entry band is deliberately at or below the market so an event-driven dip fills you rather than a chase.</li>
+                <li>Cash only, delivery only: no leverage, no margin funding, no F&amp;O overlay. Use GTT orders for both the buys and the stop so the discipline survives a bad week.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-3 lakh (50-150 shares)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 12% of equity portfolio (~5% of total assets)</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Groww / Angel One (NSE: BHARTIARTL)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low — monthly, plus four dated events</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>9-12 months (to November 2027 for the LTCG boundary)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Under 12 months: STCG at 20%. Over 12 months: LTCG at 12.5% above the ₹1.25 lakh annual exemption. Dividends taxed at slab. On a ₹1 lakh gain the 12-month hold saves ₹7,500 — plan the exit date, not just the exit price.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                
+                <li><strong>November 12, 4:00 pm — October CPI.</strong> Consensus 5.93% against September's 5.54%, with a real chance of a breach of the RBI's 6% band. A print above 6.1% is the most likely trigger for the ₹1,950-1,980 tranche to fill. Do not pre-empt it.</li>
+                <li><strong>November 27 — Jio's 30-day anchor lock-in expires.</strong> Watch ₹1,403 on JPL. A break below ₹1,300 punctures the float premium and does the relative-value work for you.</li>
+                <li><strong>December 2-4 — RBI MPC.</strong> A 25bp hike to 5.75% is priced. What matters is the stance and the FY27 CPI projection; a 6.00% terminal rate with a neutral tilt is the equity-positive outcome.</li>
+                <li><strong>Early February 2027 — Q3 FY27 results.</strong> Four numbers: India ARPU versus ₹271 (want ₹280-plus), churn versus 2.9% (want below 2.7%), India net adds versus 0.7 million (want above 2 million), and free cash flow after interest versus ₹12,100 crore.</li>
+                <li><strong>Monthly — TRAI subscriber data.</strong> Airtel's net adds against Jio's. Two consecutive months below 1 million adds is a thesis problem, not a buying opportunity.</li>
+                <li><strong>Monthly — Brent and the 10-year.</strong> Brent above $115 for three sessions, or the 10-year above 7.45%, is a de-risk signal for the whole book, not just this position.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Place a GTT limit buy for 60% of the position at ₹2,070, valid for the week — Monday closed at ₹2,065, so this fills on any flat-to-soft open. Set a second GTT buy for the remaining 40% at ₹1,975, valid to November 30, and a GTT stop-loss sell at ₹1,905 on a closing basis. Then diarise November 12 (CPI), November 27 (Jio lock-in expiry), December 4 (MPC) and early February (Q3 results) — and do nothing in between.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on November 10, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
