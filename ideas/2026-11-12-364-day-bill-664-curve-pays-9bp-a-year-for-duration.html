@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nine Basis Points a Year for Duration: Bid the 364-Day Bill at 6.64%, Not the 10-Year at 7.17% | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Nine Basis Points a Year for Duration: Bid the 364-Day Bill at 6.64%, Not the 10-Year at 7.17%</h1>
+            <p>India's curve pays 53bp to go from a one-year bill to a ten-year bond and 33bp to go from one year to 4.6 years. The bill yields 114bp over repo, 72bp over the consensus policy path, and retail got 100% allotment while institutions were filled 60%.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 November 12, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-12 months</span>
+                <span class="meta-pill return">📈 Expected: 6.6-7.4%</span>
+                <span class="meta-pill risk">⚠️ Low</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> 364-Day GoI Treasury Bill (Nov-2027) + 6.20% GS 2029</p>
+            <p><strong>Exchange:</strong> RBI Retail Direct (primary) / NSE NDS-OM (secondary)</p>
+            <p><strong>Strategy Type:</strong> Sovereign carry — front end over duration</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> The RBI hiked on 7 October to 5.50% and the consensus terminal rate is 6.00%. The 364-day T-bill nonetheless cleared at <strong>6.6394%</strong> on 11 November — a yield that discounts an <em>average</em> repo of 6.42% over the next twelve months, roughly 50bp more than the policy path the Street itself forecasts. That gap is a liquidity artefact, not a policy view: the banking system is in deficit, the RBI has been selling dollars to defend a rupee that has since recovered to 93.81, and the government has front-loaded its borrowing. You are being paid to hold the one point on the curve with no duration risk while the ten-year, up 38bp of rally in eight sessions, offers 5.9bp a year for the privilege of owning 8.9 years of it.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>One auction, one secondary purchase, both on sovereign paper. Bid the 364-day bill in the 18 November non-competitive window at whatever cut-off emerges — you accept the auction price, so there is no bidding risk, only a decision on whether 6.60% is enough. Buy the 2029 only on the NDS-OM screen, at 6.85% or better.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">364-day: cut-off ≥ 6.60% (price ≤ ₹93.83)<br>GS 2029: YTM ≥ 6.85% (≈ ₹98.53)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">Bill: ₹100 at maturity — 6.6394% locked<br>GS 2029: 6.55% YTM (≈ ₹99.35 after six months of roll)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">None on the bill — held to maturity<br>GS 2029: 10Y close &gt; 7.45% for 3 sessions</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item">
+    <div class="rationale-bullet">1</div>
+    <div><strong>The curve is paying 9bp a year for duration — that is not a curve, it is a rounding error.</strong> The 364-day bill cleared at <strong>6.6394%</strong> (price ₹93.7900) on 11 November. The 6.20% GS 2029 yields <strong>6.8519%</strong>: 21bp for 1.5 extra years. The 6.53% GS 2031 yields <strong>6.9658%</strong>: 33bp for 3.6 extra years. The 6.94% GS 2036 yields <strong>7.1671%</strong>: 53bp for 8.9 extra years, or 5.9bp a year. The 7.63% GS 2056 pays <strong>7.7103%</strong> — 54bp over the ten-year for 19.7 more years, 2.8bp a year. A 50bp selloff in the ten-year costs <strong>4.2%</strong> in price. You would need seven years of that 5.9bp compensation to pay for one bad week.</div>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">2</div>
+    <div><strong>The bill yields 114bp over repo and 72bp over the path the Street itself forecasts.</strong> Repo is 5.50%. Nomura expects 25bp on 5 December and the MPC minutes point to a 6.00% terminal rate. Discount that path — 5.50% for three weeks, 5.75% for nine, 6.00% for the remaining nine months — and the average policy rate over the bill's life is <strong>5.92%</strong>. The bill yields <strong>6.6394%</strong>. That is <strong>72bp</strong> over the expected average repo, against a normal 15-25bp term premium: roughly <strong>50bp of free cheapness</strong> in the most liquid sovereign instrument in the country.</div>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">3</div>
+    <div><strong>The 114bp is a liquidity tax, and liquidity is about to turn.</strong> The system is running a liquidity deficit. The RBI sold dollars through October to defend a rupee that touched 96.88, it has issued the ten-year heavily, and GST plus festive cash drained the rest. But the rupee has recovered to <strong>93.8075</strong> (RBI reference rate, a seven-month high), FPIs have bought <strong>$5.68bn</strong> of Indian equity in November — the largest monthly purchase since September 2024 — and CRR is already at <strong>3.00%</strong>. Every dollar the RBI now buys to slow the rupee's rise injects durable rupees into the system. When the deficit closes, the 91-day (5.8681%) and the 182-day (6.5183%) reprice first and the 364-day follows.</div>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">4</div>
+    <div><strong>Retail is structurally advantaged in this specific auction.</strong> On 11 November, competitive bidders in the 364-day tranche were allotted just <strong>60.09%</strong> of their bids at the 6.6394% cut-off — ₹21,548 crore was bid against ₹7,000 crore notified, and the desk bids under the cut-off were rejected outright. The non-competitive window, which is where RBI Retail Direct bids land, absorbed <strong>₹1,700 crore at the cut-off with full allotment</strong>. You do not have to win a bidding war with a bond desk. You have to show up with ₹10,000.</div>
+</div>
+<div class="rationale-item">
+    <div class="rationale-bullet">5</div>
+    <div><strong>The ten-year has already made this trade. The next leg has to come from a cut, and CPI prints 6% today.</strong> The benchmark yield has fallen from <strong>7.55% on 1 November to 7.17%</strong> — 38bp in eight sessions — on a 22.6% collapse in Brent from its $118.35 peak. That is the entire disinflation impulse from crude, paid out in one move. The next 38bp requires the RBI to cut, and October CPI lands today at a consensus <strong>6.00-6.05%</strong>, the first breach of the 6% band since October 2024, with onion prices up 99.6% year-on-year. Meanwhile the US ten-year is at <strong>4.845%</strong> and pressing 5%, leaving India only <strong>237bp</strong> of spread, and the Cabinet has just approved a <strong>₹62,370 crore</strong> rabi fertiliser subsidy — 64% above budget estimate.</div>
+</div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>Repo <strong>5.50%</strong> after the 7 October 25bp hike; stance shifted to <em>calibrated tightening</em>. SDF 5.25%, MSF and Bank Rate 5.75%.</li>
+<li>October CPI due <strong>today, 12 November</strong>: consensus 6.00-6.05%, up from 5.54% in September — the first print above the RBI's 6% tolerance band since October 2024. Onion +99.6% YoY; El Niño risk into rabi.</li>
+<li>Brent <strong>$91.66</strong>, down 22.6% from its $118.35 peak and down 17% last week. Every $10/bbl on Brent is worth roughly 40-50bp on CPI with a two-quarter lag.</li>
+<li>US ten-year <strong>4.845%</strong>, pressing 5% after a hot US inflation print. India-US ten-year spread is 237bp — near the bottom of its range.</li>
+<li>Rupee <strong>93.8075</strong> (RBI reference), a seven-month high; FPI equity inflows $5.68bn in November, the largest since September 2024.</li>
+<li>Banking-system liquidity in deficit; heavy ten-year supply; CRR 3.00%, SLR 18.00% — the RBI has little CRR room left, so FX intervention becomes the liquidity lever.</li>
+<li>India 5-year CDS 87.67bp — sovereign risk is not the variable here. Price is.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>364-day T-bill cut-off <strong>₹93.7900 / 6.6394%</strong> (11 November). It was 6.6485% on 4 November — flat for two weeks, not a spike.</li>
+<li>Auction size: 91-day ₹8,000 cr, 182-day ₹8,000 cr, 364-day ₹7,000 cr; bids 3.1x covered in the 364-day tranche.</li>
+<li>91-day <strong>5.8681%</strong>, 182-day <strong>6.5183%</strong> — 65bp between the three- and six-month bill.</li>
+<li>Curve: GS 2029 6.8519% · GS 2031 6.9658% · GS 2036 7.1671% · GS 2041 7.3432% · GS 2056 7.7103%.</li>
+<li>RBI's own table puts 1-year-plus bank term deposits at <strong>6.00-6.75%</strong>. The bill matches the best of that with no bank credit risk and no premature-withdrawal penalty.</li>
+<li>Non-competitive allotment in the 364-day tranche: ₹1,700 crore, fully filled, versus 60.09% partial allotment for competitive bidders.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>If the liquidity deficit closes, the 91-day drifts from 5.87% toward the SDF at 5.25% and the 364-day trades to 6.20-6.30% — a further 0.35% of capital gain on top of carry.</li>
+<li>If the RBI stops at 6.00% in February, the front end bull-steepens; the GS 2029 rallies to 6.55%, worth +0.8% in price on that tranche.</li>
+<li>A 22.6% crude collapse hits the December and January CPI prints. The food shock is a level, not a rate of change — it fades mechanically off a higher base by Q1 FY28.</li>
+<li>Sustained FPI equity inflows force the RBI to buy dollars, which is rupee liquidity by another name.</li>
+<li>At maturity you re-bid into a market that has already priced the peak — the reinvestment option is the real upside.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Inflation stays above 6% into Q4 FY27 and the RBI goes to 6.50%. The whole curve reprices 40-50bp and the GS 2029 tranche loses 1.0-1.2% in price.</li>
+<li>Fiscal slippage: the ₹62,370 crore rabi fertiliser subsidy is 64% above budget, and the 1 February Budget may add a consumption give-away. Heavier H2 supply steepens the long end.</li>
+<li>A US ten-year above 5% drains FPI debt money and caps any Indian rally regardless of domestic fundamentals.</li>
+<li>The liquidity squeeze persists if the RBI again chooses to hold the call rate above repo to defend the currency.</li>
+<li>T-bill secondary liquidity is thin for retail. Plan to hold to maturity; a mid-term exit may need a 5-10bp concession.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li><strong>60/40 split</strong> keeps portfolio duration near 0.9 years. A 50bp parallel selloff costs 0.45% on the book, not 4.2%.</li>
+<li>The bill is a <strong>hold-to-maturity</strong> instrument: 6.6394% is contractual, not a mark. No stop-loss is needed because there is no mark-to-market risk if you do not sell.</li>
+<li><strong>Bid discipline:</strong> only at 6.60% or better. If the auction clears below 6.55%, the trade no longer compensates for the opportunity cost — skip the week.</li>
+<li><strong>Hard exit</strong> on the GS 2029 tranche if the ten-year closes above 7.45% for three consecutive sessions.</li>
+<li>Size it inside the debt sleeve — 25-30% of fixed income, not against the equity risk budget.</li>
+<li>No leverage, no margin funding, no 30-year bond 'for the yield'. The 2.8bp a year the 2056 pays over the 2036 is the definition of not being paid.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-10 lakh (₹10,000 minimum per Retail Direct bid, in multiples of ₹10,000)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>60/40 bill-to-2029; max 30% of the debt sleeve; portfolio duration under 1.0 year</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>RBI Retail Direct (primary) · Zerodha / Groww / ICICI Direct for NDS-OM secondary</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low — five scheduled dates, no daily screen</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>12 months (bill to maturity) · 6-9 months (2029 trade)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Bill: the discount accrues as interest income at your slab — 6.64% pre-tax is 4.65% at the 30% slab. G-Sec coupon at slab; a secondary exit after 12 months is LTCG at 12.5%, before 12 months STCG at slab. The honest comparator is a 1-year bank FD at 6.00-6.75%, taxed identically and carrying bank risk.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li><strong>Wed 18 Nov, ~1:30 pm:</strong> read the 364-day cut-off. ≥6.60%: allotment is automatic at the cut-off. &lt;6.55%: skip, repeat on 25 Nov.</li>
+<li><strong>Fri 5 Dec:</strong> MPC decision. 25bp to 5.75% is fully priced — the risk is the stance and the FY27 CPI revision, not the number.</li>
+<li><strong>Daily for two weeks:</strong> RBI LAF/VRR net injection and the weighted average call rate versus the 5.50% repo. Call above 5.65% means the squeeze is intact; call at 5.35-5.45% means it is unwinding and the bill is about to rally.</li>
+<li><strong>Weekly:</strong> ten-year versus the US ten-year. A spread under 220bp is a warning that the Indian long end is expensive; above 280bp is where duration becomes interesting again.</li>
+<li><strong>1 Feb 2027:</strong> Union Budget. The fiscal deficit number decides whether the long end cheapens or rallies.</li>
+<li><strong>Nov 2027:</strong> bill matures at ₹100. Decide then between a fresh 364-day bill and the ten-year if it is 7.45% or better.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Log in to RBI Retail Direct → Auction → Treasury Bills → 364-Day → submit a non-competitive bid for ₹1,00,000 face value before 12:00 noon on <strong>Wednesday, 18 November 2026</strong>. The result is published around 1:30 pm; the accepted cut-off is your yield and allotment is full. Then place the GS 2029 leg as a GTT-style limit on NDS-OM at 6.85% YTM (₹98.53) and leave it — if it does not trade there, the bill alone still returns 6.64%.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on November 12, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
