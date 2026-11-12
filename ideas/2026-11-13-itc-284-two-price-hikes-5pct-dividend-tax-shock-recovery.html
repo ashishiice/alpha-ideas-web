@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITC at ₹284: Two Price Hikes, a 5.1% Dividend, and a 47% Drawdown That Has Already Bottomed | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>ITC at ₹284: Two Price Hikes, a 5.1% Dividend, and a 47% Drawdown That Has Already Bottomed</h1>
+            <p>ITC absorbed India's harshest cigarette tax reset in a decade and has now raised Gold Flake prices twice — ₹95 to ₹125 to ₹135 a pack — while the stock sits 31% below its 52-week high on 18.9x earnings and a 5.1% dividend yield. Buy the 6-9 month margin recovery, stop below ₹252, and halve the position before the 1 February 2027 Budget.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 November 13, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months (up to 12 for LTCG)</span>
+                <span class="meta-pill return">📈 Expected: 18-22% (incl. ~5% dividend)</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> ITC Ltd (NSE: ITC)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Contrarian value + dividend carry (tax-shock recovery)</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> ITC's cigarette PBIT fell 27% year-on-year in Q2 FY27 because the February 2026 excise reset — ₹2,050-8,500 per 1,000 sticks plus 40% GST — was absorbed rather than fully passed on. Two calibrated price hikes later (Gold Flake RSFT ₹95 to ₹125 in February, then ₹135 on 12 November), the flagship pack is 42% more expensive than a year ago against a 7.5% volume decline, and brokerages expect cigarette earnings to turn by Q4 FY27. At ₹284 you are paying 18.9x for a debt-free, 29.3% ROE franchise that still pays ₹14.50 a share (5.1% yield): downside to the 52-week low is 11%, upside to the ₹310-350 consensus band is 9-23% plus the dividend.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Buy in three tranches into weakness, not strength. Fifty percent at ₹280-288 (the current ₹284.05 close), thirty percent at ₹268-275, twenty percent at ₹258-265 — average cost near ₹276. If ITC gaps above ₹292 before the second tranche fills, buy only tranche one and park the balance in a liquid fund; do not chase a stock that has already run 12% in a month. Exit 40% at ₹310 (the consensus target) and the balance at ₹345-350 (Jefferies target), or on a daily close below ₹252.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹274-288 (avg ~₹276)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹310 (40%) / ₹345-350 (60%)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">Daily close &lt; ₹252 (-11% from spot; -8.7% from avg cost)</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                
+<div class="rationale-item"><div class="rationale-bullet">1</div><div><strong>The tax shock is in the price. The price hikes are not.</strong> The 1 February 2026 framework imposed excise duty of ₹2,050-8,500 per 1,000 cigarette sticks alongside a 40% GST rate — an unprecedented step-up that cut cigarette PBIT 27% YoY to ₹3,813 crore in Q2 FY27 and took the stock from a ₹412 high to ₹252.80 on 28 October, 47% below its September 2024 peak of ₹499. What the market has not marked: ITC has raised the price of Gold Flake RSFT (69mm) twice — ₹95 to ₹125 in February 2026 (+32%) and ₹125 to ₹135 on 12 November (+8%). That brand is 30-35% of cigarette volumes, and the pack is now 42% more expensive than a year ago. Price hikes flow to PBIT with a one-to-two-quarter lag; this is the same playbook ITC ran after the 2013-16 excise shocks.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">2</div><div><strong>The sequential recovery has already begun — and the tape confirms it.</strong> Q2 FY27 cigarette segment margins recovered quarter-on-quarter even as volumes fell 7.5% YoY, and consolidated PAT of ₹4,229 crore beat the CNBC-TV18 poll of ₹4,089 crore. The non-cigarette engine is doing the heavy lifting: FMCG revenue +19% with segment EBITDA margin up over 50bps, paperboards revenue +36% and PBIT +48%, agri +12%, food-tech GMV +53%. NDTV Profit reports the Street expects cigarette earnings to recover by Q4 FY27. The stock has responded: ₹266 on 9 October, ₹252.80 low on 28 October, ₹284.05 on 12 November — up 12% in a month, with 42.5 million shares traded on 4 November versus a ~15 million daily average. That is accumulation, not a dead-cat bounce.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">3</div><div><strong>A 29% ROE franchise at 18.9x with a maintained ₹14.50 dividend.</strong> ITC trades at 18.9x trailing earnings and 5.0x book, with 29.3% ROE, 38.9% ROCE and no net debt. HUL trades at 41.4x and Nestlé at 61.2x — two to three times ITC's multiple. The FY26 dividend was ₹6.50 interim plus ₹8.00 final — ₹14.50 — held flat through the worst of the tax shock; at ₹284 that is 5.10%. A board that maintains a ~₹18,000 crore annual payout through a 20% profit decline is signalling that the shock is cyclical, not structural. The stock is -30% over one year against a Nifty that fell ~8%: the de-rating is done; the question is only the timing of the earnings turn.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">4</div><div><strong>Foreign flows have turned, and ITC is the liquidity they buy first.</strong> FPIs bought $7.65 billion of Indian equities between 6 and 12 November (SBI Research), including a record ₹14,975 crore single-day buy on 5 November. The Nifty is on a ten-session winning streak at 25,299 and Bank Nifty is at an all-time high of 61,518. ITC is a ₹3.55 lakh crore Nifty heavyweight that foreign investors have spent two years under-owning — exactly the name index money buys when it re-enters India, and exactly the domestic-cash-flow profile that benefits when global investors rotate out of AI-linked duration.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">5</div><div><strong>The event calendar is clean, and the one binary risk is dated.</strong> Q3 FY27 results land in late January 2027 — the first quarter with both price hikes in the base — and ITC typically declares its interim dividend with them (₹6.50 last year, ex-date 4 February 2026). Q4 FY27 results in May 2027 are the Street's recovery checkpoint. The single gap-risk event is the Union Budget on 1 February 2027, 80 days from now and knowable in advance: trim before it, re-enter after it. You are not being asked to underwrite tax policy; you are being asked to own a 5% yielder into a margin recovery and step aside for one weekend.</div></div>
+
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                
+<li><strong>Inflation is at the ceiling, not breaking through it.</strong> October CPI printed 6.09% on 12 November (food 8.5%, core 4.51%), just above the RBI's 6% band. The 4 December MPC is expected to deliver 25bps to 5.75%; SBI Research halved its call from 50bps and sees a 50:50 chance December is the terminal hike. A peak-rate backdrop favours domestic cash-flow compounders over rate-sensitive cyclicals.</li>
+<li><strong>Global cost of capital is high.</strong> The US 10-year sits at 5.10%, DXY at 103 and gold has corrected 17.5% from its high. In a 5% risk-free world, the market pays for today's cash flow and dividends, not for long-duration growth stories.</li>
+<li><strong>Crude is unwinding.</strong> Brent at $96 is 18% below its six-month high of $117.6 on US-Iran de-escalation hopes — softer freight, packaging and edible-oil costs for ITC's FMCG business, where margins already expanded 50bps in Q2.</li>
+<li><strong>India is the "AI hedge" trade.</strong> FIIs bought $7.65bn in a week; the Nifty IT index is still 18.5% below its high while Bank Nifty prints records. Money is rotating into domestic demand and away from AI-capex proxies — ITC is the cleanest large-cap domestic-demand expression in the index.</li>
+<li><strong>Valuation is support, not a launchpad.</strong> Nifty forward P/E is ~18.6x (Bernstein); ITC at 18.9x trailing with a 5.1% yield is no longer the 30x defensive it was at its 2024 peak.</li>
+
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                
+<li><strong>Price hike #2 announced 12 November.</strong> Gold Flake RSFT (69mm) raised ₹10 to ₹135 a pack; the February hike took it from ₹95 to ₹125. The brand is 30-35% of cigarette volumes and the hikes carry straight to segment PBIT.</li>
+<li><strong>Q2 FY27 (reported 2 November):</strong> consolidated PAT ₹4,229 crore (-18.5% YoY) versus a ₹4,089 crore poll; standalone revenue ₹18,401 crore (+1.8%); EBITDA ₹5,160 crore (-17.4%), margin 28% versus 34.6%; cigarette PBIT ₹3,813 crore (-27%) but cigarette margins recovered sequentially.</li>
+<li><strong>Portfolio breadth:</strong> FMCG +19% revenue with EBITDA margin +50bps; paperboards revenue +36%, PBIT +48%; agri +12%; Sproutlife (Yoga Bar) merger approved 2 November; food-tech GMV +53%, ARR above ₹320 crore.</li>
+<li><strong>Balance sheet and payout:</strong> debt-free, ₹57 book value, 29.3% ROE, 38.9% ROCE, FY26 DPS ₹14.50 (₹6.50 interim + ₹8.00 final).</li>
+<li><strong>Street targets:</strong> Jefferies ₹350 (Buy), Religare ₹408 (Buy), ICICI Securities ₹310 (Buy), Morgan Stanley ₹312 (cut from ₹340), Motilal Oswal Neutral — a ₹300-355 band with the market at ₹284.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        
+<li>Q3/Q4 FY27 cigarette PBIT recovery as the February and November price hikes annualise — every 100bps of cigarette margin on ~₹24,000 crore of segment revenue is ~₹240 crore.</li>
+<li>Re-rating from 18.9x toward the 22-24x staples average on FY28E EPS of ₹16-17 = ₹350-400.</li>
+<li>FMCG margin expansion continues as palm oil, copra and packaging costs cool with crude; the paperboard cycle is already turning (+48% PBIT).</li>
+<li>Dividend maintained at ₹14.50, with potential for a special payout or buyback from the cash pile.</li>
+<li>A benign Union Budget on 1 February 2027 (no further tobacco excise) removes the single biggest overhang and forces the Street to mark FY28 earnings up.</li>
+<li>Continued FII inflows into India — ITC is one of the largest, most liquid domestic-demand weights in the Nifty.</li>
+
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        
+<li><strong>Budget 2027 (1 February):</strong> another excise or cess hike is the same shock that cost the stock 20% in January 2026. This is the one event that can gap through the stop.</li>
+<li><strong>Volume erosion:</strong> legal industry volumes fell 7.5% YoY and ITC has flagged a sharp rise in smuggled cigarette seizures. If illicit trade takes permanent share, the franchise damage outlasts the price hikes.</li>
+<li><strong>Dividend risk:</strong> FY27 EPS is ~₹15 against a ₹14.50 payout — a ~95% payout ratio. A cut would remove the 5.1% support and force a re-rating lower.</li>
+<li><strong>Input costs:</strong> sugar, copra, palm oil and wood stay elevated; FMCG margin expansion stalls.</li>
+<li><strong>Value-trap risk:</strong> ITC is 47% below its 2024 peak and staples are structurally de-rated. A reversal in FII flows would hit the highest-yielding large-cap first.</li>
+<li><strong>Gap risk:</strong> a tax headline can open 10-15% below any stop; the stop limits the normal case, not the tail.</li>
+
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                
+<li><strong>Size it small:</strong> maximum 10% of the portfolio (≤20% of the equity allocation). At ₹2.5-3 lakh on a ₹25-30 lakh book, even a 20% gap costs 2% of net worth.</li>
+<li><strong>Stagger the entry 50/30/20</strong> across ₹288-265; never deploy the full amount at the close of a 12% monthly rally.</li>
+<li><strong>Hard stop on a daily close below ₹252</strong> (the 28 October 52-week low of ₹252.80). Place it as a GTT; no mental stops.</li>
+<li><strong>Halve the position before 1 February 2027</strong> and re-enter after the Budget. The tax event is dated, public and repeatable — do not sit through it at full size.</li>
+<li><strong>Take 40% off at ₹310</strong> to de-risk at the consensus target, then trail the balance with a 10% stop.</li>
+<li><strong>Never average down below ₹252</strong> — a broken 52-week low on a tax headline means the thesis is wrong, not cheaper.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹2.5-3 lakh (900-1,050 shares at ₹276-288)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 10% of portfolio; ≤20% of equity allocation</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Groww / Angel One (NSE: ITC, delivery)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low — quarterly review + one dated Budget event</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-9 months, extend to 12 for LTCG</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>STCG 20% if sold within 12 months; LTCG 12.5% above ₹1.25 lakh if held beyond 12 months; dividend taxed at slab (10% TDS above ₹10,000).</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                
+<li><strong>Daily, 30 seconds:</strong> ITC close versus the ₹252 stop; any GST Council, CBIC or Budget headline on tobacco.</li>
+<li><strong>Weekly:</strong> volume trend and any Nielsen/industry cigarette volume datapoint; ITC relative strength versus Nifty FMCG.</li>
+<li><strong>Late January 2027:</strong> Q3 FY27 results — cigarette PBIT quarter-on-quarter, FMCG margin, and the interim dividend declaration.</li>
+<li><strong>1 February 2027:</strong> Union Budget — excise duty on cigarettes and tobacco. Halve the position before the print.</li>
+<li><strong>May 2027:</strong> Q4 FY27 results — the Street's recovery checkpoint; if PBIT has not turned, exit and redeploy.</li>
+<li><strong>Monthly:</strong> FII flow data and ITC delivery volumes — is the accumulation continuing above ₹270?</li>
+
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>On Friday, buy 50% of the intended position at market between ₹280 and ₹288. Place a GTT buy at ₹272 for the next 30% and at ₹262 for the final 20%, and a GTT sell/stop at ₹252 on the full quantity. Set a calendar alert for 1 February 2027 to cut the position in half before the Union Budget. If ITC opens above ₹292 before tranche two fills, buy tranche one only and leave the rest in a liquid fund.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on November 13, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
