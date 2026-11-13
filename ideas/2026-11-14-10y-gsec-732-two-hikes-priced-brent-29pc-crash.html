@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 10-Year at 7.24% Is Pricing Two More Hikes. Brent Fell 29% in Five Weeks. | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>The 10-Year at 7.24% Is Pricing Two More Hikes. Brent Fell 29% in Five Weeks.</h1>
+            <p>The 4 December hike is real. The cycle after it is not. Bid the 6.94% GS 2036 at the auction cut-off near 7.32% and get paid 7.3% a year while the market works that out.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 November 14, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 7-9 months</span>
+                <span class="meta-pill return">📈 Expected: 6-8% abs / 10-12% ann.</span>
+                <span class="meta-pill risk">⚠️ Low-Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> 6.94% GS 2036 (10-year benchmark G-Sec)</p>
+            <p><strong>Exchange:</strong> RBI Retail Direct (RDG account)</p>
+            <p><strong>Strategy Type:</strong> Duration — Rate-Cycle Turn</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> The October CPI print of 6.09% forced the Street to price a 25bp hike on 4 December and a terminal rate of 6.00-6.25%. That print is a lagging photograph of a crude market that has since collapsed: Brent went from $136 on 8 October to $96 on 13 November, and the IEA now calls a 3.8 mb/d surplus for 2027. India's inflation is about to roll over into a cycle that is already fully priced and then some. A 7.32% entry on a 7.07-duration bond pays you 7.3% a year to wait for a 27bp rally that the RBI's own forecast says is coming.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Two tranches, both mechanical. Do not chase the secondary market above 7.25% — the auction is where the concession is, and the 13 November auction cleared at 7.3203% against a 7.2430% secondary close. Tranche 1 goes in at the next 10-year auction or on the RDG secondary screen at 7.28% or better. Tranche 2 goes in at the first auction after the 4 December MPC, whatever it clears at.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">7.30-7.35% YTM (price 97.20-97.50)</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">7.05% YTM by June 2027 (price 99.22)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">None — hold to maturity. Thesis-invalidation exit if 10Y closes above 7.65% for 5 sessions.</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                
+<div class="rationale-item"><div class="rationale-bullet">1</div><div><strong>October's 6.09% CPI is a lagging photograph of a war that has already de-escalated.</strong> Retail inflation breached the MPC's 6% upper tolerance band for the first time this cycle, and the market did what it should: the 10-year sold off from 7.17% on 12 November to 7.2430% on 13 November, and the benchmark auction cleared at a 7.3203% cut-off. But that CPI number measures October. Since then Brent has gone from $136/bbl on 8 October to $96.08 on 13 November — a 29% collapse, the steepest since the 2020 pandemic — and it fell for a second consecutive week into the 13 November print. Crude is roughly 7% of the CPI basket directly, and it hits freight, LPG, kerosene, fertiliser and chemicals indirectly. A 29% crude move is worth 40-60bp off headline CPI with a three-to-four-month lag. That lands in the December and January prints.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">2</div><div><strong>The supply side has structurally flipped, and the physical market is telling you so.</strong> The IEA's November Oil Market Report, published 13 November, is unambiguous: global supply rose 2.3 mb/d to 105.4 mb/d in October, the market returns to surplus in Q4 2026 for the first time since the war began, and the 2027 surplus is 3.8 mb/d. The physical signals are louder than the forecast. Saudi Aramco cut the December Arab Light OSP for Asia by $2/bbl, pushing the discount to Oman/Dubai to $6.50 — the widest since May 2020. Oman's spot premium to Dubai went from $34/bbl in mid-September to $1.76/bbl on 5 November. Middle East producers are now competing for buyers. That is not a spike that mean-reverts next week; that is a glut being priced.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">3</div><div><strong>For the first time in a year, the RBI's two problems point the same way.</strong> Since February the RBI has been trapped: a weak rupee (94.20/USD) drives imported inflation, so defending the currency means hiking, but hiking into a war-driven oil shock kills growth. Falling crude dissolves that conflict. Every $10/bbl off Brent is roughly 0.35% of GDP off the current account deficit, so a $40 move takes India from a meaningful CAD gap toward balance — which is precisely what defends the rupee. The market has already begun to validate this: USDINR peaked at 97.05 and is back at 94.20, a 2.9% rupee recovery, while the RBI's reserves and the equity market both held. Oil falling lets the RBI stop hiking *and* keep the rupee. That is the trade.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">4</div><div><strong>The curve already prices a terminal rate that the data will not support.</strong> Today the 10-year yields 7.2430% against a 5.50% repo — a 174bp spread. If the RBI hikes to 5.75% on 4 December, that spread is 149bp. At the February 2023 peak of the last hiking cycle, the 10-year traded roughly 90bp over a 6.50% repo, because the market was already discounting the cuts that followed. This cycle the market is doing the opposite: Axis Mutual Fund's November outlook puts terminal at 6.00-6.25%, and the curve is pricing it. If the terminal is actually 5.75% — one hike and done — the fair 10-year is 7.00-7.10%, and the 10s30s at 48bp and 5s10s at 21bp say the belly has room to rally without the curve inverting.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">5</div><div><strong>The RBI's own forecast is the catalyst, and it is dated.</strong> The October 2026 Monetary Policy Statement projects CPI at 5.9% for Q3 FY27 (October-December) and 5.5% for Q4 FY27 (January-March), with FY27 averaging 5.2%. The RBI is telling you it expects inflation to fall from here. SBI Capital Markets put the same view in bond terms the day after the auction: because projected inflation peaks in Q3 FY27, "the high points of benchmark yield belong to H2FY27, after which bond yield could moderate." H2 FY27 is now. The 13 November auction at 7.3203% may well be the high print of the cycle, and you are being handed it in the primary market with full allotment because retail non-competitive bids are not rationed.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">6</div><div><strong>This reverses the 12 November call, and here is exactly what changed.</strong> Two days ago the note here said take the 364-day bill at 6.64% over the 10-year at 7.17% — the curve paid only 9bp a year for nine years of duration and the hike risk sat on the long end. Three things changed in 48 hours. One, the 10-year backed up 7bp to 7.2430% and then auctioned 8bp cheaper still at 7.3203%, so duration got paid 15bp more. Two, October CPI printed 6.09% and the hike is now fully in the price rather than in front of it. Three, the IEA's 13 November report converted the oil move from a hope into a supply-demand forecast. The bill still works — it just stopped being the best use of the risk budget. Reversing a two-day-old call is only a problem if the reason is undisclosed; here it is, with the numbers.</div></div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                
+<li><strong>Brent $96.08 / WTI $88.86</strong> (13 November close) against a $136/bbl peak on 8 October — down 29.4% in five weeks, the steepest weekly drop since the 2020 pandemic in the week to 7 November.</li>
+<li><strong>IEA November Oil Market Report:</strong> global supply 105.4 mb/d in October, above demand; Q4 2026 returns to surplus; 2027 surplus 3.8 mb/d; observed inventories up 52 mb in October, the first build since June.</li>
+<li><strong>Saudi Aramco cut December Arab Light OSP for Asia by $2/bbl</strong> to a $6.50 discount to Oman/Dubai — widest since May 2020. Oman spot premium to Dubai fell from $34/bbl (mid-Sep) to $1.76/bbl (5 Nov).</li>
+<li><strong>US 10-year at 5.154%</strong>, up 6.1% in five sessions — the single biggest risk to this trade, and the reason to size it rather than swing it.</li>
+<li><strong>USDINR 94.1997</strong> (RBI reference, 13 November, 1:00 pm), off the 97.05 cycle low — the rupee has already recovered 2.9%, which is the market marking the oil move.</li>
+<li><strong>October CPI 6.09% YoY</strong> — the first breach of the 6% upper tolerance band this cycle, and above the RBI's own 5.9% Q3 FY27 projection.</li>
+<li><strong>RBI repo 5.50%</strong> (hiked 7 October), SDF 5.25%, MSF and Bank Rate 5.75%, stance "calibrated tightening", 6-0 vote.</li>
+<li><strong>Next MPC: 2-4 December 2026</strong>, decision Friday 4 December at 10:00 IST. The Street prices 25bp to 5.75%.</li>
+
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                
+<li><strong>6.94% GS 2036 closed at 7.2430%</strong> on 13 November (RBI), 7bp above the 7.17% of 12 November and 74bp above a year ago.</li>
+<li><strong>The 13 November benchmark auction cleared at a 7.3203% cut-off</strong> — an 8bp concession to the secondary market — and the paper "sailed through", meaning demand absorbed the higher yield rather than balking.</li>
+<li><strong>Full curve:</strong> 91d T-bill 5.8681% | 182d 6.5183% | 364d 6.6394% | 5y GS 2031 7.0289% | 10y 7.2430% | 15y GS 2041 7.4011% | 30y GS 2056 7.7235%. A normally-sloped, un-inverted curve with 48bp of 10s30s steepness.</li>
+<li><strong>Bond math:</strong> at a 7.32% entry the 6.94% GS 2036 has a clean price of ₹97.34, a modified duration of 7.07 and a Macaulay duration of 7.33. DV01 is ₹7,073 per ₹1 crore of face value.</li>
+<li><strong>The RBI's own path:</strong> CPI 5.9% in Q3 FY27, 5.5% in Q4 FY27, 5.2% for FY27; GDP 7.1%. Inflation is projected to fall without another hike doing the work.</li>
+<li><strong>SBI Capital Markets</strong>, the day after the auction: "since projected inflation peaks in Q3FY27, the high points of benchmark yield belong to H2FY27, after which bond yield could moderate."</li>
+<li><strong>Axis Mutual Fund's November outlook</strong> has terminal at 6.00-6.25% and prefers 3-5 year accrual. That is the consensus you are taking the other side of, and it is why the 10-year is cheap.</li>
+<li><strong>Supply calendar:</strong> the Centre's borrowing is front-loaded into November-February. It turns light in March, exactly when the CPI rolls over. That is a double tailwind, dated.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        
+<li><strong>Every 10bp of rally is +0.71% on price.</strong> A move to 7.05% is +1.93%; to 7.00%, +2.30%; to 6.90%, +3.03%. Duration 7.07 is enough torque to make a 27bp call pay double digits annualised, and small enough that a shock is survivable.</li>
+<li><strong>The hike may not even happen.</strong> Markets price 25bp on 4 December, but crude is down 29% and two MPC members (Dr. Nagesh Kumar, Prof. Ram Singh) already dissented against the tightening stance in October. A hold would rally the 10-year 20bp in a session.</li>
+<li><strong>The carry is the floor.</strong> Even with zero price movement you earn 7.32% annualised. That is above the 6% hurdle before you make a single correct call.</li>
+<li><strong>Retail non-competitive bids in the primary auction get full allotment at the cut-off.</strong> No rationing, no bidding skill, no institutional minimum — the small investor gets the same yield as a bank.</li>
+<li><strong>Falling oil also means falling G-Sec supply pressure on the fisc.</strong> A $40 crude collapse is a direct subsidy-bill and customs-revenue story; a narrower fiscal gap is the one thing that lets the long end rally without the RBI having to cut.</li>
+<li><strong>Asymmetric event risk.</strong> The remaining catalysts — the 4 December MPC, the 12 December CPI, the January and February CPI prints, the Union Budget on 1 February — are all disinflationary in direction if Brent stays near $96.</li>
+
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        
+<li><strong>The US 10-year at 5.154% is the trade-killer.</strong> It rose 6.1% in five sessions and India's 13 November selloff was partly tracking it. If it runs to 5.50%, India's 10-year goes to 7.60-7.75% and this position is 2-3% underwater on mark-to-market.</li>
+<li><strong>Two more hikes, not one.</strong> Axis has terminal at 6.00-6.25%. At a 6.25% peak the fair 10-year is 7.60%, and the target in this note is wrong by 55bp.</li>
+<li><strong>The rupee, not CPI, may be the binding constraint.</strong> At 94.20 the RBI is already uncomfortable. If USDINR breaks 97, the RBI hikes to defend the currency regardless of what inflation does, and the entire thesis is void. The stop rule below is built for exactly this.</li>
+<li><strong>Supply.</strong> November to February is the heaviest government borrowing window of the year. Every rally gets sold into by primary dealers running inventory.</li>
+<li><strong>Crude re-spikes.</strong> A collapsed ceasefire, a Hormuz closure, or a strike on Saudi infrastructure reverses a 29% move in a week — the market did it in the other direction in early October. The disinflation case would die with it.</li>
+<li><strong>Auction concession.</strong> Bidding 7.32% when the secondary is at 7.2430% means an immediate 0.55% mark-to-market loss on day one. It is the price of full allotment, and it is recoverable in three weeks of carry.</li>
+<li><strong>Liquidity on exit.</strong> RDG secondary-market liquidity in the 10-year is thin for retail. Plan to exit into a rally rather than at a specific price, or simply hold to 2036.</li>
+
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                
+<li><strong>Two tranches, 50% each.</strong> Tranche 1 now (auction or RDG secondary at 7.28% or better), tranche 2 in the first auction after 4 December. If the hike sells the market off, the second tranche improves the blended entry instead of hurting it.</li>
+<li><strong>No leverage, no margin, no derivatives.</strong> Cash G-Sec in an RDG account only. The strategy has no path to a forced exit.</li>
+<li><strong>Hold-to-maturity is the escape hatch.</strong> If the rally never comes, 7.32% is locked for ten years against a 5.50% repo and a 5.87% 91-day bill. The downside case is "you own a 7.3% sovereign bond", not "you lost money".</li>
+<li><strong>Hard thesis-invalidation rule:</strong> if the 10-year closes above 7.65% for five consecutive sessions <em>while</em> the US 10-year is making new highs, sell and roll into 364-day T-bills at 6.64%. The cost of being wrong is capped at roughly 2%.</li>
+<li><strong>Position cap: 30% of the debt allocation, ₹2-8 lakh absolute.</strong> Large enough to matter at the portfolio level, small enough that a 5% mark-to-market drawdown is a rounding error.</li>
+<li><strong>Single decision, no averaging down.</strong> Both tranches are pre-committed. If neither fills, the trade does not happen — that is an acceptable outcome, not a reason to chase.</li>
+<li><strong>Monitor the rupee before the bond.</strong> USDINR above 96.50 is the early-warning signal that the RBI's reaction function has switched from inflation to currency. That check takes ten seconds a day.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹2-8 lakh (minimum lot ₹10,000 face value)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 30% of the debt allocation; ₹5 lakh is the core size</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>RBI Retail Direct (rddirect.rbi.org.in) + linked bank account</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low — ~20 minutes a week, three hard-dated checkpoints</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>7-9 months (to June-August 2027)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Coupon is taxed at your slab rate as income from other sources; RBI does not deduct TDS on G-Sec interest, so pay advance tax. Capital gain is STCG at slab if sold inside 12 months and LTCG at 12.5% (listed security, no indexation) beyond. On the ₹5 lakh base case the gain is ~₹9,700 against ~₹21,350 of interest — the tax treatment of the gain is a rounding error. Do not let it drive the exit.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                
+<li><strong>4 December, 10:00 IST — MPC decision.</strong> Watch the vote split and the stance wording, not just the rate. A 5-1 or 4-2 vote with a fresh dissent against hiking is the bull signal; a unanimous hike plus a hawkish stance extension is the signal to slow down.</li>
+<li><strong>Every Friday — the RBI G-Sec auction result.</strong> The 10-year cut-off versus the previous auction is the cleanest available read on real institutional demand, and it is published the same afternoon.</li>
+<li><strong>12 December — November CPI.</strong> Consensus should be 5.5-5.8% against October's 6.09%. A print at or below 5.6% is the trigger that takes the 10-year through 7.10%.</li>
+<li><strong>Every Monday — the US 10-year.</strong> If it holds above 5.25% for two consecutive weeks, halve the position regardless of what the Indian curve is doing. The correlation is not optional.</li>
+<li><strong>Daily, ten seconds — USDINR.</strong> 96.50 is the line. Above it, the RBI is defending the currency and duration is the wrong trade to hold.</li>
+<li><strong>Monthly — Brent.</strong> Below $85 strengthens the disinflation case and justifies extending the target to 6.90%. Back above $110 and the thesis is dead; exit on the invalidation rule.</li>
+
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Open or log in to RBI Retail Direct and confirm your RDG account is linked and funded. Check the RBI auction calendar — it is published each Monday for that week's Friday G-Sec auction — and identify the next 10-year 6.94% GS 2036 window (the benchmark has been coming roughly fortnightly; the next is likely Friday 27 November, then 11 December). Place tranche 1 as a non-competitive bid for ₹2,50,000 face value; you will be allotted at the cut-off yield with no rationing. If the RDG secondary screen shows the paper at 7.28% or better before then, take it there and skip the auction. Set a calendar reminder for 10:00 IST on 4 December and place tranche 2 in the following auction. Then do nothing until 12 December, when the CPI print does the work for you.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on November 14, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
