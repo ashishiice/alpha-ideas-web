@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IREDA at ₹118: Revenue Grew 14% and Profit Grew 1% — That Gap Is the Trade | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>IREDA at ₹118: Revenue Grew 14% and Profit Grew 1% — That Gap Is the Trade</h1>
+            <p>India's only listed pure-play renewable lender just printed the sharpest funding-cost squeeze in the sector, three weeks before the RBI's expected final hike. Buy the spread reversal, not the loan growth.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 November 15, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 9-12 months</span>
+                <span class="meta-pill return">📈 Expected: 24-30%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> IREDA — Indian Renewable Energy Development Agency (NSE: IREDA)</p>
+            <p><strong>Exchange:</strong> NSE, BSE</p>
+            <p><strong>Strategy Type:</strong> Rate-Cycle Reversal + Growth Accrual</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> IREDA's September quarter did one thing that matters: revenue rose 14% to ₹2,345 crore while profit rose 1% to ₹554 crore, because its cost of funds repriced faster than its loan yields. That is the mechanical signature of a mid-cycle NIM trough, not a credit event — net NPA actually fell from 1.97% to 1.08% over the same twelve months. The RBI's final 25bp hike is due on December 4 and is 77% priced. Once the repo stops rising, the liability side of a ₹97,411 crore book stops repricing while the asset side keeps repricing up. You are buying a 15%-growth lender at 2.3x book, 22% below its high, in the exact quarter its spread bottomed.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Stage it, because the stock has already run. Buy half at ₹114-120. Buy the second half at ₹106-112 on a pullback, or immediately after the December 4 policy if the RBI delivers 25bp and softens the stance. Hard stop on a daily close below ₹99. First exit at ₹145, final at ₹152.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹114-120 (tranche 1) / ₹106-112 (tranche 2) — blended ₹113-116</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹145 first, ₹152 full (+23% to +29%)</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">Daily close &lt; ₹99 — below the ₹98.78 52-week low</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item"><div class="rationale-bullet">1</div><div><strong>The Q2 gap is the entire thesis, and it is four numbers wide.</strong> Revenue &#8377;2,345 crore, up 14%. Profit &#8377;554 crore, up 1%. Disbursements &#8377;10,579 crore, up 31%. Loan book &#8377;97,411 crore, up 15%. Read those together and the business is growing while the margin is not. IREDA lent 31% more money and earned 14% more interest on a book that grew 15% &mdash; but only 1% more profit, because what it pays to borrow repriced before what it charges to lend. That is arithmetic, not a judgment call. A lender whose funding cost rises 100bp while its loan yield rises 60bp loses 40bp of spread on a book that is 5.85x its net worth. It is also the single most reversible line item in the P&amp;L the moment the policy rate stops moving.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">2</div><div><strong>The reversal has a date: December 4, 2026.</strong> The MPC meets December 2-4. The market assigns a 25bp hike a 77% probability, no change 13%, and 50bp or more just 8%. That distribution is not symmetric &mdash; it is a market saying "one more, then stop." Every serious forecaster is in the same place: Brickwork expects a final 25bp to 5.75% followed by "an extended pause," ICRA calls the December hike "almost certain," and SBI Research cut its call from 50bp to 25bp and sees terminal at 5.75-6.00%. When the repo stops at 5.75%, IREDA's incremental cost of funds plateaus within a quarter while the &#8377;97,411 crore book &mdash; 84% of it secured &mdash; keeps repricing upward. The spread turn is mechanical and it is one quarter away.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">3</div><div><strong>Growth is the part the peers do not have.</strong> PFC, the largest power financier in the country, saw disbursements fall 31.5% year-on-year to &#8377;34,131 crore while its loan book grew 2%. REC grew its book 5% sequentially but reported a 21% decline in profit and a 9% fall in net interest income. IREDA grew disbursements 31% and its book 15% in that same quarter, with a sanctions pipeline above &#8377;90,000 crore. India's 500 GW non-fossil target by 2030 is not a forecast that can be quietly dropped &mdash; it is the policy the entire renewable supply chain has been built against, and 100% of IREDA's book sits in that segment. You are not being asked to believe in a demand recovery. Demand never left.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">4</div><div><strong>Asset quality is moving the right way, which is what separates this from a value trap.</strong> Net NPA fell to 1.08% from 1.97% a year earlier. Provision coverage is 68.22%. CRAR is 20.30% against a 15% regulatory floor &mdash; the RBI's January 2026 risk-weight amendment for high-quality infrastructure projects cut IREDA's risk-weighted assets by &#8377;7,787 crore and added 183bp to its capital ratio in one stroke. CARE rates its bonds AAA; S&amp;P rates it BBB globally. The gross NPA of 3.76% is high in absolute terms and is the honest counterpoint to the bull case &mdash; but it is falling, not rising, and the FY26 Gensol slippage is already provided for.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">5</div><div><strong>You are being paid to take the de-rating, not the growth.</strong> At &#8377;118.30 the stock trades at 2.32x book value of &#8377;51.0 and 16.9x trailing earnings. At its &#8377;152 high it traded near 3.0x. Nothing about the franchise got 23% worse &mdash; the loan book is bigger, the NPAs are lower and the capital ratio is stronger than when it printed that high. What changed is that the market repriced every lender for a terminal rate it now thinks is higher. That is a discount-rate move, and discount-rate moves reverse faster than earnings moves do.</div></div>
+<div class="rationale-item"><div class="rationale-bullet">6</div><div><strong>This is a spread trade, so watch the spread &mdash; not the loan book.</strong> The single number that proves or kills the thesis is the gap between yield on term loans and cost of funds. FY26 yield was 9.5% against a cost of funds of 6.9%, down from 7.2% in FY25 &mdash; a 2.6-point spread. If the December pause holds and the spread re-widens toward 2.5-2.6% over the next two quarters, a 16% ROE business at 2.3x book is mispriced by 20-25%. If the spread compresses for a third consecutive quarter, the thesis is wrong and the &#8377;99 stop is the answer &mdash; not a lower average.</div></div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                                <li><strong>Repo 5.50%, one hike left.</strong> The RBI raised 25bp on October 7 &mdash; the first hike since February 2023 &mdash; and moved to "calibrated tightening." Consensus terminal is 5.75%: Brickwork, ICRA and SBI Research all converge there, with SBI Research assigning a 50:50 chance to 5.75% versus 6.00% and calling the three-to-four-hike consensus "an outlier."</li>
+                <li><strong>Inflation is peaking, not accelerating forever.</strong> October CPI printed 6.09% with food at 8.94% &mdash; the 12th straight month of acceleration and the first breach of the 6% ceiling. The RBI's own projection has Q3 FY27 at 6.0% and Q4 FY27 at 5.7%, with FY27 averaging 5.2%. The central bank is forecasting its own relief.</li>
+                <li><strong>The long end already carries a downward bias.</strong> The 10-year G-sec yields 7.3079%. SBI Research expects it to settle at 6.75-7.00% "with a clear downward bias," from a 7.41% cycle high on October 30. A 30-50bp fall in the 10-year is the discount-rate tailwind that re-rates a growth lender.</li>
+                <li><strong>Imported inflation is retreating into the decision.</strong> Brent is $95.84, down 18.5% from its $117.64 peak, and the rupee has recovered to 94.24 from 96.88 &mdash; a 2.7% appreciation. Both were the RBI's stated reasons for tightening in October.</li>
+                <li><strong>The system is short of deposits.</strong> Bank credit is growing 19.4% against deposit growth of 17.8%, with the credit-deposit ratio at 81%. That is exactly why funding costs led loan yields this cycle &mdash; and why those costs stop leading the moment policy stops moving.</li>
+                <li><strong>Liquidity is still in surplus.</strong> The RBI absorbed &#8377;38,592 crore through a 3-day VRRR at a weighted average of 5.49%, just under the 5.50% repo. Overnight money is not stressed; only term funding is.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                                <li><strong>Q2 FY27 standalone:</strong> disbursements &#8377;10,579 crore (+31%), loan book &#8377;97,411 crore (+15%), revenue &#8377;2,345 crore (+14%), PAT &#8377;554 crore (+1%), net worth &#8377;14,337 crore (+11%), net NPA 1.08% from 1.97%.</li>
+                <li><strong>Q1 FY27 was the mirror image:</strong> PAT &#8377;337.5 crore, up 36.8%, on NII of &#8377;856.8 crore, up 24.1%, with annualised NIM at 3.75% versus 3.60%. Two quarters, two directions &mdash; which is what a rate shock landing mid-year looks like, not a deteriorating franchise.</li>
+                <li><strong>Book composition:</strong> solar/SPV 26%, state utilities 19%, wind 11%, manufacturing 11%; 84% secured. Roughly 70% of the portfolio sits in projects already commissioned, which is why credit cost fell as the book aged.</li>
+                <li><strong>Capital is not the constraint:</strong> CRAR 20.30% against a 15% floor, gearing 5.85x on a stated intent to stay under 7.0x, and a &#8377;2,005.90 crore QIP completed in FY26 with the government stake protected by a 3.76% dilution cap.</li>
+                <li><strong>FY26 baseline:</strong> PAT &#8377;1,874 crore on AUM of &#8377;93,069 crore, return on managed assets 2.21%, RoNW 16.2%. CARE flags credit cost rising to 0.9% from 0.3% on the Gensol account moving to Stage III &mdash; a known, provided-for item.</li>
+                <li><strong>The stock has already turned:</strong> &#8377;102.30 on November 3 to &#8377;118.30 on November 13, a 15.6% move in eight sessions, into a three-month intraday high of &#8377;123.99. That is the argument for staging the entry rather than buying the print.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                                                <li><strong>A hike-and-pause on December 4</strong> sends the 10-year toward 7.05-7.10% and re-rates the entire lender complex. IREDA carries the highest book-growth beta in the group, so it moves most.</li>
+                        <li><strong>Q3 FY27 in mid-January</strong> is the first print with a stable cost of funds. A return to 15-20% PAT growth resets the multiple toward 2.8-3.0x book &mdash; &#8377;143 to &#8377;153.</li>
+                        <li><strong>Food inflation cooling</strong> in the November and December prints lets the RBI signal the end of the cycle at the February 3-5 MPC &mdash; the second and larger re-rating event inside the 9-12 month window.</li>
+                        <li><strong>Renewable capex is policy-locked.</strong> REC's renewable book grew 27% to &#8377;86,660 crore in the same quarter that IREDA grew disbursements 31%. The order pipeline is not the risk.</li>
+                        <li><strong>The 50bp tail is only 8% priced.</strong> Positioning already assumes "hike and stop," which caps how much damage a hawkish surprise can do relative to how much a dovish one pays.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                                                <li><strong>The deceleration may not be a spread trough.</strong> Revenue +14% with PAT +1% can persist if asset yields keep falling faster than funding costs &mdash; ICICI Direct flagged exactly this on PFC's book: "faster decline in asset yields relative to funding costs could sustain pressure on spreads."</li>
+                        <li><strong>A 50bp hike.</strong> Market-implied at 8%, but HSBC argued for it. That would take the 10-year through 7.50% and IREDA through &#8377;99, triggering the stop for a 16% loss.</li>
+                        <li><strong>2.32x book is not cheap.</strong> If ROE slips below 13% and book growth falls under 12%, the multiple compresses to 1.9x &mdash; that is &#8377;97, not a recovery. There is no asset-value floor here the way there is at 0.8x book.</li>
+                        <li><strong>Gross NPA of 3.76% is genuinely high</strong> &mdash; four times PFC's 0.91%. One large renewable borrower slipping would undo two quarters of asset-quality improvement.</li>
+                        <li><strong>Capital-raise overhang.</strong> A 15%-growth lender at 5.85x gearing will need equity again; the FY26 QIP was &#8377;2,005.90 crore. Dilution at a depressed multiple is a real cost to the existing holder.</li>
+                        <li><strong>You are buying after a 15.6% eight-session run</strong> into a three-month high. Momentum cuts both ways, and the &#8377;98.78 low sits only 16% below the current price.</li>
+                        <li><strong>PSU discount and directed-lending risk.</strong> Tariff directives, mandated lending and leadership changes at a MNRE CPSE are not hedgeable and are not in the valuation.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                                <li><strong>Stage the entry 50/50.</strong> Half at &#8377;114-120, half at &#8377;106-112 or post-policy. Do not put the full position on at a three-month high after a 15.6% run.</li>
+                <li><strong>Hard stop on a daily close below &#8377;99.</strong> That is the &#8377;98.78 52-week low. Honour it and never average down through it &mdash; the entire point of a 2.3x-book position is that the stop is cheap.</li>
+                <li><strong>Cap at 8% of the equity portfolio.</strong> On a &#8377;1-10 lakh book that is &#8377;40,000-&#8377;80,000, or roughly 340-680 shares at &#8377;118.</li>
+                <li><strong>No adds above &#8377;126.</strong> Beyond that you have handed back the whole de-rating discount that makes the risk-reward work.</li>
+                <li><strong>Two-quarter rule.</strong> If NIM has not stabilised across two consecutive quarters, exit on the thesis rather than on the price.</li>
+                <li><strong>Pair it with duration, not another lender.</strong> If you want more of this macro view, express it through the 10-year G-sec or a target-maturity fund, not by doubling up on NBFCs.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1-5 lakh (₹40,000-₹80,000 per the 8% sizing rule)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 8% of the equity portfolio; ≤ ₹80,000 on a ₹1-10 lakh book</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Angel One / Groww — NSE cash segment, no F&amp;O required</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Low — four fixed review dates, no daily screen time</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>9-12 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Hold past 12 months for LTCG at 12.5% above the ₹1.25 lakh annual equity exemption. Sell inside 12 months and it is STCG at 20%. That 7.5-point gap is worth more than most of the expected price move, so do not trade in and out. Dividend yield is only 1.14% — no dividend-capture angle, no slab-rate drag to model.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                                <li><strong>December 4 MPC:</strong> 25bp with a softened stance = hold and add tranche 2. 50bp = the &#8377;99 stop is live; do not add at any price.</li>
+                <li><strong>10-year G-sec:</strong> a close below 7.15% confirms the cycle has peaked. A break above 7.45% invalidates the macro premise before the earnings do.</li>
+                <li><strong>Q3 FY27, mid-January:</strong> NIM must stabilise and PAT growth must return above 10%. A third straight quarter of revenue growth without profit growth is an exit, not an averaging opportunity.</li>
+                <li><strong>Spread, not book:</strong> yield on term loans minus cost of funds. Below 2.2% for two quarters breaks the thesis no matter how fast the loan book grows.</li>
+                <li><strong>Net NPA:</strong> any move back above 1.50%, or a fresh large-borrower slippage, exits the position.</li>
+                <li><strong>Macro tripwires:</strong> INR below 93 or Brent above $105 would revive the hike trade and should force a re-look before the next results.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Monday, November 17: log into Zerodha (or Angel One / Groww), place the first 50% tranche at ₹114-120, set a GTT for the second 50% at ₹110, and set a GTT sell-stop at ₹99. Then diarise exactly two dates — December 4 and the mid-January Q3 print. Nothing in between should change the position.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on November 15, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
