@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahanadi Coalfields IPO at ₹136: India's Largest Coal Miner, 8.4x Earnings, and a 9.3% Dividend Yield | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Mahanadi Coalfields IPO at ₹136: India's Largest Coal Miner, 8.4x Earnings, and a 9.3% Dividend Yield</h1>
+            <p>Coal India is selling 10% of MCL at 8.43x FY26 earnings against an 11.57x peer average — and the subsidiary has paid ₹25,750 crore of dividends in three years. Bid the ₹136 cut-off for the listing pop; stay for the 8-9% yield.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 November 17, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 3-12 months</span>
+                <span class="meta-pill return">📈 Expected: 14-20%</span>
+                <span class="meta-pill risk">⚠️ Moderate</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Mahanadi Coalfields Ltd (IPO; NSE/BSE: MCL)</p>
+            <p><strong>Exchange:</strong> NSE / BSE — IPO via Zerodha, Groww or Angel One</p>
+            <p><strong>Strategy Type:</strong> Event-Driven IPO + Dividend Accrual</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> MCL is India's largest single coal producer — 218.3 MT in FY26, 21% of national output — with the lowest cost per tonne in the Coal India group (₹816 vs SECL's ₹1,448) and a virtually debt-free balance sheet. At the ₹136 top of the band it is valued at 8.43x FY26 EPS of ₹16.13 against an 11.57x peer average, and its FY26 dividend of ₹8,400 crore works out to ₹12.69 per share — a 9.3% yield on the issue price. The 5% grey-market pop is a bonus; the dividend and 4.3x EV/EBITDA are the reason to own the allotment.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>The issue opens Thursday, November 19 and closes Monday, November 23 at 4:30 PM. Bid at the cut-off of ₹136 — the exchange discovers the price at or below your bid, so you never pay more. The retail cap is 13 lots (1,430 shares = ₹1,94,480 per PAN); add a second family PAN only if you want ₹3.9 lakh. If unallotted, buy on listing day (November 27) only up to ₹142; do not chase above ₹145. Hold the allotment for the FY27 dividend and trim 40% into ₹150-158 if the re-rating arrives early.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹136 cut-off (band ₹129-136); secondary ≤₹142</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹150-158 (10-16% above issue) + ₹11-13 dividend</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">Daily close &lt; ₹120 (−12%); exit if FY27 payout falls below 50%</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                
+                <div class="rationale-item">
+                    <div class="rationale-bullet">1</div>
+                    <div><strong>A 9.3% trailing dividend yield at the issue price.</strong> MCL declared ₹8,600 crore of dividends in FY24, ₹8,750 crore in FY25 and ₹8,400 crore in FY26 — ₹25,750 crore in three years, a 78-81% payout. On 661.84 crore shares that is ₹12.69 per share, or 9.33% at ₹136. Even a cut to a 70% payout on a flat ₹10,700 crore PAT still gives about ₹11.3 per share — an 8.3% yield. DIPAM Secretary Arunish Chawla said on November 16 that MCL "will continue to remain" a high-dividend stock and called the price band "fair and restrained".</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">2</div>
+                    <div><strong>8.43x FY26 earnings against 11.57x peers — and 4.3x EV/EBITDA on reported cash.</strong> At ₹136 the market cap is ₹90,010 crore; FY26 PAT was ₹10,698 crore and EBITDA ₹16,085 crore (47.45% margin). Cash and bank balances of ₹20,292 crore against ₹2.76 crore of borrowings put enterprise value near ₹69,700 crore, or 4.3x EBITDA. Coal India itself trades at ₹397.5, about 7.9x FY26 consolidated PAT and a 6.62% yield — MCL's small premium buys a 53.77% RONW and a bigger payout.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">3</div>
+                    <div><strong>The lowest-cost producer in the group.</strong> MCL mined a tonne for ₹816.01 in FY26 versus ₹1,448.34 at SECL and ₹3,980.54 at BCCL. Surface miners handle 99.4% of output and productivity is 30.34 tonnes per manshift against Coal India's 12.65. That cost position is what funds the dividend through the cycle — and why MCL reported the highest EBITDA margin among Indian coal producers in FY26.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">4</div>
+                    <div><strong>H1 FY27 is growing again after a soft FY26.</strong> Revenue was ₹16,093 crore (+9.3% YoY), EBITDA ₹7,464 crore (+6.1%) and PAT ₹4,881 crore (+6.7%), against ₹14,724 crore / ₹7,034 crore / ₹4,574 crore in H1 FY26. Operating cash flow was ₹8,997 crore in H1 FY27 versus ₹2,435 crore a year earlier — the dividend is covered by cash, not just accounting profit.</div>
+                </div>
+                <div class="rationale-item">
+                    <div class="rationale-bullet">5</div>
+                    <div><strong>The seller is the government, not a distressed holder.</strong> Only 10% is being sold; Coal India keeps 90% and needs the ₹8,981 crore for its ₹1 trillion diversification plan, so the parent has every incentive to keep MCL's dividend and output intact. The ₹9,000 crore free float makes index inclusion a 2027 possibility — optionality, not the base case.</div>
+                </div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>Coal produced about 70% of India's electricity in FY26; the government plans to lift coal-fired capacity from 227.8 GW in January 2026 to 283 GW by FY32 (MCL RHP).</li>
+                <li>India's non-coking coal demand is projected at 1,394 MT by FY31 and 1,564 MT by FY36, versus 1,112 MT in FY25 — domestic coal is the import-substitution trade.</li>
+                <li>The RBI has hiked the repo to 5.50% and the December 4 MPC is pricing another 25bp; a 9% pre-tax dividend yield (about 6.5% post-tax at the 30% slab) still beats the 7.3% 10-year G-sec (about 5.1% post-tax).</li>
+                <li>Nifty at 25,291 is 4.1% below its 52-week high after an 11% rebound from the October low — a high-yield new issue is a defensive way to stay invested without chasing 19-20x earnings.</li>
+                <li>The government's divestment pipeline — MCL now, SECL and NLC India Renewables later — keeps PSU coal in the news and retail participation high.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>FY26: 218.31 MT produced — 21% of India's coal and 28.4% of Coal India's output; 17 mines (14 opencast, 3 underground) and 20,526 permanent employees.</li>
+                <li>FY26 revenue ₹30,550 crore, PAT ₹10,698 crore, EBITDA margin 47.45%, PAT margin 31.56%, ROACE 73.26%, RONW 53.77%.</li>
+                <li>Dividend record: ₹8,600 crore (FY24), ₹8,750 crore (FY25), ₹8,400 crore (FY26); FY26 payout 78.5% of PAT.</li>
+                <li>Issue: 66.18 crore shares, 100% OFS, ₹8,981 crore at ₹136; 35% retail quota, 50% QIB, 15% NII; allotment November 25, listing November 27; GMP ₹7 (about 5%).</li>
+                <li>Retail cap 13 lots (₹1,94,480); Coal India shareholders have a separate shareholder quota up to ₹2 lakh; employees get a ₹6 discount up to ₹5 lakh.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>Dividend re-rating: capitalising ₹12.69 at an 8% yield gives ₹159; at 7.5% it gives ₹169. The stock does not need earnings growth for a 17-25% total return.</li>
+                        <li>FY27E EPS of ₹16-17 on the H1 run-rate puts the stock at 8x; a 9.5-10x multiple is ₹152-170.</li>
+                        <li>A pause in the RBI hiking cycle after December would lift high-yield PSUs across the board.</li>
+                        <li>Index inclusion (Nifty Next 50 / MSCI) in 2027 if float and trading history qualify.</li>
+                        <li>Coal India's ₹1 trillion diversification and the SECL IPO keep the subsidiary story in the market's eye.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li>Production is falling: 218.31 MT in FY26 versus 225.17 MT in FY25 (−3.05%), and operating EBITDA margin slid from 46.41% in FY24 to 40.07% in H1 FY27.</li>
+                        <li>FY26 profit was flattered by ₹1,164 crore of tax refunds and ₹695 crore of liability write-backs; excluding them, PBT fell 10.6% YoY. The RHP explicitly says future dividends are not guaranteed.</li>
+                        <li>Contingent liabilities of ₹12,513 crore at September 2026 — 55.9% of net worth — including ₹8,075 crore of income-tax disputes; adverse outcomes would hit cash.</li>
+                        <li>Customer concentration: the top 10 customers are 55.94% of revenue (NTPC 14.64%, Vedanta 7.67%); APGenco and APPDCL already owe ₹2,432 crore.</li>
+                        <li>The government keeps selling: 90% remains with Coal India, and the SECL and NLC Renewables listings add PSU coal supply to the market.</li>
+                        <li>Energy transition and ESG exclusion cap the multiple; coal demand may peak within a decade.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li>Cap the position at 15-20% of the equity portfolio; the retail route naturally caps a single PAN at ₹1.94 lakh.</li>
+                <li>Bid at cut-off only — never above ₹136 in the IPO. If the grey-market premium disappears, the dividend still pays you to wait.</li>
+                <li>Hard stop on a daily close below ₹120 (−12%); do not average down through ₹125.</li>
+                <li>Cap total coal exposure (MCL plus Coal India) at 25% of the portfolio.</li>
+                <li>Skip or downsize the trade if QIB subscription is below 1x on November 23 — institutions set the price in a ₹9,000 crore OFS.</li>
+                <li>Re-underwrite the dividend after the FY27 results: if the payout policy drops below 50% of PAT, exit.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹1.5-2 lakh per PAN (13 lots = ₹1,94,480); up to ₹6 lakh across three family PANs</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 15-20% of the equity portfolio; total coal sleeve ≤25%</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Groww / Angel One IPO section (UPI mandate)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Moderate — five dates in two weeks, then quarterly</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-12 months (listing trade: 2 weeks)</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Dividend taxed at slab (10% TDS above ₹5,000); STCG 20% if sold within 12 months; LTCG 12.5% above ₹1.25 lakh if held longer</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li>November 18: anchor book — QIB participation is the first institutional read.</li>
+                <li>November 19-23: daily subscription — retail 3x+ and QIB 1x+ by the close on November 23.</li>
+                <li>November 25: allotment; November 26: shares credited; November 27: listing versus ₹136 and the ₹143 GMP print. Exit if it closes below ₹125 on day one.</li>
+                <li>December 4: RBI MPC — a hike is about 77% priced; a pause is a tailwind for PSU yield names.</li>
+                <li>January 2027: Q3 FY27 results — production, realisation, EBITDA margin and any dividend declaration.</li>
+                <li>April-May 2027: FY27 dividend record date and Coal India's next stake sale / SECL IPO headlines.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Open Zerodha → IPO → Mahanadi Coalfields → bid 13 lots at cut-off ₹136 before 4:30 PM on November 23, with the UPI mandate ready. If you hold Coal India shares, check the shareholder quota — it is a separate, usually less crowded book with the same ₹2 lakh cap. Set price alerts at ₹120 and ₹158.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on November 17, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
