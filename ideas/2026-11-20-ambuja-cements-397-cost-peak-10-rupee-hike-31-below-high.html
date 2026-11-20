@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambuja Cements at ₹397: The Cost Peak Was Q2, the ₹10/Bag Hike Is Already Banked, and the Stock Is 31% Below Its High | Alpha Ideas</title>
+    <style>
+        :root {
+            --bg-primary: #0d1117;
+            --bg-secondary: #161b22;
+            --bg-tertiary: #21262d;
+            --text-primary: #e6edf3;
+            --text-secondary: #7d8590;
+            --accent-green: #238636;
+            --accent-gold: #e3b341;
+            --accent-red: #da3633;
+            --accent-blue: #58a6ff;
+            --accent-purple: #a371f7;
+            --border: #30363d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--accent-blue);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+        
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .meta-pill {
+            font-size: 0.85rem;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+        }
+        
+        .meta-pill.date {
+            color: var(--text-secondary);
+        }
+        
+        .meta-pill.return {
+            color: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+        
+        .meta-pill.risk {
+            color: var(--accent-red);
+            border-color: var(--accent-red);
+        }
+        
+        .meta-pill.timeframe {
+            color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+        
+        .section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section h2 {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .section h3 {
+            font-size: 1rem;
+            color: var(--accent-purple);
+            margin: 1.25rem 0 0.75rem 0;
+        }
+        
+        .section p, .section li {
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .section ul {
+            padding-left: 1.5rem;
+        }
+        
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight-box {
+            background: var(--bg-tertiary);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .highlight-box strong {
+            color: var(--accent-gold);
+        }
+        
+        .levels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .level-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .level-card.buy {
+            border-color: var(--accent-green);
+        }
+        
+        .level-card.target {
+            border-color: var(--accent-gold);
+        }
+        
+        .level-card.stop {
+            border-color: var(--accent-red);
+        }
+        
+        .level-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .level-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .level-card.buy .level-value {
+            color: var(--accent-green);
+        }
+        
+        .level-card.target .level-value {
+            color: var(--accent-gold);
+        }
+        
+        .level-card.stop .level-value {
+            color: var(--accent-red);
+        }
+        
+        .rationale-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+        
+        .rationale-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .rationale-bullet {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 0.75rem;
+            color: white;
+        }
+        
+        .risk-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .risk-card {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        
+        .risk-card.pros {
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .risk-card.cons {
+            border-left: 4px solid var(--accent-red);
+        }
+        
+        .risk-card h4 {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+        
+        .risk-card ul {
+            padding-left: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .action-cta {
+            background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple));
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .action-cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+            border: none;
+            padding: 0;
+        }
+        
+        .action-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+        
+        .execution-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .execution-table th,
+        .execution-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .execution-table th {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .execution-table td {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        
+        .execution-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .disclaimer {
+            background: var(--bg-tertiary);
+            border: 1px dashed var(--border);
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .disclaimer p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 600px) {
+            .levels-grid {
+                grid-template-columns: 1fr;
+            }
+            .risk-matrix {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">📈 Alpha Ideas</a>
+        <a href="../index.html" class="back-link">← Back to Archive</a>
+    </header>
+    
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Ambuja Cements at ₹397: The Cost Peak Was Q2, the ₹10/Bag Hike Is Already Banked, and the Stock Is 31% Below Its High</h1>
+            <p>India's second-largest cement maker trades at 12.6x forward EV/EBITDA, a 17% discount to its own five-year average, with a realised ₹10/bag price hike, Brent down 24% from its October high, and capacity going from 109 to 119 MTPA by March.</p>
+            
+            <div class="hero-meta">
+                <span class="meta-pill date">📅 November 20, 2026</span>
+                <span class="meta-pill timeframe">⏱️ 6-9 months</span>
+                <span class="meta-pill return">📈 Expected: 15-22%</span>
+                <span class="meta-pill risk">⚠️ Moderate (high-beta cyclical)</span>
+            </div>
+        </div>
+        
+        <!-- The Asset -->
+        <div class="section">
+            <h2>🎯 The Asset</h2>
+            <p><strong>Instrument:</strong> Ambuja Cements Ltd (NSE: AMBUJACEM)</p>
+            <p><strong>Exchange:</strong> NSE / BSE</p>
+            <p><strong>Strategy Type:</strong> Cyclical Margin-Inflection (EV/EBITDA and EV-per-tonne value)</p>
+            
+            <div class="highlight-box">
+                <strong>Investment Thesis:</strong> Cement is the one domestic cyclical where the WPI problem is also the solution: input costs are falling while output prices are rising. Ambuja's Q2 FY27 revenue grew 10% to ₹6,113 crore while reported profit fell ~90% purely on a ₹1,697 crore income-tax provision reversal in the base quarter, so the headline looks like a collapse and the operating reality is a trough. At ₹396.80 the stock sits 30.8% below its 52-week high of ₹573.10 and on 12.6x one-year forward EV/EBITDA against a five-year average near 15.2x, while the two things that decide cement margins - the price per bag and the cost of fuel - have both just turned.
+            </div>
+        </div>
+        
+        <!-- Entry & Exit Levels -->
+        <div class="section">
+            <h2>📍 Entry & Exit Levels</h2>
+            <p>Buy the ₹385-400 zone in two equal tranches. The stock bottomed at ₹341 and has reclaimed both its 20-DMA (₹375.70) and 50-DMA (₹373.30), with the 200-DMA at ₹427.40 as the first objective. Do not chase above ₹420; the second tranche is only justified on a daily close above the 200-DMA, which converts the base into an uptrend. Exit on either the target or the stop, whichever comes first - this is not a hold-through-anything position.</p>
+            
+            <div class="levels-grid">
+                <div class="level-card buy">
+                    <div class="level-label">Entry / Buy Zone</div>
+                    <div class="level-value">₹385-400</div>
+                </div>
+                <div class="level-card target">
+                    <div class="level-label">Target / Exit</div>
+                    <div class="level-value">₹470 base / ₹520 stretch</div>
+                </div>
+                <div class="level-card stop">
+                    <div class="level-label">Stop Loss</div>
+                    <div class="level-value">Daily close below ₹338</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Market Rationale -->
+        <div class="section">
+            <h2>🔍 Why This Works Now</h2>
+            
+            <div class="rationale-chain">
+                <div class="rationale-item"><div class="rationale-bullet">1</div><div><strong>The price hike is banked, not hoped for.</strong> On ACC's November 3 earnings call - ACC is the group's sister listed entity and shares Ambuja's pricing geography - management said price had sustained at ₹255 per bag through a lean monsoon quarter and that they had <em>already realised ₹10 per bag</em> in November. At ~20 bags to the tonne that is roughly ₹200 per tonne against a Q2 EBITDA of about ₹770 per tonne: a ~26% lift to unit cash earnings if it holds.</div></div><div class="rationale-item"><div class="rationale-bullet">2</div><div><strong>The cost peak was Q2, and the biggest input just fell 24%.</strong> Brent went from $117.64 in late October to $89.73 today, a 23.7% decline, as Strait of Hormuz shipments normalised. Petcoke and diesel are cement's two largest variable costs and both lag crude by one to two quarters - which puts the relief exactly in the December-to-March window that this position is designed to own.</div></div><div class="rationale-item"><div class="rationale-bullet">3</div><div><strong>You are paying a five-year-low multiple for a business that is getting bigger.</strong> 12.6x one-year forward EV/EBITDA is a 17% discount to Ambuja's own five-year average. Meanwhile capacity goes from 109 MTPA today (including Sanghi, Penna and Orient) to 119 MTPA by March 2027, with the group's stated target revised up to 140-155 MTPA by FY28. Volume grew 14.7% in FY26, roughly double the industry.</div></div><div class="rationale-item"><div class="rationale-bullet">4</div><div><strong>The 90% profit fall is a tax artefact, not an operating collapse.</strong> Q2 FY26 carried a ₹1,697 crore income-tax provision reversal that inflated that quarter's base. Q2 FY27 revenue still rose 10% to ₹6,113 crore and EBITDA per tonne rose sequentially. The trailing P/E of 32.6 and ROE of 8.85% are therefore measuring a depressed denominator, not a broken business.</div></div><div class="rationale-item"><div class="rationale-bullet">5</div><div><strong>The chart has already turned.</strong> ₹341 low, then ₹396.80, above the 20-DMA at ₹375.70 and the 50-DMA at ₹373.30, and 7.2% below the 200-DMA at ₹427.40. The first target is the 200-DMA, not a hero number, and the stop at ₹338 sits just under the 52-week low - so the trade is defined by structure on both sides.</div></div>
+            </div>
+            
+            <h3>Macro Context</h3>
+            <ul>
+                <li>India's 10-year G-sec yields <strong>7.21%</strong> while the Nifty's forward earnings yield is roughly 5.26% - a <strong>195bp equity-bond gap</strong>, within 5bp of the 2-percentage-point threshold Bloomberg flagged on November 20 as the level where 12-month equity returns have historically turned negative. In that regime you own cheap cyclicals, not 35-60x growth.</li><li><strong>CPI 6.09% in October</strong> (a two-year high, first breach of the RBI's 6% band in two years) and <strong>WPI 12.29%</strong>, the highest in the new series, driven by fuel and power. Cement is a pass-through business, and the pass-through is now showing up in the market price per bag rather than only in the cost line.</li><li><strong>Repo at 5.50% with the real policy rate at -59bp</strong> into the December 2-4 MPC. A 25bp hike to 5.75% on December 4 is consensus, with the terminal pegged at 6.00% - down from earlier 6.25% projections. Every hike already priced is a hike this position does not have to absorb.</li><li>The Fed sits at 3.75-4.00% with a <strong>December 9 hike fully priced</strong> and the US 10-year at 5.09%. Global money is expensive, which is precisely why a domestic-demand asset on 12.6x forward EBITDA is the safer duration than a 58x depository.</li><li>The Nifty is at a <strong>nine-month high of 25,514, up 9.7% in November</strong> - its best month in six years - on a record <strong>$10.33 billion</strong> of foreign inflows. That flow bought banks and large-cap momentum. It did not buy a cement name sitting 31% below its high.</li><li><strong>Brent at $89.73, down 23.7%</strong> from its late-October high, with the rupee at a seven-month high of 93.28. Cheaper fuel, stronger currency, same domestic demand.</li>
+            </ul>
+            
+            <h3>Micro Catalysts</h3>
+            <ul>
+                <li>ACC's November 3 call: price <strong>sustained at ₹255 per bag</strong> through the monsoon quarter, with <strong>₹10 per bag already realised</strong> in November.</li><li><strong>Nomura: Buy, target ₹470</strong>, modelling Q3 FY27 EBITDA per tonne at <strong>₹845</strong>, up ₹75 sequentially, even after assuming raw-material and power/fuel costs rise 5% quarter-on-quarter.</li><li><strong>Motilal Oswal: Buy, target ₹600</strong>, valuing the stock at 17x FY28E EV/EBITDA on the expanded capacity roadmap.</li><li><strong>InCred: Add, target ₹680</strong>, with the target capacity revised from 140 to 155 MTPA by FY28.</li><li>Capacity: <strong>109 MTPA today to 119 MTPA by FY27-end</strong>, including the Sanghi, Penna and Orient consolidation that is already in the base.</li><li><strong>₹14,500 crore of fresh investment announced</strong>; the stock rose nearly 4% on the disclosure, which tells you the market is not rejecting growth capex at this price.</li><li>Price sits above the 20-DMA (₹375.70) and 50-DMA (₹373.30) after a double-bottom near ₹341-375; average daily volume of ~4.0 million shares is ample for a ₹5 lakh position.</li>
+            </ul>
+        </div>
+        
+        <!-- Risk Analysis -->
+        <div class="section">
+            <h2>⚖️ Risk-Reward Analysis</h2>
+            
+            <div class="risk-matrix">
+                <div class="risk-card pros">
+                    <h4>✓ Upside Factors</h4>
+                    <ul>
+                        <li>A ₹10/bag hike held for a full year is roughly <strong>₹1,300 crore of incremental EBITDA</strong> on ~33 million tonnes of annual volume - on a base where quarterly EBITDA is about ₹1,400 crore.</li><li>Every $10/bbl fall in Brent strips a further <strong>₹25-30 per tonne</strong> out of fuel cost with a one-to-two-quarter lag.</li><li>Capacity of 119 MTPA by March 2027 with FY26 volume growth of 14.7% - operating leverage on a fixed cost base.</li><li>Three analysts at <strong>₹470 / ₹600 / ₹680</strong> - wide dispersion because the earnings base is distorted, not because the asset is in dispute.</li><li>12.6x forward EV/EBITDA reverting to the 15.2x five-year average is a re-rating on its own, before a single extra tonne is sold.</li><li>A February 1, 2027 Union Budget with an infrastructure capex push would land inside the holding period.</li>
+                    </ul>
+                </div>
+                <div class="risk-card cons">
+                    <h4>✗ Downside Risks</h4>
+                    <ul>
+                        <li><strong>Adani group governance and related-party risk.</strong> Part of the discount is structural and may never close - this is the single largest reason the position is capped at 8%.</li><li><strong>A cement price war.</strong> If the December-March hikes reverse and trade price falls below ₹245 per bag, the entire margin thesis breaks and the stop must be honoured without argument.</li><li><strong>Brent re-spiking above $105</strong> on a Strait of Hormuz reversal would remove the cost-relief leg in one move.</li><li>Rates to 6.00% and beyond slowing housing and infrastructure demand into FY28 - cement volumes are the first casualty of a housing slowdown.</li><li>A ₹14,500 crore capex programme that dilutes returns if volumes disappoint; the group has a history of announcing capacity faster than it commissions it.</li><li>Trailing ROE of 8.85% and a 0.50% dividend yield leave no accounting or income cushion while you wait.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Risk Mitigation</h3>
+            <ul>
+                <li><strong>Hard stop at ₹338</strong> - just under the ₹341 52-week low. That caps the realised loss at about 14.8%, comfortably inside the 25% drawdown ceiling.</li><li><strong>Maximum 8% of the equity portfolio.</strong> Half the position in the ₹385-400 zone; the second half only on a daily close above the 200-DMA (₹427.40).</li><li><strong>No averaging down below ₹360.</strong> A break of the 52-week low is information, not an opportunity.</li><li><strong>Delivery only.</strong> No MIS, no margin funding, no leverage on a high-beta cyclical into a rate-hike cycle.</li><li><strong>Pre-set a GTT stop</strong> at ₹338 on the broker platform so the exit does not depend on you watching the screen.</li><li><strong>Keep 40%+ of the book in 7%+ short-duration debt</strong> while this works. The 195bp equity-bond gap is real; the cement position is the equity sleeve, not the whole book.</li>
+            </ul>
+        </div>
+        
+        <!-- Execution Details -->
+        <div class="section">
+            <h2>🛠️ Execution Guide</h2>
+            
+            <table class="execution-table">
+                <tr>
+                    <th>Parameter</th>
+                    <th>Specification</th>
+                </tr>
+                <tr>
+                    <td>Capital Required</td>
+                    <td>₹2-5 lakh (in 2 equal tranches)</td>
+                </tr>
+                <tr>
+                    <td>Position Sizing</td>
+                    <td>Max 8% of the equity portfolio; 4% now, 4% on a close above ₹427.40</td>
+                </tr>
+                <tr>
+                    <td>Broker Platform</td>
+                    <td>Zerodha Kite / Groww - delivery order, GTT stop at ₹338</td>
+                </tr>
+                <tr>
+                    <td>Monitoring Intensity</td>
+                    <td>Medium - weekly price print, quarterly results</td>
+                </tr>
+                <tr>
+                    <td>Expected Holding Period</td>
+                    <td>6-9 months</td>
+                </tr>
+                <tr>
+                    <td>Tax Treatment</td>
+                    <td>Held over 12 months: LTCG at 12.5% on gains above the ₹1.25 lakh annual exemption. Sold inside 12 months: STCG at 20%. There is no dividend cushion (0.50% yield), so the entire return is price - which is why the holding period should be allowed to cross 12 months where the thesis permits.</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Monitoring Checklist -->
+        <div class="section">
+            <h2>✅ Position Monitoring Checklist</h2>
+            
+            <p>Review weekly:</p>
+            <ul>
+                <li><strong>Weekly:</strong> all-India cement trade price per bag. Exit if it falls below ₹245.</li><li><strong>Weekly:</strong> Brent. If it re-crosses $105, the cost-relief leg is gone - tighten the stop to ₹375.</li><li><strong>Late January (Q3 FY27 results):</strong> EBITDA per tonne versus Nomura's ₹845. Volume versus the 119 MTPA run-rate.</li><li><strong>Quarterly:</strong> capacity commissioning against the March 2027 deadline.</li><li><strong>Ongoing:</strong> Adani group related-party transactions, pledge disclosures and any auditor commentary.</li><li><strong>February 1, 2027:</strong> Union Budget infrastructure allocation - a cut would break the demand leg.</li>
+            </ul>
+        </div>
+        
+        <!-- Action This Week -->
+        <div class="action-cta">
+            <h2>🚀 Action This Week</h2>
+            <p>Buy ₹2 lakh of AMBUJACEM in the ₹385-400 zone at Monday's open, place a GTT stop at ₹338 the same day, and set a calendar alert for the Q3 print in late January. Add the second tranche only above ₹427.40.</p>
+        </div>
+        
+        <!-- Disclaimer -->
+        <div class="disclaimer">
+            <p><strong>Disclaimer:</strong> This is for educational and informational purposes only. Not financial advice. Past performance does not guarantee future returns. Markets carry inherent risks including loss of capital. Conduct your own due diligence before investing. Consult a SEBI-registered investment advisor for personalized advice.</p>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Generated on November 20, 2026 | Alpha Ideas Archive</p>
+    </footer>
+</body>
+</html>
